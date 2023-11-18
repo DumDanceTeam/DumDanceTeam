@@ -29,7 +29,6 @@ export async function PATCH(req: NextRequest, {params}:{params:{id: string}}){
         return NextResponse.json({msg:"Schimbarea a fost facută cu succes !"},{status:200});
 
     }catch(err){
-        console.log(err);
         
         return new NextResponse(
             "Ceva a mers greșit, te rugăm să încerci mai tărziu !",

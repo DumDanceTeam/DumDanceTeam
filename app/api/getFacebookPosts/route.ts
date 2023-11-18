@@ -51,7 +51,6 @@ export async function GET(req:Request){
         }
         
     }catch(err){
-        console.log("fberror",err);
         
         return new NextResponse("Something went wrong. Please try again later!",{status:500});
     }

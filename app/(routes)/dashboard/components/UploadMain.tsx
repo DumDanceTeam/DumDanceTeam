@@ -17,7 +17,6 @@ interface UploadMainProps{
 const UploadMain: React.FC<UploadMainProps> = ({imageUrl,setImageUrl,uploadProgress,setUploadProgress, isUploading, setIsUploading}) => {
 
   const onUpload = (result: any) =>{
-    console.log(result);
     setImageUrl(result.info.secure_url);
   }
 

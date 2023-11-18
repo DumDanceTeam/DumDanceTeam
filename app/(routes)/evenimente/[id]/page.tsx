@@ -60,7 +60,6 @@ export default EventPage
 export async function generateStaticParams(){
  
         const eventsData = await getAllEvents();
-        console.log("ed static",eventsData);
         if(eventsData.allEvents.length===0) return [];
 
         return eventsData.allEvents.map((ev: EventDB)=>(

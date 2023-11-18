@@ -62,7 +62,6 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
                   {/*@ts-ignore */}
                     <Button onClick={
                           handleSubmit((data)=>{
-                            console.log("Data",data);
                             if(!agreeWithTerms){
                               setAgreeTermsMessage("Acceptă termenii și condițiile");
                               return;

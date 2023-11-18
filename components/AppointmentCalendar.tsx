@@ -22,9 +22,6 @@ const AppointmentCalendar = ({phone_number}:{phone_number:string}) => {
     let nextDay = new Date(originalDate);
     nextDay.setDate(originalDate.getDate()+1);
 
-
-        
-    console.log("day",dayjs(nextDay).day());
     
     while(dayjs(nextDay).day()!==2 && dayjs(nextDay).day()!==4 && dayjs(nextDay).day()!==6 && dayjs(nextDay).day()!==0){
       nextDay.setDate(nextDay.getDate()+1);

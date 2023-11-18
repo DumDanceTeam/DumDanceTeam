@@ -24,7 +24,7 @@ export const navbarLinks: Array<NavbarLink> = [
     link: "/regulament",
   },
   {
-    label:"suține performanțele DDT",
+    label:"susține performanțele DDT",
     link: `/sustine-performanta`,
   }
 ];

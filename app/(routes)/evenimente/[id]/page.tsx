@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import { getAllEvents } from "@/lib/api/getAllEvents"
+import getAllEvents from "@/lib/api/getAllEvents"
 import prismadb from "@/lib/db"
 import { Event as EventDB } from "@prisma/client"
 import Event from "../components/Event";
@@ -60,10 +60,13 @@ export default EventPage
 export async function generateStaticParams(){
     try{
         const eventsData: EventDB[] = await getAllEvents();
+        console.log("ed static",eventsData);
         
-        return eventsData.map(ev=>(
-            {id:ev.id}
-        ));
+        return eventsData.map(ev=>{
+            return {
+                id:ev.id,
+            }
+        });
     }catch(err){
         console.log(err);
         

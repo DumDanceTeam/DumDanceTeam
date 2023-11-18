@@ -1,7 +1,6 @@
 import AppointmentCalendar from "./AppointmentCalendar";
 
 const Appointment = () => {
-    console.log(process.env.PHONE_NUMBER);
     
   return (
     <div className="my-20">

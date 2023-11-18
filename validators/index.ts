@@ -29,6 +29,17 @@ export const EventValidator = z.object({
 
 export type EventRequest = z.infer<typeof EventValidator>;
 
+export const PartnershipValidator = z.object({
+    title: z.string({required_error:"Titlul trebuie să conțină cel puțin un caracter !"}).min(1,"Titlul trebuie să conțină cel puțin un caracter !"),
+    description: z.string({required_error:"Descrierea trebuie să conțină cel puțin 2 caractere !"}).min(2,"Descrierea trebuie să conțină cel puțin două caractere !"),
+    mainImage:z.string({required_error:"Imagine invalidă !"}).refine(value=>value.trim()!=='',{
+        message:"Imaginea principală nu poate fi nedefinită"
+    }),
+    secondImages:z.optional(z.array(z.string())),
+    youtubeLink:z.optional(z.string()),
+});
+
+export type PartnershipRequest = z.infer<typeof PartnershipValidator>;
 
 export const TestmonialUpdateValidator = z.object({
     newData: z.object({
@@ -40,6 +51,11 @@ export const TestmonialUpdateValidator = z.object({
 
 export type TestmonialUpdateRequest = z.infer<typeof TestmonialUpdateValidator>;
 
+export const ImageUpdateValidator = z.object({
+    newUrl: z.string({required_error:"Noul url lipsește"}),
+});
+
+export type ImageUpdateRequest = z.infer<typeof TestmonialUpdateValidator>;
 
 export const AppointmentDataValidator = z.object({
     parentName:z.string().min(2,"Numele tutorelui trebuie să conțină cel puțin 2 caractere ."),

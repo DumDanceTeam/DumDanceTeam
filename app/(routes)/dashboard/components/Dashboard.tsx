@@ -4,6 +4,10 @@ import prismadb from "@/lib/db";
 import TestmonialsManager from "./testmonials/TestmonialsManager";
 import SearchInput from "./SearchInput";
 import Rules from "./rules/Rules";
+import Partnership from "./parteneriat/Partnership";
+import Gallery from "@/components/about/Gallery";
+import GalleryManager from "./gallery/GalleryManager";
+
 
 export const revalidate = 0;
 
@@ -61,6 +65,13 @@ const Dashboard = async ({ event }: { event: string }) => {
           </div>
         </div>
       </div>
+      <div className="my-20">
+        <Partnership/>
+      </div>
+      <div className="my-20">
+        <GalleryManager/>
+      </div>
+
       <div className="my-20">
         <TestmonialsManager />
       </div>

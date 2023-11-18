@@ -35,6 +35,15 @@ model Event {
   youtubeLink String?
   createdAt DateTime @default(now())
 }
+model Partnership {
+  id String @id @default(uuid())
+  title String
+  description String
+  mainImage String
+  secondImages String[]
+  youtubeLink String?
+  createdAt DateTime @default(now())
+}
 
 model Testmonial{
   id String @id @default(uuid())

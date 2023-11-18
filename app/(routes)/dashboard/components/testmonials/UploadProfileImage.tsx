@@ -15,7 +15,6 @@ interface UploadProfileImageProps{
 
 const UploadProfileImage: React.FC<UploadProfileImageProps> = ({imageUrl,setImageUrl,uploadProgress,setUploadProgress, isUploading, setIsUploading}) => {
   const onUpload = (result: any) =>{
-    console.log(result);
     setImageUrl(result.info.secure_url);
   }
   return (
@@ -33,7 +32,7 @@ const UploadProfileImage: React.FC<UploadProfileImageProps> = ({imageUrl,setImag
             />
           
         ) : null}
-      <CldUploadWidget onUpload={onUpload} uploadPreset="h7trytjb">
+      <CldUploadWidget onUpload={onUpload} uploadPreset="opphlmxz">
         {({open})=>{
           const onClick = () =>{
             open();

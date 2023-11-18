@@ -17,13 +17,9 @@ const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
   const videoId = extractYouTubeVideoID(event.youtubeLink || "");
 
   return (
-    <div
-      className={`w-full h-full flex flex-col gap-5 ${
-        index % 2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row"
-      } ${fullLayout ? "justify-center" : ""}`}
-    >
+    <div className={`w-full h-full flex flex-col gap-5 ${index % 2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row"} ${fullLayout ? "justify-center" : ""}`}>
       <Link
-        className="cursor-pointer flex items-center justify-center"
+        className="cursor-pointer flex-1"
         href={event.mainImage}
         target="_blank"
       >
@@ -31,25 +27,25 @@ const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
           src={event.mainImage}
           width={8000}
           height={8000}
-          className="self-start rounded-[5px] w-full max-w-[400px] max-h-[400px] sm:max-w-[500px] sm:max-h-[500px] sm:min-w-[400px] sm:min-h-[400px] md:max-w-[600px] md:max-h-[600px] object-cover"
+          className={`rounded-[5px] w-full h-full max-w-[950px] max-h-[800px] flex-1 object-cover`}
           quality={100}
           priority
           alt="event image"
         />
       </Link>
-      <div className={` ${!fullLayout ? "flex-1" : ""}`}>
+      <div className={` ${!fullLayout ? "flex-1 flex flex-col gap-5 overflow-auto" : ""}`}>
         <div
-          className={`flex items-center ${
+          className={` ${
             fullLayout
-              ? "flex-col justify-center h-full"
-              : "justify-center md:justify-around lg:justify-between"
-          } gap-2 lg:gap-0`}
+              ? "flex flex-col justify-center items-center h-full"
+              : "flex items-center justify-between"
+          }`}
         >
           <p
-            className={`font-bold text-[1.5em] text-center ${
+            className={`${
               fullLayout
                 ? "xsBig:text-[1.7em] sm:text-[1.8em] md:text-[2em]"
-                : ""
+                : "font-bold text-[1.5em] text-center"
             }`}
           >
             {event.title}
@@ -65,12 +61,12 @@ const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
         <div className="">
           {!fullLayout ? (
             <div className="">
-              <p className="font-light text-[1em] line-clamp-6 text-center lg:text-start">
+              <p className="font-light text-[1em] line-clamp-6 text-center lg:text-start overflow-auto break-words min-h-[200px]">
                 {event.description}
               </p>
               {videoId && videoId.trim() !== "" ? (
                 <iframe
-                  className="w-full h-full max-w-[500px] max-h-[500px] min-w-[230px] min-h-[230px] mt-6"
+                  className="w-full h-full min-h-[400px] mt-6"
                   src={`https://www.youtube.com/embed/${videoId}`}
                   allowFullScreen
                 ></iframe>
@@ -96,25 +92,25 @@ const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
           ) : null}
         </div>
         {!fullLayout ? (
-          <div className="flex flex-col xs:flex-row items-center justify-center gap-2.5 w-full mt-auto">
-            {secondImages && secondImages.length > 0
+        <div className="flex flex-col xs:flex-row items-center justify-center gap-2.5 w-full self-end">
+        {secondImages && secondImages.length > 0
               ? secondImages.map((sImage, index) => (
-                  <Link
-                    key={index}
-                    href={sImage}
-                    target="_blank"
-                    className="cursor-pointer"
-                  >
-                    <Image
-                      src={sImage}
-                      width={8000}
-                      height={8000}
-                      className="rounded-[10px] object-cover w-full h-full hover:scale-95 transition-transform max-w-[230px] max-h-[230px]"
-                      quality={100}
-                      priority
-                      alt="event image"
-                    />
-                  </Link>
+                <Link
+                key={index}
+                href={sImage}
+                target="_blank"
+                className="cursor-pointer"
+              >
+                <Image
+                  src={sImage}
+                  width={8000}
+                  height={8000}
+                  className="rounded-[10px] object-cover w-full h-full hover:scale-95 transition-transform max-w-[230px] max-h-[230px]"
+                  quality={100}
+                  priority
+                  alt="event image"
+                />
+              </Link>
                 ))
               : null}
           </div>

@@ -24,8 +24,8 @@ export const navbarLinks: Array<NavbarLink> = [
     link: "/regulament",
   },
   {
-    label:"Suține performanțele DDT",
-    link: `https://wa.me/+40747914993?text=Bună, sunt interesat/ă în a redirecționa cei 3.5%. Îmi puteți oferi mai multe detalii ?`,
+    label:"suține performanțele DDT",
+    link: `/sustine-performanta`,
   }
 ];
 

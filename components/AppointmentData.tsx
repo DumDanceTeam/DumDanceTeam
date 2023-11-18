@@ -38,11 +38,6 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
 
 
   useEffect(()=>{
-    console.log("errors", errors);
-    
-  },[errors]);
-
-  useEffect(()=>{
     setTimeout(()=>{
       setAgreeTermsMessage("");
     },2700);
@@ -52,7 +47,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
     <div className='flex flex-col md:flex-row items-center md:items-baseline justify-center gap-5'>
         <div className="flex flex-col items-center justify-center gap-1 sm:gap-10 text-xs">
                 <div className="flex flex-col gap-3 w-full ">
-                    <Input {...register("parentName")} placeholder='Nume și prenume tutore' className='outline-none shadow-[0px_0px_5px_rgba(255,51,8.2,.2)] focus:shadow-[0px_0px_5px_rgba(255,51,8.2,.7)] py-6 w-full lg:w-[400px]'/>
+                    <Input {...register("parentName")} placeholder='Nume și prenume tutore' className='outline-none shadow-[0px_0px_5px_rgba(255,51,8.2,.2)] focus:shadow-[0px_0px_5px_rgba(255,51,8.2,.7)] py-6 w-full min-w-[230px]'/>
                     {/* @ts-ignore */}
                     {errors && errors.parentName && showErrorMessage ? <p className='text-lightRed text-xs xs:text-sm whitespace-break-spaces'>{errors.parentName.message}</p>:null}
                     <Input {...register("childName")} placeholder='Nume și prenume copil' className='outline-none shadow-[0px_0px_5px_rgba(255,51,8.2,.2)] focus:shadow-[0px_0px_5px_rgba(255,51,8.2,.7)] py-6 w-full'/>
@@ -74,7 +69,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
                             }
                             if(data.parentName.trim().length>=2 && data.childName.trim().length>=2){
                               {/* @ts-ignore */}
-                              window.location.href=`https://wa.me/${phone_number}?text=Bună mă numesc ${data.parentName}, sunt interesat/ă de o ședință de dans gratuită în data de ${months[selectedDate.month()]}, ${selectedDate.date()} ${selectedDate.year()} pentru ${data.childName} cu vârstă de ${data.childAge} ani`
+                              window.location.href=`https://wa.me/${phone_number}?text=Bună mă numesc ${data.parentName}, sunt interesat/ă de o ședință de dans gratuită în data de ${months[selectedDate.month()]}, ${selectedDate.date()} ${selectedDate.year()} pentru ${data.childName} în vârstă de ${data.childAge} ani`
                             }
                           })
                     } variant={"fill"} className="active:scale-95 transition-transform text-xs sm:text-[1.5em] mt-2.5">Programează ședința</Button>

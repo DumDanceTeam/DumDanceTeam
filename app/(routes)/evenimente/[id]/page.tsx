@@ -25,7 +25,7 @@ const EventPage = async ({params}:{params:{id: string}}) => {
         <div className="mt-10 mb-20 container mx-auto">
             <Event index={1} event={currentEvent} fullLayout={true}/>
             <p className="text-[1.1em] mt-10 xsBig:text-[1.3em] sm:text-[1.5em] md:text-[1.7em]">Descrierea <span className="text-lightRed">Evenimentului</span></p>
-            <p className="font-light text-[1em]  text-center lg:text-start">
+            <p className="font-light text-[1em] max-h-[300px] overflow-auto break-words text-center lg:text-start">
                 {currentEvent.description}
             </p> 
             {videoId && videoId.trim() !== "" ? (
@@ -57,15 +57,15 @@ const EventPage = async ({params}:{params:{id: string}}) => {
 
 export default EventPage
 
-// export async function generateStaticParams(){
-//     try{
-//         const eventsData: EventDB[] = await getAllEvents();
+export async function generateStaticParams(){
+    try{
+        const eventsData: EventDB[] = await getAllEvents();
 
-//         return eventsData.map(ev=>(
-//             {id:ev.id}
-//         ));
-//     }catch(err){
-//         console.log(err);
+        return eventsData.map(ev=>(
+            {id:ev.id}
+        ));
+    }catch(err){
+        console.log(err);
         
-//     }
-// }
+    }
+}

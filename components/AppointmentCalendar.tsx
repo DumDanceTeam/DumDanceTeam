@@ -4,7 +4,6 @@ import { cn, generateDate } from "@/lib/utils";
 import dayjs, { Dayjs } from "dayjs";
 import { useEffect, useState } from "react";
 import {GrFormNext, GrFormPrevious} from "react-icons/gr";
-import { Button } from "./ui/Button";
 import AppointmentData from "./AppointmentData";
 
 const AppointmentCalendar = ({phone_number}:{phone_number:string}) => {
@@ -23,8 +22,7 @@ const AppointmentCalendar = ({phone_number}:{phone_number:string}) => {
     let nextDay = new Date(originalDate);
     nextDay.setDate(originalDate.getDate()+1);
 
-    console.log("og",originalDate.getDay());
-    console.log("nd",nextDay.getDay());
+
         
     console.log("day",dayjs(nextDay).day());
     

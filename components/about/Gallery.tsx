@@ -1,9 +1,11 @@
-import prismadb from "@/lib/db";
 import GalleryImage from "./GalleryImage";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/Button";
+import prismadb from "@/lib/db";
 
 const Gallery: React.FC = async () => {
+  const images = await prismadb.image.findMany();
+
   return (
     <div>
       <div className="bg-black rounded-lg p-2">
@@ -15,14 +17,13 @@ const Gallery: React.FC = async () => {
             </p>
             <hr className="hidden sm:block bg-ddtWhite" />
           </div>
-          <div className="flex flex-col gap-10 max-h-[870px] overflow-y-scroll">
+          <div className="flex flex-col gap-10 overflow-y-scroll">
             <div className="mt-6 grid grid-cols-1 items-center justify-center sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <GalleryImage galleryImage={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700157481/tm9ru02hlofxnayts2kl.jpg"} />
-              <GalleryImage galleryImage={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700157481/v3clc5qllsyi6wpmqcba.jpg"} />
-              <GalleryImage galleryImage={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700157482/nvhskzwyudlilk87y4ab.jpg"} />
-              <GalleryImage galleryImage={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700157481/kznzkyftvmkdg6yqkoty.jpg"} />
-              <GalleryImage galleryImage={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700157482/y8ufqnggyyvgkwrfqevz.jpg"} />
-              <GalleryImage galleryImage={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700157482/nscwlq7hwjvjrray4zgx.jpg"} />
+              {images && images.length>0 ? (
+                images.map(gImg=>(
+                  <GalleryImage galleryImage={gImg.url} key={gImg.id} />
+                ))
+              ):null}              
             </div>
             <div className="flex items-center justify-center mt-10 mb-2">
               <a

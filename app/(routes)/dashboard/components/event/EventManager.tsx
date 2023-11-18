@@ -1,7 +1,6 @@
 import { PartyPopperIcon } from "lucide-react"
 import ManagerInfo from "../ManagerInfo"
 import NewEvent from "./NewEvent"
-import { cookies } from "next/headers";
 
 const EventManager = () => {
   

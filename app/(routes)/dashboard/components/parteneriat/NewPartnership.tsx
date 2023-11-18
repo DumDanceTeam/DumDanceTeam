@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import UploadMain from "../UploadMain";
 import UploadImages from "../UploadImages";
 import { useForm } from "react-hook-form";
-import { EventRequest, EventValidator } from "@/validators";
+import { PartnershipRequest, PartnershipValidator } from "@/validators";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
@@ -14,7 +14,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import Image from "next/image";
 
-const NewEvent: React.FC = () => {
+const NewPartnership: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string>("");
   const [secondImages, setSecondImages] = useState<Array<string>>([]);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
@@ -26,17 +26,17 @@ const NewEvent: React.FC = () => {
     handleSubmit,
     formState: { errors },
     setValue,
-  } = useForm<EventRequest>({
-    resolver: zodResolver(EventValidator),
+  } = useForm<PartnershipRequest>({
+    resolver: zodResolver(PartnershipValidator),
   });
 
   const { mutate: createEvent, isLoading } = useMutation({
-    mutationFn: async function (data: EventRequest) {
-      const res = await axios.post("/api/event", data);
+    mutationFn: async function (data: PartnershipRequest) {
+      const res = await axios.post("/api/partnership", data);
       return res.data;
     },
     onSuccess: () => {
-      toast.success("Evenimentul a fost creat !");
+      toast.success("Parteneriatul a fost creat !");
       window.location.reload();
     },
     onError: () => {
@@ -84,7 +84,7 @@ const NewEvent: React.FC = () => {
             <input
               {...register("title")}
               className="bg-ddtWhite h-full w-full md:max-w-fit p-2 rounded-md outline-none"
-              placeholder="numele evenimentului"
+              placeholder="numele parteneriatului"
             />
           </div>
           {showErrorMessage && errors.title ? (
@@ -97,7 +97,7 @@ const NewEvent: React.FC = () => {
             {...register("description")}
             className="resize-none bg-ddtWhite outline-none p-2 rounded-md w-full"
             rows={4}
-            placeholder="descrierea evenimentului"
+            placeholder="descrierea parteneriatului"
           ></textarea>
         </div>
         {showErrorMessage && errors.description ? (
@@ -154,7 +154,7 @@ const NewEvent: React.FC = () => {
         </div>
         <div className="flex items-center justify-center  mt-3">
           <Button type="submit" isLoading={isLoading}>
-            Creează evenimentul
+            Creează parteneriatului
           </Button>
         </div>
       </form>
@@ -162,4 +162,4 @@ const NewEvent: React.FC = () => {
   );
 };
 
-export default NewEvent;
+export default NewPartnership;

@@ -18,7 +18,7 @@ const PartnershipsContainer = async () => {
             </p>
           ) : (
             partnerships.map((partnership, index) => (
-                <Partnership fullLayout={false} index={index} key={index+1} partnership={partnership}/>
+                <Partnership index={index} key={index+1} partnership={partnership}/>
             ))
           )}
         </div>

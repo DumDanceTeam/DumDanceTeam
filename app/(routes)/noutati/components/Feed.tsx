@@ -1,20 +1,19 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import axios from "axios";
 import { FacebookPost } from "@/types";
 import Post from "./Post";
 import Image from "next/image";
 import { useIntersection } from "@mantine/hooks";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { Skeleton } from "@/components/ui/skeleton";
 
 const Feed = () => {
 
   const lastPostRef = useRef<HTMLElement>(null);
   const { ref, entry } = useIntersection({
     root: lastPostRef.current,
-    threshold: 1,
+    threshold: 0.5,
   });
 
   const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
@@ -34,6 +33,7 @@ const Feed = () => {
   );
 
   useEffect(() => {
+    console.log("1")
     if (entry?.isIntersecting) fetchNextPage();
   }, [entry, fetchNextPage]);
 
@@ -58,8 +58,8 @@ const Feed = () => {
             feedData.map((fbPost, i) => {
               if (i === feedData.length - 1)
                 return (
-                  <div ref={ref}>
-                    <Post key={fbPost.id} post={fbPost} />
+                  <div ref={ref} key={fbPost.id}>
+                    <Post post={fbPost} />
                   </div>
                 );
               else return <Post key={fbPost.id} post={fbPost} />;

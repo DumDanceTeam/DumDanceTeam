@@ -1,13 +1,13 @@
 import { buttonVariants } from "@/components/ui/Button";
 import { cn, formatDateToDDMMYY } from "@/lib/utils";
-import { Event } from "@prisma/client";
+import { Event, Partnership } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { extractYouTubeVideoID } from "@/lib/utils";
 
 interface EventProps {
   index: number;
-  event: Event;
+  event: Event | Partnership;
   fullLayout: boolean;
 }
 

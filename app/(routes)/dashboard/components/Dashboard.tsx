@@ -43,6 +43,12 @@ const Dashboard = async ({ event }: { event: string }) => {
 
   const showRules = await prismadb.rule.findFirst();
 
+  const initialPartnership = await prismadb.partnership.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
   return (
     <div className="">
       <h3 className="font-bold text-center text-[1.2em] sm:text-[1.3em] md:text-[1.5em] lg:text-[2em]">
@@ -66,7 +72,7 @@ const Dashboard = async ({ event }: { event: string }) => {
         </div>
       </div>
       <div className="my-20">
-        <Partnership/>
+        <Partnership partnerships={initialPartnership}/>
       </div>
       <div className="my-20">
         <GalleryManager/>

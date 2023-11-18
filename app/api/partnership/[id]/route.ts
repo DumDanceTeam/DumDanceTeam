@@ -5,16 +5,17 @@ export async function DELETE(req: NextRequest, {params}:{params:{id: string}}){
     try{
         const id = params.id;
 
-        const event = prismadb.event.findFirst({
+        const partnership = prismadb.partnership.findFirst({
             where:{
                 id: id,
             },
         });
         
-        if(!event)
+        if(!partnership)
             throw new Error("Nu am putut găsi un eveniment cu id-ul dat");
         
-        await prismadb.event.delete({
+        //delete partnership
+        await prismadb.partnership.delete({
             where:{
                 id:id
             }

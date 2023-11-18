@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 import { EventRequest, EventValidator } from "@/validators";
 import { ZodError } from "zod";
 import prismadb from "@/lib/db";
-import z from "zod";
 
 export async function POST(req: Request) {
   try {
@@ -43,4 +42,3 @@ export async function POST(req: Request) {
     );
   }
 }
-

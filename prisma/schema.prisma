@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Token{
+  id String @id @default(uuid())
+  token String
+  createdAt DateTime @default(now())
+}
+
+model AuthToken {
+  id String @id @default(uuid())
+  authToken String
+}
+
+model Image {
+  id String @unique
+  url String
+}
+
+model Event {
+  id String @id @default(uuid())
+  title String
+  description String
+  mainImage String
+  secondImages String[]
+  youtubeLink String?
+  createdAt DateTime @default(now())
+}
+
+model Testmonial{
+  id String @id @default(uuid())
+  name String
+  description String
+  profileUrl String
+  createdAt DateTime @default(now())
+}
+
+model Rule{
+  id String @id @default(uuid())
+  show Boolean @default(false)
+}

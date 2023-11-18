@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+  
+::-webkit-scrollbar-thumb {
+  background: #223138;
+  border-radius: 12px;
+}
+
+.activeMenu.line1{
+  transform: rotate(45deg) translateY(5px) translateX(-2px);
+}
+.activeMenu.line2{
+  transform: rotate(-45deg) translateY(-5px) translateX(-2px);
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#223138;
+  opacity: 0.2;
+  height: 1px;
+}
+
+#mesaj{
+  resize: none;
+}
+
+@media (max-width:500px){
+  .container{
+    padding: 15px;
+    margin: 0;
+  }
+}
+
+.custom-duration{
+  animation-duration: 6s;
+}
+.recommendBg{
+  background-size: cover;
+}

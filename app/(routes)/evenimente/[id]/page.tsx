@@ -57,15 +57,15 @@ const EventPage = async ({params}:{params:{id: string}}) => {
 
 export default EventPage
 
-// export async function generateStaticParams(){
-//     try{
-//         const eventsData: EventDB[] = await getAllEvents();
+export async function generateStaticParams(){
+    try{
+        const eventsData: EventDB[] = await getAllEvents();
 
-//         return eventsData.map(ev=>(
-//             {id:ev.id}
-//         ));
-//     }catch(err){
-//         console.log(err);
+        return eventsData.map(ev=>(
+            {id:ev.id}
+        ));
+    }catch(err){
+        console.log(err);
         
-//     }
-// }
+    }
+}

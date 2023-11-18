@@ -9,7 +9,7 @@ const Hero: React.FC<HeroProps> = ({ label }) => {
   return (
     <div className="text-ddtWhite relative z-20 h-full">
       <video
-        src="/edited.mp4"
+        src="/Edited.mp4"
         autoPlay
         loop
         muted

@@ -19,7 +19,7 @@ const Referinte: FC<ReferinteProps> = ({}) => {
           &#34;Disciplină, unitatea și munca sunt principiile care ne fac să
           dezvoltăm copiii din simplii dansatori în adevarăți campioni.
           Educația, disciplina, respectul și valorile morale pe care copii și
-          le însușesc practicând dansul sunt neprețuite și negșsite în orice alt
+          le însușesc practicând dansul sunt neprețuite și negăsite în orice alt
           sport. &#34; -{" "}
           <span className="not-italic text-sm text-black tracking-tight leading-8 font-semibold sm:text-[1.1em]">
             antrenor Andrei Claudiu Dumitrașcu

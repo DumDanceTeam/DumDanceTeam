@@ -29,26 +29,6 @@ export const navbarLinks: Array<NavbarLink> = [
   }
 ];
 
-export const testmonials: Array<TestmonialCardProps> = [
-  {
-    profileImage: "/profile.avif",
-    profileName: "C. Darian Rareș",
-    label:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur porro perferendis fugit deserunt eaque ad, excepturi explicabo esse quis!",
-  },
-  {
-    profileImage: "/profile.avif",
-    profileName: "C. Darian Rareș",
-    label:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur porro perferendis fugit deserunt eaque ad, excepturi explicabo esse quis!",
-  },
-  {
-    profileImage: "/profile.avif",
-    profileName: "C. Darian Rareș",
-    label:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur porro perferendis fugit deserunt eaque ad, excepturi explicabo esse quis!",
-  },
-];
 
 export const faq: Array<FAQItem> = [
   {
@@ -65,7 +45,7 @@ export const faq: Array<FAQItem> = [
   {
     question: "Ce se învață la cursurile DDT ?",
     answer:
-      "Pe lângă dezvoltarea abilităților de dans, încurajăm și adoptarea unei posturi corecte într-un colectiv educat si disciplinat. Respectul, grația, eleganța, socializarea și munca în echipă sunt câteva dintre oportunitățile de dezvoltare pe care copilul dvs. cu siguranță le va dobândi. Suntem nerăbdători să ne cunoaștem !😁",
+      "Pe lângă dezvoltarea abilităților de dans, încurajăm și adoptarea unei posturi corecte într-un colectiv educat si disciplinat. Respectul, grația, eleganța, socializarea și munca în echipă sunt câteva dintre oportunitățile de dezvoltare pe care copilul dvs. cu siguranță le va dobândi. Suntem nerăbdători să ne cunoaștem !",
   },
 ];
 

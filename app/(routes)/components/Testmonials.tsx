@@ -1,5 +1,4 @@
 import TestmonialCard from "@/components/ui/TestmonialCard";
-import { testmonials } from "@/constants";
 import RevealRightSlideIn from "@/components/Reveal/RevealRightSlide";
 import prismadb from "@/lib/db";
 

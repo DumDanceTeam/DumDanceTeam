@@ -93,7 +93,7 @@ const EventsFeed: FC<EventsFeedProps> = ({
         searchedEvents.map((ev, i) => {
           return (
             <div key={ev.id} className="flex flex-col gap-3">
-              <Event fullLayout={false} index={i + 1} event={ev} />
+              <Event showInfoButton={true} index={i + 1} event={ev} />
               <Trash
                 onClick={() => deleteEvent(ev.id)}
                 className={`w-6 h-6 text-lightRed cursor-pointer ${
@@ -110,7 +110,7 @@ const EventsFeed: FC<EventsFeedProps> = ({
           if (i === events.length - 1)
             return (
               <div ref={ref} key={ev.id} className="flex flex-col gap-3">
-                <Event fullLayout={false} index={i + 1} event={ev} />
+                <Event showInfoButton={true} index={i + 1} event={ev} />
                 <Trash
                   onClick={() => deleteEvent(ev.id)}
                   className={`w-6 h-6 text-lightRed cursor-pointer ${
@@ -124,7 +124,7 @@ const EventsFeed: FC<EventsFeedProps> = ({
           else
             return (
               <div key={ev.id} className="flex flex-col gap-3">
-                <Event fullLayout={false} index={i + 1} event={ev} />
+                <Event showInfoButton={true} index={i + 1} event={ev} />
                 <Trash
                   onClick={() => deleteEvent(ev.id)}
                   className={`w-6 h-6 text-lightRed cursor-pointer ${

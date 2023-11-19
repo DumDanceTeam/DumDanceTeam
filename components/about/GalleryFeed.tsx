@@ -24,7 +24,6 @@ const GalleryFeed: React.FC<GalleryFeedProps> = ({initialImages}) => {
       const query = `/api/images?limit=4&page=${pageParam}`;
 
       const { data } = await axios.get(query);
-        console.log("Data",data);
         
       return data as ImageDB[];
     },

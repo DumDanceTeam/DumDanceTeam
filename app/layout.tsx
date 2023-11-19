@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import Provider from "@/components/provider/Provider";
 import { constructMetadata } from "@/lib/utils";
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
             <Footer />
           </Provider>
         </div>
+        <Analytics/>
       </body>
     </html>
   );

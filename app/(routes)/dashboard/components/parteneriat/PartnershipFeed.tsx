@@ -60,7 +60,7 @@ const PartnerFeed: React.FC<PartnerFeedProps> = ({initialPartnerships}) => {
           else
             return (
               <div key={partnership.id} className="flex flex-col gap-3">
-                <Event fullLayout={false} index={i + 1} event={partnership} />
+                <Event showInfoButton={false} index={i + 1} event={partnership} />
                 <Trash
                   onClick={() => deletePartnership(partnership.id)}
                   className={`w-6 h-6 text-lightRed cursor-pointer ${

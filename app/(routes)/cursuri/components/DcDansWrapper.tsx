@@ -16,7 +16,7 @@ const DcDansWrapper: FC<DcDansWrapperProps> = ({}) => {
         </p>
         <div className="bg-[url('https://res.cloudinary.com/dwfidpghc/image/upload/v1700157481/xe8rmyg0lnj4jw5ejru9.jpg')] xl:h-[800px] rounded-[10px] recommendBg">
           <div className="bgWrapper z-10 p-5 bg-[rgba(0,0,0,.4)] rounded-[10px] xl:h-[800px]">
-              <div className="flex flex-col xl:flex-row mx-auto h-full">
+              <div className="flex flex-col xl:flex-row xl:mt-20 mx-auto h-full">
                 <DcDans
                   colorClause="black"
                   number={1}

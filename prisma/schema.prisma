@@ -22,7 +22,7 @@ model AuthToken {
 }
 
 model Image {
-  id String @unique
+  id String @id @default(uuid())
   url String
 }
 

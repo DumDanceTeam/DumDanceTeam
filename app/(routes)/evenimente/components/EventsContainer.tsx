@@ -19,7 +19,7 @@ const EventsContainer = async () => {
         <div className="mt-12 flex flex-col gap-20">
           {!events || events.length === 0 ? (
             <p className="text-center text-[1.1em] xs:text-[1.2em] sm:text-[1.3em]">
-              niciun <span className="text-lightRed">eveniment</span> curent
+              Niciun <span className="text-lightRed">eveniment</span> curent
             </p>
           ) : (
             events.map((event, index) => (

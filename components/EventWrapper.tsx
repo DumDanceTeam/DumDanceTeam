@@ -48,7 +48,7 @@ const EventWrapper = ({
               href="/evenimente"
               className={cn(
                 buttonVariants({ variant: "fill" }),
-                "w-full mt-5 hover:scale-100 rounded-[2px]"
+                "w-full mt-5 hover:scale-100 rounded-[2px] whitespace-nowrap"
               )}
             >
               Vezi mai mult <AiOutlineRight className="ml-1 h-4 w-4" />

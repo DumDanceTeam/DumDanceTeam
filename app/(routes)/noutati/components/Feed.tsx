@@ -33,7 +33,6 @@ const Feed = () => {
   );
 
   useEffect(() => {
-    console.log("1")
     if (entry?.isIntersecting) fetchNextPage();
   }, [entry, fetchNextPage]);
 

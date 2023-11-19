@@ -47,12 +47,14 @@ const About1: FC<About1Props> = ({
               {description}
             </p>
           </div>
-          <Image
+         <Image
+          loading="lazy"
             src="/ddt-black.png"
-            className="self-center"
+            className="self-center sm:max-w-[400px]"
             alt="ddt-white"
-            width={400}
-            height={200}
+            
+            width={686}
+            height={364}
             quality={100}
           />
           {whereClause != "despre-noi" && whereClause !="despre-noi2" && (
@@ -72,7 +74,7 @@ const About1: FC<About1Props> = ({
           <div className="flex flex-col gap-2.5">
             {title}
             <Image
-              src={imageUrl ?? "/about1.jpg"}
+              src={imageUrl}
               width={8000}
               height={8000}
               quality={100}
@@ -91,7 +93,7 @@ const About1: FC<About1Props> = ({
           <Image
           loading="lazy"
             src="/ddt-black.png"
-            className="self-center"
+            className="self-center sm:max-w-[400px]"
             alt="ddt-white"
             
             width={686}
@@ -115,7 +117,7 @@ const About1: FC<About1Props> = ({
       {whereClause === "despre-noi" ? (
         <RevealLeftSlideIn className="hidden xsBig:block">
           <Image
-            src={imageUrl ?? "/about1.jpg"}
+            src={imageUrl}
             width={700}
             height={525}
             quality={100}
@@ -128,7 +130,7 @@ const About1: FC<About1Props> = ({
       ) : (
         <RevealRightSlideIn className="hidden xsBig:block">
           <Image
-            src={imageUrl ?? "/about1.jpg"}
+            src={imageUrl}
             width={700}
             height={525}
             quality={100}

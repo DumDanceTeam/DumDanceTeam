@@ -57,6 +57,12 @@ export const ImageUpdateValidator = z.object({
 
 export type ImageUpdateRequest = z.infer<typeof TestmonialUpdateValidator>;
 
+export const ImageCreateValidator = z.object({
+    imageUrl: z.string({required_error:"Noul url lipsește"}),
+});
+
+export type ImageCreateRequest = z.infer<typeof TestmonialUpdateValidator>;
+
 export const AppointmentDataValidator = z.object({
     parentName:z.string().min(2,"Numele tutorelui trebuie să conțină cel puțin 2 caractere ."),
     childName:z.string().min(2,"Numele copilului trebuie să conțină cel puțin 2 caractere ."),

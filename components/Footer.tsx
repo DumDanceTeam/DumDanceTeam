@@ -30,16 +30,14 @@ const Footer: FC<FooterProps> = async ({}) => {
   });
   const showRule = await prismadb.rule.findFirst();
 
-
   return (
     <div className="bg-black">
       <div className="container mx-auto text-ddtWhite max-w-full">
         <div className="flex flex-col gap-5 pb-4">
           <Link prefetch={true} href="/" className="self-center">
             <Image
-            loading="lazy"
+              loading="lazy"
               src="/ddt-white.png"
-              
               alt="ddt-white"
               width={1000}
               height={8000}
@@ -59,31 +57,49 @@ const Footer: FC<FooterProps> = async ({}) => {
                   <EventWrapper events={events} />
                 </div>
                 {navbarLinks.map((navLink, index) => {
-                  if(navLink.label!=="Regulament")
-                    return(
-                    <div key={index} className="flex items-center gap-2">
-                      <BsDot className="text-lightRed" />
-                      <Link
-                        prefetch={true}
-                        href={navLink.link}
-                        className="lowercase text-[.96em] tracking-widest hover:text-gray-200 text-ddtWhite font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
-                      >
-                        {navLink.label}
-                      </Link>
-                    </div>
-                  )
-                  else if(showRule?.show) return (
-                    <div key={index} className="flex items-center gap-2">
-                      <BsDot className="text-lightRed" />
-                      <Link prefetch={true}
-                        key={index}
-                        href={navLink.link}
-                        className="lowercase text-[.96em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
-                      >
-                        {navLink.label}
-                      </Link>
-                    </div>
-                  )
+                  if (navLink.label !== "Regulament") {
+                    if (navLink.label.includes("DDT"))
+                      return (
+                        <div key={index} className="flex items-center gap-2">
+                          <BsDot className="text-lightRed" />
+                          <Link
+                            prefetch={true}
+                            key={index}
+                            href={navLink.link}
+                            className="text-[.96em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
+                          >
+                            {navLink.label}
+                          </Link>
+                        </div>
+                      );
+                    return (
+                      <div key={index} className="flex items-center gap-2">
+                        <BsDot className="text-lightRed" />
+
+                        <Link
+                          prefetch={true}
+                          key={index}
+                          href={navLink.link}
+                          className="lowercase text-[.96em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
+                        >
+                          {navLink.label}
+                        </Link>
+                      </div>
+                    );
+                  } else if (showRule?.show)
+                    return (
+                      <div key={index} className="flex items-center gap-2">
+                        <BsDot className="text-lightRed" />
+                        <Link
+                          prefetch={true}
+                          key={index}
+                          href={navLink.link}
+                          className="lowercase text-[.96em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
+                        >
+                          {navLink.label}
+                        </Link>
+                      </div>
+                    );
                 })}
               </div>
               <div className="flex flex-col gap-2.5">

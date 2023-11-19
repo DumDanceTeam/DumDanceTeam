@@ -2,9 +2,14 @@ import GalleryImage from "./GalleryImage";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/Button";
 import prismadb from "@/lib/db";
+import GalleryFeed from "./GalleryFeed";
 
 const Gallery: React.FC = async () => {
-  const images = await prismadb.image.findMany();
+  const images = await prismadb.image.findMany({
+    take:4,
+  });
+
+  
 
   return (
     <div>
@@ -17,14 +22,8 @@ const Gallery: React.FC = async () => {
             </p>
             <hr className="hidden sm:block bg-ddtWhite" />
           </div>
-          <div className="flex flex-col gap-10 overflow-y-scroll">
-            <div className="mt-6 grid grid-cols-1 items-center justify-center sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {images && images.length>0 ? (
-                images.map(gImg=>(
-                  <GalleryImage galleryImage={gImg.url} key={gImg.id} />
-                ))
-              ):null}              
-            </div>
+          <div className="flex flex-col gap-10 max-h-[1000px] overflow-y-scroll">
+            <GalleryFeed initialImages={images}/>
             <div className="flex items-center justify-center mt-10 mb-2">
               <a
                 href={"https://www.facebook.com/dumdanceteam/photos"}

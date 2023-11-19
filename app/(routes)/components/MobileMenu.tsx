@@ -24,17 +24,28 @@ const MobileMenu =({events, showRule}: {events: { id: string; title: string }[],
       <div className="flex flex-col justify-evenly h-full">
 
         {navbarLinks.map((navItem, index)=>{
-          if(navItem.label!=="Regulament")
-          return(
-            <Link
-            prefetch={true}
-            key={index}
-            href={navItem.link}
-            className="lowercase max-w-fit mx-auto text-center text-[1em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
-          >
-            {navItem.label}
-          </Link>
-          )
+          if(navItem.label!=="Regulament"){
+            if(navItem.label.includes("DDT"))
+              return (
+                <Link prefetch={true}
+                  key={index}
+                  href={navItem.link}
+                  className="text-[1em] w-fit mx-auto tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
+                >
+                  {navItem.label}
+                </Link>)
+                return(
+                  <Link
+                  prefetch={true}
+                  key={index}
+                  href={navItem.link}
+                  className="lowercase max-w-fit mx-auto text-center text-[1em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
+                >
+                  {navItem.label}
+                </Link>
+                )
+          }
+          
           else if(showRule) return (
             <Link
             prefetch={true}

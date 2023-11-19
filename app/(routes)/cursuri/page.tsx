@@ -6,7 +6,6 @@ import InformatiiCursuri from "./components/InformatiiCursuri";
 import Pasi from "./components/Pasi";
 import PrimaOra from "./components/PrimaOra";
 import DcDansWrapper from "./components/DcDansWrapper";
-import { BsDot } from "react-icons/bs";
 
 const page = () => {
   return (
@@ -51,8 +50,7 @@ dezvoltare prin mișcare și dans !"
             </RevealLeftSlideIn>
             <RevealLeftSlideIn className="flex-1">
               <InformatiiCursuri
-                descriere="Descoperă experiența inedită a cursurilor noastre de dans pentru adulți! Cu prietenie, profesionalism și creativitate, te invităm să explorezi dezvoltarea personală prin mișcare și dans!
-"
+                descriere="Descoperă experiența inedită a cursurilor noastre de dans pentru adulți! Cu prietenie, profesionalism și creativitate, te invităm să explorezi dezvoltarea personală prin mișcare și dans!"
                 durata="1 oră (doar lecții private)"
               />
             </RevealLeftSlideIn>

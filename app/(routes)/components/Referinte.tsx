@@ -40,15 +40,12 @@ const Referinte: FC<ReferinteProps> = ({}) => {
       <p className="text-black text-center tracking-tight leading-8 font-semibold sm:text-[1.25em]">
         Dansul este o artă, dar și un sport de lungă durată, după ani de zile
         veți reuși să vă bucurați de adevăratele satisfacții, dar vă spunem
-        sigur că vor fi enorme. Să faci parte dintr-o echipă de top este un
-        privilegiu, vei renunța să fii egoist,mediocru, când ești înconjurat de
-        prieteni profesioniști.
+        sigur că vor fi enorme. Dansul aduce o mulțime de bucurii și beneficii, contribuind la educația și dezvoltarea valorilor morale ale copiilor. Pe parcursul anilor, ei învață să depășească obstacolele, dobândind o postură corectă și o încredere de sine robustă. Aceste calități sunt fundamentul pentru a-i pregăti pe tineri pentru o viață fericită de succes.
       </p>
       <br />
       <p className="text-sm text-left sm:text-center italic sm:text-[1.15em] text-slate-600 font-medium tracking-tight leading-7 border-t pt-2.5">
         &quot;Să faci parte dintr-o echipă de top este un privilegiu, vei
-        renunța să fii egoist,mediocru, când ești înconjurat de prieteni
-        profesioniști.&quot;
+        renunța să fii mediocru, și vei începe să strălucești când ești înconjurat de prieteni profesioniști.&quot;
       </p>
       <div className="my-10">
         <About2 />

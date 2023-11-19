@@ -3,7 +3,7 @@ import AppointmentCalendar from "./AppointmentCalendar";
 const Appointment = () => {
     
   return (
-    <div className="my-20">
+    <div className="mt-10 mb-20">
         <div className="container mx-auto">
         <p className='font-semibold my-9'><span className="text-lightRed text-lg">|</span> Contactează-ne</p>
 

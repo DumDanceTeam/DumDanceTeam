@@ -78,7 +78,7 @@ export function constructMetadata({
       ]
     },
     icons,
-    metadataBase: new URL('https://dum-dance-team.vercel.app'),
+    metadataBase: new URL('https://dumdanceteam.com/'),
     themeColor: '#FFF',
     ...(noIndex && {
       robots: {

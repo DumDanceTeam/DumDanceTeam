@@ -3,9 +3,10 @@ import Navbar from "../app/(routes)/components/Navbar";
 
 interface HeroProps {
   label?: string;
+  noutati?:boolean
 }
 
-const Hero: React.FC<HeroProps> = ({ label }) => {
+const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
   return (
     <div className="text-ddtWhite relative z-20 h-full">
       <video
@@ -25,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ label }) => {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center h-full w-full">
-          <Landing label={label} />
+          <Landing label={label} noutati={noutati}/>
         </div>
       </div>
     </div>

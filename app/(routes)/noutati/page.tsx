@@ -6,7 +6,7 @@ import { FacebookIcon } from "lucide-react"
 const Noutati: React.FC = () => {
   return (
     <div>
-        <Hero label="Noi, de peste tot"/>
+        <Hero noutati={true} label="Noi, de peste tot"/>
         <div className="container mx-auto max-w-full mt-5">
           <p className="font-bold text-[1.5em] sm:text-[1.7em] md:text-[2.1em] text-center">Ultimele <span className="text-lightRed">noutăți</span> despre noi le găsiți <span className="text-lightRed">aici</span></p>
           <Link target="_blank" href={"https://www.facebook.com/dumdanceteam"} >

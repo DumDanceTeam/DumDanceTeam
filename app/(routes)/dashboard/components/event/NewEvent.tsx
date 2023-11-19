@@ -134,6 +134,8 @@ const NewEvent: React.FC = () => {
           </div>
           <div className="max-flex-1">
             <UploadImages images={secondImages} setImages={setSecondImages} />
+              <p>poți selecta imagini nelimitate</p>
+
             {secondImages && secondImages.length > 0 ? (
               <div className="mt-2 flex flex-col gap-5 max-h-[500px] overflow-scroll overflowContainer">
                 {secondImages.map((imgUrl, index) => (

@@ -20,7 +20,7 @@ const Partnership: React.FC<PartnershipProps> = ({ index, partnership }) => {
           <p className="font-bold text-[1.5em] text-center">
             {partnership.title}
           </p>
-          <p className="font-light text-[1em] line-clamp-6 text-start sm:text-center lg:text-start break-words overflow-y-scroll min-h-[700px] sm:min-h-[400px] p-0 sm:p-2">
+          <p className="font-light text-[1em] md:line-clamp-6 text-start sm:text-center lg:text-start md:break-words md:overflow-y-scroll lg:min-h-[400px] p-0 sm:p-2">
             {partnership.description}
           </p>
         </div>
@@ -34,7 +34,7 @@ const Partnership: React.FC<PartnershipProps> = ({ index, partnership }) => {
             src={partnership.mainImage}
             width={8000}
             height={8000}
-            className="rounded-[5px] w-full h-full object-cover"
+            className="rounded-[5px] w-full h-full object-cover sm:max-h-[500px]"
             quality={100}
             alt="partnership image"
           />

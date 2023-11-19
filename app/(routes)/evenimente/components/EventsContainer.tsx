@@ -23,7 +23,7 @@ const EventsContainer = async () => {
             </p>
           ) : (
             events.map((event, index) => (
-              <Event key={index} fullLayout={false} index={index + 1} event={event} />
+              <Event key={index} showInfoButton={true} index={index + 1} event={event} />
             ))
           )}
         </div>

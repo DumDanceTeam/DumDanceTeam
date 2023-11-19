@@ -16,33 +16,33 @@ const Referinte: FC<ReferinteProps> = ({}) => {
         <br />
         <br />
         <p className="text-sm text-left sm:text-center italic sm:text-[1.008em] text-slate-600 font-medium tracking-tight leading-7 border-t pt-2.5">
-          &#34;Disciplina, unitatea si munca sunt principiile care ne fac sa
-          dezvoltam copiii din simplii dansatori in adevarati campioni.
-          Educatia, disciplina, respectul si valorile morale pe care copiii si
-          le insusesc practicand dansul sunt nepretuite si negasite in orice alt
+          &#34;Disciplină, unitatea și munca sunt principiile care ne fac să
+          dezvoltăm copiii din simplii dansatori în adevarăți campioni.
+          Educația, disciplina, respectul și valorile morale pe care copii și
+          le însușesc practicând dansul sunt neprețuite și negșsite în orice alt
           sport. &#34; -{" "}
           <span className="not-italic text-sm text-black tracking-tight leading-8 font-semibold sm:text-[1.1em]">
-            antrenor Andrei Claudiu Dumitrascu
+            antrenor Andrei Claudiu Dumitrașcu
           </span>
         </p>
       </div>
       <br />
       <Image
       loading="lazy"
-        src={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700157482/pbxwkna0szjryxr8b7b9.jpg"}
+        src={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700383221/omp27vokrpaqqe35rc8p.jpg"}
         quality={100}
         width={2048}
         height={400}
         alt="referinte"
-        className="rounded-[10px] max-h-[400px] object-cover brightness-95"
+        className="rounded-[10px] max-w-[750px] mx-auto max-h-[600px] object-cover object-center brightness-95"
       />
       <br />
       <p className="text-black text-center tracking-tight leading-8 font-semibold sm:text-[1.25em]">
-        Dansul este o arta, dar si un sport de lunga durata, dupa ani de zile
-        veti reusi sa va bucurati de adevaratele satisfactii, dar va spunem
-        sigur ca vorfi enorme Sa faci parte dintr-o echipa de top este un
-        privilegiu, vei renunta sa fii egoist,mediocru, cand esti inconjurat de
-        prieteni profesionisti.
+        Dansul este o artă, dar și un sport de lungă durată, după ani de zile
+        veți reuși să vă bucurați de adevăratele satisfacții, dar vă spunem
+        sigur că vor fi enorme. Să faci parte dintr-o echipă de top este un
+        privilegiu, vei renunța să fii egoist,mediocru, când ești înconjurat de
+        prieteni profesioniști.
       </p>
       <br />
       <p className="text-sm text-left sm:text-center italic sm:text-[1.15em] text-slate-600 font-medium tracking-tight leading-7 border-t pt-2.5">

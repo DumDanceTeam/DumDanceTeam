@@ -17,10 +17,11 @@ const Landing: React.FC<LandingProps> = ({label}) => {
         <div className="flex justify-center">
         <Link href={"/"} prefetch={true} className="cursor-pointer">
           <Image
+            loading="lazy"
             src={"/ddt-white.png"}
             quality={100}
-            height={8000}
-            width={8000}
+            height={500}
+            width={1000}
             priority
             alt="logo"
             className="mx-auto w-full max-w-[500px] lg:w-[1000px] mb-20 sm:mb-10"

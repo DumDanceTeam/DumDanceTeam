@@ -26,11 +26,13 @@ const About2: FC<About2Props> = ({}) => {
         </div>
         <div className="flex items-center justify-center gap-5">
           <Image
+          loading="lazy"
             src="/ddt-black.png"
             className="self-center"
             alt="ddt-white"
-            width={300}
-            height={200}
+            width={686}
+            priority
+            height={364}
             quality={100}
           />
         </div>

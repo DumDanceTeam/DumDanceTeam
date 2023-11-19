@@ -16,9 +16,10 @@ const Curs: FC<CursProps> = ({ imageUrl, title, description, whatsappMessage }) 
   return (
     <div className="flex flex-col items-center">
       <Image
+      loading="lazy"
         src={imageUrl}
-        width={8000}
-        height={8000}
+        width={1080}
+        height={400}
         quality={100}
         priority
         alt="curs"

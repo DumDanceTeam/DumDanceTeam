@@ -28,10 +28,11 @@ const Referinte: FC<ReferinteProps> = ({}) => {
       </div>
       <br />
       <Image
+      loading="lazy"
         src={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700157482/pbxwkna0szjryxr8b7b9.jpg"}
         quality={100}
-        width={8000}
-        height={8000}
+        width={2048}
+        height={400}
         alt="referinte"
         className="rounded-[10px] max-h-[400px] object-cover brightness-95"
       />

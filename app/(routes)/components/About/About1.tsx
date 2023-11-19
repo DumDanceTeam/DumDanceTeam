@@ -30,9 +30,10 @@ const About1: FC<About1Props> = ({
           <div className="flex flex-col gap-2.5">
             {title}
             <Image
+            loading="lazy"
               src={imageUrl ?? "/about1.jpg"}
-              width={8000}
-              height={8000}
+              width={2048}
+              height={525}
               quality={100}
               priority
               alt="about1.jpg"
@@ -88,11 +89,13 @@ const About1: FC<About1Props> = ({
             </p>
           </div>
           <Image
+          loading="lazy"
             src="/ddt-black.png"
             className="self-center"
             alt="ddt-white"
-            width={400}
-            height={200}
+            priority
+            width={686}
+            height={364}
             quality={100}
           />
           {whereClause != "despre-noi" && whereClause!="despre-noi2" && (
@@ -114,8 +117,9 @@ const About1: FC<About1Props> = ({
           <Image
             src={imageUrl ?? "/about1.jpg"}
             width={700}
-            height={500}
+            height={525}
             quality={100}
+            loading="lazy"
             priority
             alt="about1.jpg"
             className="min-h-[100px] min-w-[100px] max-h-[525px] sm:min-w-[500px] sm:min-h-[500px] object-cover rounded-[10px] brightness-75"
@@ -126,8 +130,9 @@ const About1: FC<About1Props> = ({
           <Image
             src={imageUrl ?? "/about1.jpg"}
             width={700}
-            height={500}
+            height={525}
             quality={100}
+            loading="lazy"
             priority
             alt="about1.jpg"
             className="min-h-[100px] max-h-[525px] min-w-[100px] sm:min-w-[500px] sm:min-h-[500px] object-cover rounded-[10px] brightness-75"

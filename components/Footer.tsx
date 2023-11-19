@@ -37,10 +37,11 @@ const Footer: FC<FooterProps> = async ({}) => {
         <div className="flex flex-col gap-5 pb-4">
           <Link prefetch={true} href="/" className="self-center">
             <Image
+            loading="lazy"
               src="/ddt-white.png"
-              priority
+              
               alt="ddt-white"
-              width={8000}
+              width={1000}
               height={8000}
               quality={100}
               className="mx-auto w-full max-w-[500px] lg:w-[1000px]"
@@ -135,6 +136,7 @@ const Footer: FC<FooterProps> = async ({}) => {
             </div>
             <div className="flex flex-col gap-3 flex-1">
               <iframe
+                title="location"
                 className="w-full rounded-[10px] h-[250px] max-h-[250px]"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2763.020206982105!2d21.348446376218227!3d46.170253471094355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47459945cd214b5f%3A0xff0d372a84e6cae8!2sDum%20Dance%20Team%20-%20Scoala%20de%20dans!5e0!3m2!1sro!2sro!4v1697994662608!5m2!1sro!2sro"
                 style={{ border: "0" }}

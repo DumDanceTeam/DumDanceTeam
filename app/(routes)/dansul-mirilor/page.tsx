@@ -89,11 +89,11 @@ const page = () => {
             <div>
               <Image
                 src={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700318915/l6ebdbirpuzd8i82g8xt.jpg"}
-                width={8000}
-                height={8000}
+                width={1920}
+                height={1280}
                 className="object-cover rounded-[10px] brightness-75"
                 quality={100}
-                priority
+                
                 alt="dansul mirilor"
               />
             </div>
@@ -296,11 +296,12 @@ const page = () => {
         <Image
           alt="logo"
           src={"/ddt-black.png"}
-          width={8000}
-          height={8000}
+          width={686}
+          loading="lazy"
+          height={430}
           className="my-10 w-full max-w-screen h-[130px] xs:h-[150px] sm:w-full sm:h-full  sm:max-w-[500px] sm:max-h-[430px] object-cover mx-auto"
           quality={100}
-          priority
+          
         />
 
         <p className="text-black text-center mb-6 text-[1.7em] xs:text-[2em] sm:text-[2.5em] font-bold tracking-tight">
@@ -439,18 +440,4 @@ const page = () => {
   );
 };
 
-{
-  /* <RevealRightSlideIn className="w-full h-full flex flex-col items-center gap-3">
-<Image
-  src={"/dans-miri2.jpg"}
-  width={8000}
-  height={8000}
-  className="w-full h-full max-w-[600px] max-h-[600px] rounded-[5px] object-cover"
-  quality={100}
-  priority
-  alt="dansul mirilor 2"
-/>
-
-</RevealRightSlideIn> */
-}
 export default page;

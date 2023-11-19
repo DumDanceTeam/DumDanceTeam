@@ -143,7 +143,7 @@ const NewPartnership: React.FC = () => {
                     height={8000}
                     className="max-w-[600px] max-h-[600px] min-w-[240px] sm:min-w-[500px] h-full w-full mx-auto object-cover rounded-sm"
                     quality={100}
-                    priority
+                    
                     src={imgUrl}
                     alt="uploaded-image"
                   />

@@ -31,7 +31,7 @@ const About2: FC<About2Props> = ({}) => {
             className="self-center"
             alt="ddt-white"
             width={686}
-            priority
+            
             height={364}
             quality={100}
           />

@@ -25,9 +25,10 @@ const UploadProfileImage: React.FC<UploadProfileImageProps> = ({imageUrl,setImag
                 src={imageUrl}
                 width={200}
                 height={200}
+                loading="lazy"
                 className="object-cover w-[150px] h-[150px] mx-auto rounded-full"
                 quality={100}
-                priority
+                
                 alt="profile image"
             />
           

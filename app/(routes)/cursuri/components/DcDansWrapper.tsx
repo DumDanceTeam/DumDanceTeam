@@ -14,9 +14,9 @@ const DcDansWrapper: FC<DcDansWrapperProps> = ({}) => {
         <p className="text-center text-[1.7em] xs:text-[2em] sm:text-[2.5em] font-bold text-black sm:whitespace-nowrap mb-5">
           De ce <span className="text-lightRed">dans</span>... ?
         </p>
-        <div className="bg-[url('https://res.cloudinary.com/dwfidpghc/image/upload/v1700157481/xe8rmyg0lnj4jw5ejru9.jpg')] h-[800px] rounded-[10px] recommendBg">
-          <div className="bgWrapper z-10 p-5 bg-[rgba(0,0,0,.4)] rounded-[10px] h-[800px]">
-              <div className="flex flex-col lg:flex-row mx-auto h-full">
+        <div className="bg-[url('https://res.cloudinary.com/dwfidpghc/image/upload/v1700157481/xe8rmyg0lnj4jw5ejru9.jpg')] xl:h-[800px] rounded-[10px] recommendBg">
+          <div className="bgWrapper z-10 p-5 bg-[rgba(0,0,0,.4)] rounded-[10px] xl:h-[800px]">
+              <div className="flex flex-col xl:flex-row mx-auto h-full">
                 <DcDans
                   colorClause="black"
                   number={1}
@@ -81,9 +81,10 @@ const DcDansWrapper: FC<DcDansWrapperProps> = ({}) => {
             <Image
               src="https://res.cloudinary.com/dwfidpghc/image/upload/v1700157483/xxkihojjqii7vcjejxxo.jpg"
               alt="camp"
-              width={8000}
-              height={8000}
-              priority
+              width={1078}
+              height={806}
+              
+              loading="lazy"
               quality={100}
               className="self-center max-w-full object-cover"
             />

@@ -44,8 +44,9 @@ const Feed = () => {
       {!feedData || feedData.length === 0 ? (
         <div className="">
           <Image
-            width={8000}
-            height={8000}
+            width={300}
+            height={200}
+            loading="lazy"
             src={"/ddt-black.png"}
             className="mx-auto max-w-[300px] mt-4 mb-2 max-h-[200px] w-full h-full rounded-md animate-pulse"
             alt="facebookImage"

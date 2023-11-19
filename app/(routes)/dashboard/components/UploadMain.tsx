@@ -26,11 +26,12 @@ const UploadMain: React.FC<UploadMainProps> = ({imageUrl,setImageUrl,uploadProgr
         {imageUrl && imageUrl.trim() !== "" ? (
           <Link href={imageUrl} className="cursor-pointer" target="_blank">
             <Image
-              width={8000}
-              height={8000}
+              width={600}
+              height={600}
+              loading="lazy"
               className="max-w-[600px] max-h-[600px] min-w-[240px] sm:min-w-[500px] h-full w-full mx-auto object-cover rounded-sm"
               quality={100}
-              priority
+              
               src={imageUrl}
               alt="uploaded-image"
             />

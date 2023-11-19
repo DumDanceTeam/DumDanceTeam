@@ -21,7 +21,7 @@ const Curs: FC<CursProps> = ({ imageUrl, title, description, whatsappMessage }) 
         width={1080}
         height={400}
         quality={100}
-        priority
+        
         alt="curs"
         className="self-center mb-5 w-full max-h-[400px] object-cover rounded-[10px] hover:scale-105 transition-transform"
       />

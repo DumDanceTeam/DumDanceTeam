@@ -14,8 +14,9 @@ const PrimaOra: FC<PrimaOraProps> = ({}) => {
         <Image
           src="https://res.cloudinary.com/dwfidpghc/image/upload/v1700157482/ftxkcjfw2x8ymtbwhrfo.jpg"
           quality={100}
-          width={80000}
-          height={8000}
+          width={1600}
+          loading="lazy"
+          height={350}
           className="max-h-[350px] rounded-[10px] object-cover flex-1"
           alt="primaora"
         />

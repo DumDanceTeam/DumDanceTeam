@@ -27,12 +27,13 @@ const Partnership: React.FC<PartnershipProps> = ({ index, partnership }) => {
         target="_blank"
       >
         <Image
+          loading="lazy"
           src={partnership.mainImage}
           width={8000}
           height={8000}
           className="rounded-[5px] w-full h-full object-cover flex-1"
           quality={100}
-          priority
+          
           alt="partnership image"
         />
       </Link>
@@ -67,12 +68,13 @@ const Partnership: React.FC<PartnershipProps> = ({ index, partnership }) => {
                   className="cursor-pointer"
                 >
                   <Image
+                  loading="lazy"
                     src={sImage}
                     width={8000}
                     height={8000}
                     className="rounded-[10px] object-cover w-full h-full hover:scale-95 transition-transform max-w-[230px] max-h-[230px]"
                     quality={100}
-                    priority
+                    
                     alt="event image"
                   />
                 </Link>

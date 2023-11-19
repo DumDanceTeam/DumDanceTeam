@@ -29,7 +29,7 @@ const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
           height={8000}
           className={`rounded-[5px] w-full h-full max-w-[950px] max-h-[800px] flex-1 object-cover`}
           quality={100}
-          priority
+          
           alt="event image"
         />
       </Link>
@@ -103,11 +103,12 @@ const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
               >
                 <Image
                   src={sImage}
-                  width={8000}
-                  height={8000}
+                  width={230}
+                  loading="lazy"
+                  height={230}
                   className="rounded-[10px] object-cover w-full h-full hover:scale-95 transition-transform max-w-[230px] max-h-[230px]"
                   quality={100}
-                  priority
+                  
                   alt="event image"
                 />
               </Link>

@@ -53,7 +53,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
                     <Input {...register("childName")} placeholder='Nume și prenume copil' className='outline-none shadow-[0px_0px_5px_rgba(255,51,8.2,.2)] focus:shadow-[0px_0px_5px_rgba(255,51,8.2,.7)] py-6 w-full'/>
                     {/* @ts-ignore */}
                     {errors && errors.childName && showErrorMessage ? <p className='text-lightRed text-xs xs:text-sm whitespace-break-spaces'>{errors.childName.message}</p>:null}
-                    <Input defaultValue={1}  {...register("childAge")} placeholder='Vârsta copil' type='number' className='outline-none shadow-[0px_0px_5px_rgba(255,51,8.2,.2)] focus:shadow-[0px_0px_5px_rgba(255,51,8.2,.7)] py-6 w-full'/>
+                    <Input  {...register("childAge")} placeholder='Vârsta copil' type='number' className='outline-none shadow-[0px_0px_5px_rgba(255,51,8.2,.2)] focus:shadow-[0px_0px_5px_rgba(255,51,8.2,.7)] py-6 w-full'/>
 
                 </div>
                 <div className="flex flex-col mt-10 items-center justify-center gap-1 sm:gap-2.5 text-xs">
@@ -96,7 +96,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
           </div>
           <div onClick={()=>setAgreeWithTerms(prev=>!prev)} className="cursor-pointer flex items-center gap-2 font-bold justify-center my-1">
                   <Checkbox checked={agreeWithTerms}/>
-                    Sunt de acord cu termenii și condiții
+                    Sunt de acord cu termenii și condițiile
                     
             </div>
             <p className='text-lightRed sm:text-[1.2em]'>{agreeWithTermsMessage}</p>

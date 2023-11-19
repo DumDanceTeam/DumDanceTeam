@@ -10,7 +10,7 @@ interface About1Props {
   whereClause?: string;
   title: React.ReactNode;
   description: string;
-  imageUrl?: string;
+  imageUrl: string;
 }
 
 const About1: FC<About1Props> = ({
@@ -31,11 +31,11 @@ const About1: FC<About1Props> = ({
             {title}
             <Image
             loading="lazy"
-              src={imageUrl ?? "/about1.jpg"}
+              src={imageUrl}
               width={2048}
               height={525}
               quality={100}
-              priority
+              
               alt="about1.jpg"
               className="xsBig:hidden max-h-[525px] min-h-[100px] min-w-[100px] sm:min-w-[500px] sm:min-h-[500px] object-cover rounded-[10px] brightness-75"
             />
@@ -76,7 +76,7 @@ const About1: FC<About1Props> = ({
               width={8000}
               height={8000}
               quality={100}
-              priority
+              
               alt="about1.jpg"
               className="xsBig:hidden max-h-[525px] min-h-[100px] min-w-[100px] sm:min-w-[500px] sm:min-h-[500px] object-cover rounded-[10px] brightness-75"
             />
@@ -93,7 +93,7 @@ const About1: FC<About1Props> = ({
             src="/ddt-black.png"
             className="self-center"
             alt="ddt-white"
-            priority
+            
             width={686}
             height={364}
             quality={100}
@@ -120,7 +120,7 @@ const About1: FC<About1Props> = ({
             height={525}
             quality={100}
             loading="lazy"
-            priority
+            
             alt="about1.jpg"
             className="min-h-[100px] min-w-[100px] max-h-[525px] sm:min-w-[500px] sm:min-h-[500px] object-cover rounded-[10px] brightness-75"
           />
@@ -133,7 +133,7 @@ const About1: FC<About1Props> = ({
             height={525}
             quality={100}
             loading="lazy"
-            priority
+            
             alt="about1.jpg"
             className="min-h-[100px] max-h-[525px] min-w-[100px] sm:min-w-[500px] sm:min-h-[500px] object-cover rounded-[10px] brightness-75"
           />

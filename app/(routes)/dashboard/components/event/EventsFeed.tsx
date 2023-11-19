@@ -87,7 +87,7 @@ const EventsFeed: FC<EventsFeedProps> = ({
         <p className="text-black">
           Cam <span className="text-lightRed">gol</span> pe aici...
         </p>
-        <Image src="/kiss.svg" width={8000} height={8000} quality={100} priority alt="kiss" className="object-cover max-w-[80px] max-h-[80px]"/>
+        <Image src="/kiss.svg" width={8000} height={8000} quality={100}  alt="kiss" className="object-cover max-w-[80px] max-h-[80px]"/>
         </div>
       ) : searchedEvents ? (
         searchedEvents.map((ev, i) => {

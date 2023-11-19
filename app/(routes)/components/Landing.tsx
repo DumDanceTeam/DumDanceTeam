@@ -22,7 +22,6 @@ const Landing: React.FC<LandingProps> = ({label}) => {
             quality={100}
             height={500}
             width={1000}
-            priority
             alt="logo"
             className="mx-auto w-full max-w-[500px] lg:w-[1000px] mb-20 sm:mb-10"
           />

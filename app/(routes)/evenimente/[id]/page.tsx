@@ -42,7 +42,7 @@ const EventPage = async ({params}:{params:{id: string}}) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {currentEvent.secondImages.map((imgUrl, index)=>(
                         <Link key={index} href={imgUrl} target="_blank">
-                            <Image src={imgUrl} width={8000} height={8000} quality={100} className="max-w-[700px] max-h-[600px] w-full h-full min-w-[230px] min-h-[230px] sm:min-w-[400px] sm:min-h-[400px] md:min-w-[500px] md:min-h-[500px] object-cover rounded-sm" priority alt="event image"/>
+                            <Image src={imgUrl} loading="lazy" width={700} height={600} quality={100} className="max-w-[700px] max-h-[600px] w-full h-full min-w-[230px] min-h-[230px] sm:min-w-[400px] sm:min-h-[400px] md:min-w-[500px] md:min-h-[500px] object-cover rounded-sm"  alt="event image"/>
                         </Link>
                     ))}
                 </div>

@@ -13,12 +13,13 @@ const TestmonialCard: React.FC<TestmonialCardProps> = ({
         <div className="w-full flex flex-col gap-2 lg:gap-0 items-center justify-center">
             <div className="lg:-mb-3 lg:z-10">
                 <Image
+                  loading="lazy"
                     src={profileImage}
                     width={200}
                     height={200}
                     className="object-cover w-[150px] h-[150px] rounded-full"
                     quality={100}
-                    priority
+                    
                     alt="profile image"
                 />
             </div>

@@ -17,16 +17,18 @@ const Post: React.FC<PostProps> = ({ post }) => {
       {post.attachments?.data[0].media.image.src ? (
         <Image
           quality={100}
-          width={8000}
-          height={8000}
+          width={766}
+          height={466}
+          loading="lazy"
           src={post.attachments?.data[0].media.image.src}
           className="max-h-[466px] max-w-[766px] w-full h-full object-cover rounded-md"
           alt="facebookImage"
         />
       ) : (
         <Image
-          width={8000}
-          height={8000}
+          width={300}
+          loading="lazy"
+          height={200}
           src={"/ddt-white.png"}
           className="max-w-[300px] max-h-[200px] w-full h-full rounded-md"
           alt="facebookImage"
@@ -34,7 +36,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       )}
       <div className="max-h-[466px] max-w-[600px] break-words overflow-y-scroll xl:px-5 mt-5 xl:mt-0 w-full">
         <div className="flex items-center gap-5 mb-5">
-          <Image src={"/logo.jpg"} quality={100} priority width={8000} height={8000} className="max-w-[50px] min-h-[50px] self-start rounded-full object-cover" alt="user"/>
+          <Image src={"/logo.jpg"} loading="lazy" quality={100}  width={50} height={50} className="max-w-[50px] min-h-[50px] self-start rounded-full object-cover" alt="user"/>
           <div className="flex flex-col flex-1">
             <p className="font-semibold text-sm">Școala de dans Dum Dance Team</p>
             <p className="text-xs font-medium">{formatDateToDDMMYY(new Date(post.created_time))}</p>

@@ -138,12 +138,13 @@ const NewEvent: React.FC = () => {
               <div className="mt-2 flex flex-col gap-5 max-h-[500px] overflow-scroll overflowContainer">
                 {secondImages.map((imgUrl, index) => (
                   <Image
-                    width={8000}
+                    width={600}
                     key={index}
-                    height={8000}
+                    loading="lazy"
+                    height={600}
                     className="max-w-[600px] max-h-[600px] min-w-[240px] sm:min-w-[500px] h-full w-full mx-auto object-cover rounded-sm"
                     quality={100}
-                    priority
+                    
                     src={imgUrl}
                     alt="uploaded-image"
                   />

@@ -51,10 +51,11 @@ const GalleryManagerImage: React.FC<GalleryManagerImageProps> = ({
         <Link href={imageUrl} target="_blank">
           <Image
             src={imageUrl}
-            width={8000}
-            height={8000}
+            width={400}
+            loading="lazy"
+            height={600}
             className="object-cover max-w-[400px] max-h-[600px] mx-auto w-full h-full rounded-[5px]"
-            priority
+            
             quality={100}
             alt="gallery-image"
           />

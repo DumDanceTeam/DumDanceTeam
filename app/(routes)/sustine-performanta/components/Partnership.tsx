@@ -1,7 +1,7 @@
 import { Partnership } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import { cn, extractYouTubeVideoID, formatDateToDDMMYY } from "@/lib/utils";
+import { cn, extractYouTubeVideoID } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/Button";
 
 interface PartnershipProps {
@@ -11,7 +11,6 @@ interface PartnershipProps {
 
 const Partnership: React.FC<PartnershipProps> = ({ index, partnership }) => {
   const secondImages = partnership.secondImages.slice(0, 2);
-  const createdDate = formatDateToDDMMYY(new Date(partnership.createdAt));
   const videoId = extractYouTubeVideoID(partnership.youtubeLink || "");
 
   return (      
@@ -31,7 +30,7 @@ const Partnership: React.FC<PartnershipProps> = ({ index, partnership }) => {
           src={partnership.mainImage}
           width={8000}
           height={8000}
-          className="rounded-[5px] w-full h-full object-cover flex-1"
+          className="rounded-[5px] w-full h-full object-cover h-[300px]"
           quality={100}
           
           alt="partnership image"
@@ -42,13 +41,10 @@ const Partnership: React.FC<PartnershipProps> = ({ index, partnership }) => {
       </Link>
       </div>
       <div className="flex-1 flex flex-col gap-5 sm:gap-10 overflow-auto">
-        <div className="flex items-center justify-between">
           <p className="font-bold text-[1.5em] text-center">
             {partnership.title}
           </p>
-          <small>{createdDate}</small>
-        </div>
-        <p className="font-light text-[1em] line-clamp-6 text-center lg:text-start break-words overflow-auto min-h-[200px] p-0 sm:p-2">
+        <p className="font-light text-[1em] line-clamp-6 text-start sm:text-center lg:text-start break-words overflow-y-scroll min-h-[700px] sm:min-h-[400px] p-0 sm:p-2">
           {partnership.description}
         </p>
         {videoId && videoId.trim() !== "" ? (

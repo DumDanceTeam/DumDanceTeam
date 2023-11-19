@@ -88,12 +88,13 @@ const page = () => {
           <RevealRightSlideIn className="flex-1">
             <div>
               <Image
-                src={"https://res.cloudinary.com/dwfidpghc/image/upload/v1700318915/l6ebdbirpuzd8i82g8xt.jpg"}
+                src={
+                  "https://res.cloudinary.com/dwfidpghc/image/upload/v1700318915/l6ebdbirpuzd8i82g8xt.jpg"
+                }
                 width={1920}
                 height={1280}
                 className="object-cover rounded-[10px] brightness-75"
                 quality={100}
-                
                 alt="dansul mirilor"
               />
             </div>
@@ -167,7 +168,8 @@ const page = () => {
                   </p>
                   <div className="flex-1 my-2 flex items-end justify-center">
                     <Link
-                      href={"/"}
+                      target="_blank"
+                      href={`https://wa.me/${process.env.PHONE_NUMBER}?text=Bună, aș dori mai multe detalii despre pachetul DDT LOVE DANCE PRO pentru dansul miriilor.`}
                       className={cn(
                         buttonVariants({ variant: "default" }),
                         "bg-lightRed sm:text-[1.15em]"
@@ -191,7 +193,8 @@ const page = () => {
                   </p>
                   <div className="flex-1 flex items-end justify-center">
                     <Link
-                      href={"/"}
+                      target="_blank"
+                      href={`https://wa.me/${process.env.PHONE_NUMBER}?text=Bună, aș dori mai multe detalii despre pachetul DDT LOVE PRO pentru dansul miriilor.`}
                       className={cn(
                         buttonVariants({ variant: "default" }),
                         "bg-lightRed sm:text-[1.15em] my-2"
@@ -217,7 +220,8 @@ const page = () => {
                   </p>
                   <div className="flex-1 flex items-end justify-center">
                     <Link
-                      href={"/"}
+                      target="_blank"
+                      href={`https://wa.me/${process.env.PHONE_NUMBER}?text=Bună, aș dori mai multe detalii despre pachetul DDT LOVE DANCE pentru dansul miriilor.`}
                       className={cn(
                         buttonVariants({ variant: "default" }),
                         "bg-lightRed sm:text-[1.15em] my-2"
@@ -240,7 +244,8 @@ const page = () => {
                   </p>
                   <div className="flex-1 flex items-end justify-center">
                     <Link
-                      href={"/"}
+                      target="_blank"
+                      href={`https://wa.me/${process.env.PHONE_NUMBER}?text=Bună, aș dori mai multe detalii despre pachetul DDT LOVE pentru dansul miriilor.`}
                       className={cn(
                         buttonVariants({ variant: "default" }),
                         "bg-lightRed sm:text-[1.15em] my-2"
@@ -301,7 +306,6 @@ const page = () => {
           height={430}
           className="my-10 w-full max-w-screen h-[130px] xs:h-[150px] sm:w-full sm:h-full  sm:max-w-[500px] sm:max-h-[430px] object-cover mx-auto"
           quality={100}
-          
         />
 
         <p className="text-black text-center mb-6 text-[1.7em] xs:text-[2em] sm:text-[2.5em] font-bold tracking-tight">

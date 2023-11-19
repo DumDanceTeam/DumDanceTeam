@@ -1,5 +1,5 @@
 import { buttonVariants } from "@/components/ui/Button";
-import { cn, formatDateToDDMMYY } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Event, Partnership } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +13,6 @@ interface EventProps {
 
 const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
   const secondImages = event.secondImages.slice(0, 2);
-  const createdDate = formatDateToDDMMYY(new Date(event.createdAt));
   const videoId = extractYouTubeVideoID(event.youtubeLink || "");
 
   return (
@@ -34,13 +33,6 @@ const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
         />
       </Link>
       <div className={` ${!fullLayout ? "flex-1 flex flex-col gap-5 overflow-auto" : ""}`}>
-        <div
-          className={` ${
-            fullLayout
-              ? "flex flex-col justify-center items-center h-full"
-              : "flex items-center justify-between"
-          }`}
-        >
           <p
             className={`${
               fullLayout
@@ -50,18 +42,11 @@ const Event: React.FC<EventProps> = ({ index, event, fullLayout }) => {
           >
             {event.title}
           </p>
-          <small
-            className={`${
-              fullLayout ? "text-[.9em] xs:text-[1em] xsBig:text-[1.1em]" : ""
-            }`}
-          >
-            {createdDate}
-          </small>
-        </div>
+          
         <div className="">
           {!fullLayout ? (
             <div className="">
-              <p className="font-light text-[1em] line-clamp-6 text-center lg:text-start overflow-auto break-words min-h-[200px]">
+              <p className="font-light text-[1em]  text-center lg:text-start">
                 {event.description}
               </p>
               {videoId && videoId.trim() !== "" ? (

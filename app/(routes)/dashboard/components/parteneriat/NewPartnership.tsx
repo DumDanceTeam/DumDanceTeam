@@ -154,8 +154,8 @@ const NewPartnership: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-center  mt-3">
-          <Button type="submit" isLoading={isLoading}>
-            Creează parteneriatului
+          <Button aria-label="Creează parteneriatul" type="submit" isLoading={isLoading}>
+            Creează parteneriatul
           </Button>
         </div>
       </form>

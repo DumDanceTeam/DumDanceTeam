@@ -54,6 +54,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
                 target="_blank"
               >
                 <Button
+                aria-label="Vezi Mai Mult"
                   variant={"fill"}
                   className="border-2 border-[#0866ff] text-sm xs:text-[.9em] bg-[#0866ff] xs:whitespace-nowrap rounded-md w-full sm:w-fit p-1 xs:p-2 sm:p-4 md:p-5 text-ddtWhite flex items-center gap-3"
                 >

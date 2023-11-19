@@ -60,7 +60,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
                     {/*@ts-ignore */}
                     <p className="font-semibold text-center xxs:text-start sm:text-[1.4em]">Programează pentru data de: {months[selectedDate.month()]}, {selectedDate.date()} {selectedDate.year()}</p>
                   {/*@ts-ignore */}
-                    <Button onClick={
+                    <Button aria-label="Programează ședința" onClick={
                           handleSubmit((data)=>{
                             if(!agreeWithTerms){
                               setAgreeTermsMessage("Acceptă termenii și condițiile");

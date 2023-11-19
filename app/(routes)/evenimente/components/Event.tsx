@@ -35,7 +35,7 @@ const Event: React.FC<EventProps> = ({ index, event, showInfoButton }) => {
             src={event.mainImage}
             width={8000}
             height={8000}
-            className="rounded-[5px] w-full h-full object-cover sm:max-h-[500px]"
+            className="rounded-[5px] w-full h-full object-cover min-h-[300px] sm:max-h-[500px]"
             quality={100}
             alt="event image"
           />

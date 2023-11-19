@@ -60,7 +60,7 @@ const Navbar: React.FC = async () => {
 
         <div className="hidden xl:block ml-4">
           <Link href={"/#faq"}>
-            <Button variant={"fill"} className="hover:bg-transparent">
+            <Button aria-label="Înscrie-te" variant={"fill"} className="hover:bg-transparent">
               Înscrie-te
             </Button>
           </Link>

@@ -22,7 +22,7 @@ const UploadImages: React.FC<UploadImagesProps> = ({images,setImages}) => {
             open();
         }
         return (
-            <Button type="button" variant="fill" className="bg-transparent text-black hover:text-black" onClick={onClick}>
+            <Button aria-label="Încarcă alte imagini" type="button" variant="fill" className="bg-transparent text-black hover:text-black" onClick={onClick}>
                 Încarcă alte imagini
             </Button>
         )

@@ -39,7 +39,7 @@ const UploadProfileImage: React.FC<UploadProfileImageProps> = ({imageUrl,setImag
             open();
         }
         return (
-            <Button type="button" variant="outline" className="bg-transparent text-black hover:text-white" onClick={onClick}>
+            <Button aria-label="Încarcă imaginea de profil" type="button" variant="outline" className="bg-transparent text-black hover:text-white" onClick={onClick}>
                 Încarcă imaginea de profil
             </Button>
         )

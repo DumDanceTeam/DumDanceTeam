@@ -67,7 +67,7 @@ const Testmonial: React.FC<TestmonialProps> = ({
         </div>
       </div>
       {changes ? <div className="flex justify-center">
-        <Button isLoading={isLoading} className="my-3 bg-lightRed" onClick={()=>updateTestmonial(id)}>Salvează</Button>
+        <Button aria-label="Salvează" isLoading={isLoading} className="my-3 bg-lightRed" onClick={()=>updateTestmonial(id)}>Salvează</Button>
       </div>  : null}
     </div>
   );

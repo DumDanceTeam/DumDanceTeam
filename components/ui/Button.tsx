@@ -45,7 +45,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, children, isLoading , ...props }, ref) => {
     return (
       <button
-      aria-label="button"
       className={cn(buttonVariants({ variant, size, className }))}
       ref={ref}
       disabled={isLoading}

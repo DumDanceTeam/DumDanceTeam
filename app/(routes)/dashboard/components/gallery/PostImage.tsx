@@ -37,6 +37,7 @@ const PostImage = () => {
             return (
               <div className="">
                 <Button
+                aria-label="Adaugă imagine"
                   type="button"
                   isLoading={isLoading}
                   variant="outline"

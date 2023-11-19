@@ -44,7 +44,7 @@ const UploadMain: React.FC<UploadMainProps> = ({imageUrl,setImageUrl,uploadProgr
             open();
         }
         return (
-            <Button type="button" variant="fill" onClick={onClick}>
+            <Button aria-label="Încarcă imaginea principală" type="button" variant="fill" onClick={onClick}>
                 Încarcă imaginea principală
             </Button>
         )

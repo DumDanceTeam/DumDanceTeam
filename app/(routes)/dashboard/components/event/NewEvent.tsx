@@ -156,7 +156,7 @@ const NewEvent: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-center  mt-3">
-          <Button type="submit" isLoading={isLoading}>
+          <Button aria-label="Creează evenimentul" type="submit" isLoading={isLoading}>
             Creează evenimentul
           </Button>
         </div>

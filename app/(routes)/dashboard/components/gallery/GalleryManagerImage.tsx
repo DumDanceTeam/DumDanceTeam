@@ -89,6 +89,7 @@ const GalleryManagerImage: React.FC<GalleryManagerImageProps> = ({
               <div className="">
                 <div className="flex items-center gap-1">
                   <Button
+                  aria-label="Schimbă imaginea"
                     type="button"
                     disabled={isLoading}
                     variant="outline"

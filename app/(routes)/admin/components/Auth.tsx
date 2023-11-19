@@ -91,7 +91,7 @@ const Auth: React.FC = () => {
                 placeholder="introdu token-ul de acces"
                 className="placeholder:text-sm bg-transparent rounded-sm p-1 outline-none border-b border-[rgba(255,255,255,.4)] text-ddtWhite text-sm"
               />
-              <Button variant={"ghost"} type="submit" isLoading={isLoading}>
+              <Button aria-label="Continuă" variant={"ghost"} type="submit" isLoading={isLoading}>
                 Continuă <Lock className="w-4 h-4" />
               </Button>
             </form>

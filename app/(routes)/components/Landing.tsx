@@ -36,6 +36,7 @@ const Landing: React.FC<LandingProps> = ({label}) => {
           <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 mt-3">
             <Link href={"/#faq"} className="max-w-full">
               <Button
+              aria-label="Programează o ședință gratuită"
                 variant={"fill"}
                 className="text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 xs:p-2"
               >

@@ -34,7 +34,7 @@ const Referinte: FC<ReferinteProps> = ({}) => {
         width={2048}
         height={400}
         alt="referinte"
-        className="rounded-[10px] max-w-[750px] mx-auto max-h-[600px] object-cover object-center brightness-95"
+        className="rounded-[10px]  mx-auto max-h-[600px] object-cover md:max-w-[750px] md:object-center  brightness-95"
       />
       <br />
       <p className="text-black text-center tracking-tight leading-8 font-semibold sm:text-[1.25em]">

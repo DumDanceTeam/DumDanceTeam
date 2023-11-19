@@ -36,7 +36,7 @@ const page = () => {
 prietenie, profesionalism și creativitate, asigurăm o
 experiență educativă deosebită pentru copii. Vă așteptăm la
 dezvoltare prin mișcare și dans !"
-                durata="1 ora"
+                durata="1 oră"
               />
             </RevealLeftSlideIn>
           </div>
@@ -53,7 +53,7 @@ dezvoltare prin mișcare și dans !"
               <InformatiiCursuri
                 descriere="Descoperă experiența inedită a cursurilor noastre de dans pentru adulți! Cu prietenie, profesionalism și creativitate, te invităm să explorezi dezvoltarea personală prin mișcare și dans!
 "
-                durata="1 ora (doar lecții private)"
+                durata="1 oră (doar lecții private)"
               />
             </RevealLeftSlideIn>
           </div>

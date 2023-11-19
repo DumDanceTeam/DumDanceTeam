@@ -20,8 +20,8 @@ const PrimaOra: FC<PrimaOraProps> = ({}) => {
           className="max-h-[350px] rounded-[10px] object-cover flex-1"
           alt="primaora"
         />
-        <div className="flex flex-col md:border-l md:border-l-slate-200 pl-10">
-          <p className="font-semibold sm:text-[1.25em] mb-10">
+        <div className="flex flex-col items-start gap-5 md:border-l md:border-l-slate-200 md:pl-10">
+          <p className="font-semibold sm:text-[1.25em] sm:mb-10">
             Ce avem nevoie la prima oră ?
           </p>
           <div className="flex items-start">

@@ -9,9 +9,11 @@ import {
 import { Event as EventDB } from "@prisma/client";
 import axios from "axios";
 import Event from "@/app/(routes)/evenimente/components/Event";
-import { Trash } from "lucide-react";
+import { Edit, Trash } from "lucide-react";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import EditEvent from "./EditEvent";
+import useEditEvent from "@/hooks/useEditEvent";
 
 interface EventsFeedProps {
   initialEvents: EventDB[];
@@ -28,6 +30,8 @@ const EventsFeed: FC<EventsFeedProps> = ({
   const [toDeleteEvent, setToDeleteEvent] = useState<string | undefined>(
     undefined
   );
+  const {setEv, setIsOpen, isOpen, editEv} = useEditEvent(state=>state);
+
   const lastPostRef = useRef<HTMLElement>(null);
   const { ref, entry } = useIntersection({
     root: lastPostRef.current,
@@ -94,14 +98,23 @@ const EventsFeed: FC<EventsFeedProps> = ({
           return (
             <div key={ev.id} className="flex flex-col gap-3">
               <Event showInfoButton={true} index={i + 1} event={ev} />
-              <Trash
-                onClick={() => deleteEvent(ev.id)}
-                className={`w-6 h-6 text-lightRed cursor-pointer ${
-                  isLoading && ev.id === toDeleteEvent
-                    ? "pointer-events-none text-slate-600"
-                    : null
-                }`}
-              />
+              <div className="flex items-center gap-2">
+                <Trash
+                  onClick={() => deleteEvent(ev.id)}
+                  className={`w-6 h-6 text-lightRed cursor-pointer ${
+                    isLoading && ev.id === toDeleteEvent
+                      ? "pointer-events-none text-slate-600"
+                      : null
+                  }`}
+                />
+              <Edit onClick={()=>{
+                if(editEv!=ev){
+                  setEv(ev);
+                }else{
+                  setIsOpen(!isOpen);
+                }
+              }} className="w-6 h-6 text-lightRed" />
+              </div>
             </div>
           );
         })
@@ -111,6 +124,7 @@ const EventsFeed: FC<EventsFeedProps> = ({
             return (
               <div ref={ref} key={ev.id} className="flex flex-col gap-3">
                 <Event showInfoButton={true} index={i + 1} event={ev} />
+                <div className="flex items-center gap-2">
                 <Trash
                   onClick={() => deleteEvent(ev.id)}
                   className={`w-6 h-6 text-lightRed cursor-pointer ${
@@ -119,20 +133,40 @@ const EventsFeed: FC<EventsFeedProps> = ({
                       : null
                   }`}
                 />
+              <Edit onClick={()=>{
+                if(editEv!=ev){
+                  setEv(ev);
+                }else{
+                  setIsOpen(!isOpen);
+                }
+              }} className="w-6 h-6 text-lightRed" />
+                </div>
+                
               </div>
             );
           else
             return (
               <div key={ev.id} className="flex flex-col gap-3">
                 <Event showInfoButton={true} index={i + 1} event={ev} />
-                <Trash
-                  onClick={() => deleteEvent(ev.id)}
-                  className={`w-6 h-6 text-lightRed cursor-pointer ${
-                    isLoading && ev.id === toDeleteEvent
-                      ? "pointer-events-none text-slate-600"
-                      : null
-                  }`}
-                />
+                <div className="flex items-center gap-2">
+                  <Trash
+                    onClick={() => deleteEvent(ev.id)}
+                    className={`w-6 h-6 text-lightRed cursor-pointer ${
+                      isLoading && ev.id === toDeleteEvent
+                        ? "pointer-events-none text-slate-600"
+                        : null
+                    }`}
+                  />
+              <Edit onClick={()=>{
+                if(editEv!=ev){
+                  setIsOpen(true);
+                  setEv(ev);
+                }else{
+                  setEv(ev);
+                  setIsOpen(!isOpen);
+                }
+              }} className="w-6 h-6 text-lightRed" />
+                </div>
               </div>
             );
         })

@@ -29,6 +29,7 @@ export const EventValidator = z.object({
 
 export type EventRequest = z.infer<typeof EventValidator>;
 
+
 export const PartnershipValidator = z.object({
     title: z.string({required_error:"Titlul trebuie să conțină cel puțin un caracter !"}).min(1,"Titlul trebuie să conțină cel puțin un caracter !"),
     description: z.string({required_error:"Descrierea trebuie să conțină cel puțin 2 caractere !"}).min(2,"Descrierea trebuie să conțină cel puțin două caractere !"),

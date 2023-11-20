@@ -7,6 +7,7 @@ import Rules from "./rules/Rules";
 import Partnership from "./parteneriat/Partnership";
 import Gallery from "@/components/about/Gallery";
 import GalleryManager from "./gallery/GalleryManager";
+import EditEventContainer from "./event/EditEventContainer";
 
 
 export const revalidate = 0;
@@ -68,6 +69,9 @@ const Dashboard = async ({ event }: { event: string }) => {
               initialEvents={initialEvents}
               eventString={event}
             />
+            <div className="mt-5">
+              <EditEventContainer/>
+            </div>
           </div>
         </div>
       </div>

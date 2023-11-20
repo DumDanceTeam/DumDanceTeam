@@ -140,7 +140,7 @@ const Navbar: React.FC<NavbarProps> = async ({ noutati }) => {
         <MobileNav />
       </div>
       <div className="">
-        <MobileMenu showRule={showRule?.show!} events={events} />
+        <MobileMenu noutati={noutati} showRule={showRule?.show!} events={events} />
       </div>
     </nav>
   );

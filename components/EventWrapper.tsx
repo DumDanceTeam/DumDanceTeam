@@ -15,8 +15,10 @@ import { usePathname } from "next/navigation";
 
 const EventWrapper = ({
   events,
+  noutati,
 }: {
   events: { id: string; title: string }[];
+  noutati?: boolean;
 }) => {
   const path = usePathname();
   const [showContent, setShowContent] = useState<boolean>(false);
@@ -30,7 +32,15 @@ const EventWrapper = ({
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="bg-inherit">
-            <Link prefetch={true} href="/evenimente" className="text-[1.1em]">evenimente</Link>
+            {noutati ? (
+              <a href="/evenimente" className="text-[1.1em]">
+                evenimente
+              </a>
+            ) : (
+              <Link prefetch={true} href="/evenimente" className="text-[1.1em]">
+                evenimente
+              </Link>
+            )}
           </NavigationMenuTrigger>
 
           <NavigationMenuContent className="bg-ddtWhite">
@@ -43,16 +53,28 @@ const EventWrapper = ({
                 </div>
               </a>
             ))}
-            <Link
-              prefetch={true}
-              href="/evenimente"
-              className={cn(
-                buttonVariants({ variant: "fill" }),
-                "w-full mt-5 hover:scale-100 rounded-[2px] whitespace-nowrap"
-              )}
-            >
-              Vezi mai mult <AiOutlineRight className="ml-1 h-4 w-4" />
-            </Link>
+            {noutati ? (
+              <a
+                href="/evenimente"
+                className={cn(
+                  buttonVariants({ variant: "fill" }),
+                  "w-full mt-5 hover:scale-100 rounded-[2px] whitespace-nowrap"
+                )}
+              >
+                Vezi mai mult <AiOutlineRight className="ml-1 h-4 w-4" />
+              </a>
+            ) : (
+              <Link
+                prefetch={true}
+                href="/evenimente"
+                className={cn(
+                  buttonVariants({ variant: "fill" }),
+                  "w-full mt-5 hover:scale-100 rounded-[2px] whitespace-nowrap"
+                )}
+              >
+                Vezi mai mult <AiOutlineRight className="ml-1 h-4 w-4" />
+              </Link>
+            )}
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>

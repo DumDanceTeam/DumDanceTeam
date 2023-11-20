@@ -17,7 +17,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
       <RevealLeftSlideIn className="flex-1 w-full">
         <div className="flex justify-center">
           {noutati === true ? (
-            <a href={"/"} className="cursor-pointer">
+            <a href="/" className="cursor-pointer">
               <Image
                 loading="lazy"
                 src={"/ddt-white.png"}
@@ -29,7 +29,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
               />
             </a>
           ) : (
-            <Link href={"/"} prefetch={true} className="cursor-pointer">
+            <Link href="/" prefetch={true} className="cursor-pointer">
               <Image
                 loading="lazy"
                 src={"/ddt-white.png"}
@@ -41,7 +41,6 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
               />
             </Link>
           )}
-          
         </div>
 
         <div className="w-full flex flex-col items-center justify-center md:items-start">
@@ -53,28 +52,55 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
             <span className="text-slate-700">&quot;</span>
           </p>
           <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 mt-3">
-            <Link href={"/#faq"} className="max-w-full">
-              <Button
-                aria-label="Programează o ședință gratuită"
-                variant={"fill"}
-                className="text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 xs:p-2"
-              >
-                <span>
-                  Programează o ședință
-                  <span className="font-bold"> gratuită</span>
-                </span>
-              </Button>
-            </Link>
+            {noutati ? (
+              <a href="/#faq" className="cursor-pointer">
+                <Button
+                  aria-label="Programează o ședință gratuită"
+                  variant={"fill"}
+                  className="text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 xs:p-2"
+                >
+                  <span>
+                    Programează o ședință
+                    <span className="font-bold"> gratuită</span>
+                  </span>
+                </Button>
+              </a>
+            ) : (
+              <Link href="/#faq" className="max-w-full">
+                <Button
+                  aria-label="Programează o ședință gratuită"
+                  variant={"fill"}
+                  className="text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 xs:p-2"
+                >
+                  <span>
+                    Programează o ședință
+                    <span className="font-bold"> gratuită</span>
+                  </span>
+                </Button>
+              </Link>
+            )}
 
-            <Link href={"/#faq"} className="max-w-content">
-              <Button
-                variant={"fill"}
-                className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2"
-              >
-                Întrebări frecvente{" "}
-                <BsArrowRight className="font-bold text-[1.3em]" />
-              </Button>
-            </Link>
+            {noutati ? (
+              <a href="/#faq">
+                <Button
+                  variant={"fill"}
+                  className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2"
+                >
+                  Întrebări frecvente{" "}
+                  <BsArrowRight className="font-bold text-[1.3em]" />
+                </Button>
+              </a>
+            ) : (
+              <Link href="/#faq" className="max-w-content">
+                <Button
+                  variant={"fill"}
+                  className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2"
+                >
+                  Întrebări frecvente{" "}
+                  <BsArrowRight className="font-bold text-[1.3em]" />
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
         <div className="hidden md:block mt-6 w-full space-y-2">

@@ -80,7 +80,6 @@ const Event: React.FC<EventProps> = ({ index, event, showInfoButton }) => {
               "self-center mt-5 sm:mt-10"
             )}
             href={`/evenimente/${event.id}`}
-            target="_blank"
           >
             Mai multe detalii
           </Link>

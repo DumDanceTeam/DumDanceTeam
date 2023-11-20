@@ -9,15 +9,24 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
-const CoursesWrapper = () => {
+interface CoursesWrapperProps{
+  noutati?: boolean;
+}
+
+const CoursesWrapper: React.FC<CoursesWrapperProps> = ({noutati}) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="bg-inherit">
-            <Link prefetch={true} href="/cursuri" className="text-[1.1em]">
+            {noutati ? (
+              <a href="/cursuri" className="text-[1.1em]">cursuri</a>
+            ):(
+              <Link prefetch={true} href="/cursuri" className="text-[1.1em]">
               cursuri
             </Link>
+            )}
+           
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-ddtWhite">
             <a href={"/cursuri/#curscopil"}>

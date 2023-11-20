@@ -6,7 +6,6 @@ import Event from "../components/Event";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { extractYouTubeVideoID } from "@/lib/utils";
 
 const EventPage = async ({params}:{params:{id: string}}) => {
     const currentEvent = await prismadb.event.findFirst({
@@ -17,7 +16,6 @@ const EventPage = async ({params}:{params:{id: string}}) => {
     if(!currentEvent)
         redirect("/evenimente");
 
-    const videoId = extractYouTubeVideoID(currentEvent.youtubeLink || "");
 
   return (
     <div>
@@ -28,13 +26,7 @@ const EventPage = async ({params}:{params:{id: string}}) => {
             <p className="font-light text-[1em] max-h-[300px] overflow-auto break-words text-center lg:text-start">
                 {currentEvent.description}
             </p> 
-            {videoId && videoId.trim() !== "" ? (
-                <iframe
-                  className="w-full h-full max-w-[500px] max-h-[500px] min-w-[280px] min-h-[280px] mt-6"
-                  src={`https://www.youtube.com/embed/${videoId}`}
-                  allowFullScreen
-                ></iframe>
-              ) : null}
+            
             <div className="">
                 {currentEvent.secondImages && currentEvent.secondImages.length>0 ? (
                     <>

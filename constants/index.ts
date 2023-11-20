@@ -1,9 +1,7 @@
 import {
   FAQItem,
   FooterInfo,
-  FooterLink,
   NavbarLink,
-  TestmonialCardProps,
 } from "@/types";
 
 export const navbarLinks: Array<NavbarLink> = [

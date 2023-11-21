@@ -34,7 +34,7 @@ const Footer: FC<FooterProps> = async ({}) => {
     <div className="bg-black">
       <div className="container mx-auto text-ddtWhite max-w-full">
         <div className="flex flex-col gap-5 pb-4">
-          <Link prefetch={true} href="/" className="self-center">
+          <a href="/" className="self-center">
             <Image
               loading="lazy"
               src="/ddt-white.png"
@@ -44,7 +44,7 @@ const Footer: FC<FooterProps> = async ({}) => {
               quality={100}
               className="mx-auto w-full max-w-[500px] lg:w-[1000px]"
             />
-          </Link>
+          </a>
           <div className="flex flex-col gap-10 sm:gap-0 sm:flex-row sm:items-center">
             <div className="flex flex-col gap-10 items-start sm:gap-0 sm:flex-row sm:items-center sm:justify-around flex-1">
               <div className="flex flex-col gap-2.5">
@@ -62,42 +62,39 @@ const Footer: FC<FooterProps> = async ({}) => {
                       return (
                         <div key={index} className="flex items-center gap-2">
                           <BsDot className="text-lightRed" />
-                          <Link
-                            prefetch={true}
+                          <a
                             key={index}
                             href={navLink.link}
                             className="text-[.96em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
                           >
                             {navLink.label}
-                          </Link>
+                          </a>
                         </div>
                       );
                     return (
                       <div key={index} className="flex items-center gap-2">
                         <BsDot className="text-lightRed" />
 
-                        <Link
-                          prefetch={true}
+                        <a
                           key={index}
                           href={navLink.link}
                           className="lowercase text-[.96em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
                         >
                           {navLink.label}
-                        </Link>
+                        </a>
                       </div>
                     );
                   } else if (showRule?.show)
                     return (
                       <div key={index} className="flex items-center gap-2">
                         <BsDot className="text-lightRed" />
-                        <Link
-                          prefetch={true}
+                        <a
                           key={index}
                           href={navLink.link}
                           className="lowercase text-[.96em] tracking-widest hover:text-gray-200 font-roboto hover:font-medium hover:scale-95 active:scale-90 duration-200 after:content-[''] after:w-[0] after:h-[0] relative after:absolute after:-bottom-[2px] after:left-[50%] after:-translate-x-[50%] hover:after:w-full hover:after:h-[1px] hover:after:bg-lightRed after:duration-200"
                         >
                           {navLink.label}
-                        </Link>
+                        </a>
                       </div>
                     );
                 })}

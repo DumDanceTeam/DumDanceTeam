@@ -109,8 +109,10 @@ const EventsFeed: FC<EventsFeedProps> = ({
                 />
               <Edit onClick={()=>{
                 if(editEv!=ev){
+                  setIsOpen(true);
                   setEv(ev);
                 }else{
+                  setEv(ev);
                   setIsOpen(!isOpen);
                 }
               }} className="w-6 h-6 text-lightRed cursor-pointer" />
@@ -134,11 +136,13 @@ const EventsFeed: FC<EventsFeedProps> = ({
                   }`}
                 />
               <Edit onClick={()=>{
-                if(editEv!=ev){
-                  setEv(ev);
-                }else{
-                  setIsOpen(!isOpen);
-                }
+               if(editEv!=ev){
+                setIsOpen(true);
+                setEv(ev);
+              }else{
+                setEv(ev);
+                setIsOpen(!isOpen);
+              }
               }} className="w-6 h-6 text-lightRed cursor-pointer" />
                 </div>
                 

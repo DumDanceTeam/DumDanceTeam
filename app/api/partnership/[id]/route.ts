@@ -1,4 +1,5 @@
 import prismadb from "@/lib/db";
+import { PartnershipValidator } from "@/validators";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function DELETE(req: NextRequest, {params}:{params:{id: string}}){
@@ -19,6 +20,38 @@ export async function DELETE(req: NextRequest, {params}:{params:{id: string}}){
             where:{
                 id:id
             }
+        });
+
+        return new Response("OK", {status:200})
+    }catch(err){
+        
+        return new NextResponse("Ceva a mers greșit. Te rugăm să încerci mai târziu !",{status:400});
+    }
+}
+
+export async function PATCH(req: NextRequest, {params}:{params:{id: string}}){
+    try{
+        const payload = await req.json();
+
+        const updatedData = PartnershipValidator.parse(payload);
+        const id = params.id;
+
+        const partnership = prismadb.partnership.findFirst({
+            where:{
+                id: id,
+            },
+        });
+        
+        if(!partnership)
+            throw new Error("Nu am putut găsi un parteneriat cu id-ul dat");
+        
+        await prismadb.partnership.update({
+            where:{
+                id:id
+            },
+            data:{
+                ...updatedData,
+            },
         });
 
         return new Response("OK", {status:200})

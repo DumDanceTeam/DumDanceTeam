@@ -55,7 +55,6 @@ export async function PATCH(req: NextRequest, {params}:{params:{id: string}}){
 
         return new Response("OK", {status:200})
     }catch(err){
-        console.log("update", err);
         
         return new NextResponse("Ceva a mers greșit. Te rugăm să încerci mai târziu !",{status:400});
     }

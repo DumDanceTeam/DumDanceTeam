@@ -8,6 +8,7 @@ import Partnership from "./parteneriat/Partnership";
 import Gallery from "@/components/about/Gallery";
 import GalleryManager from "./gallery/GalleryManager";
 import EditEventContainer from "./event/EditEventContainer";
+import EditPartnershipContainer from "./parteneriat/EditPartnershipContainer";
 
 
 export const revalidate = 0;
@@ -77,6 +78,9 @@ const Dashboard = async ({ event }: { event: string }) => {
       </div>
       <div className="my-20">
         <Partnership partnerships={initialPartnership}/>
+        <div className="mt-10">
+          <EditPartnershipContainer/>
+        </div>
       </div>
       <div className="my-20">
         <GalleryManager/>

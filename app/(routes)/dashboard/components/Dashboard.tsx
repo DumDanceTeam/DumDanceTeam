@@ -8,7 +8,6 @@ import Partnership from "./parteneriat/Partnership";
 import GalleryManager from "./gallery/GalleryManager";
 import EditEventContainer from "./event/EditEventContainer";
 import EditPartnershipContainer from "./parteneriat/EditPartnershipContainer";
-import MarkdownTest from "./MarkdownTest";
 
 
 export const revalidate = 0;
@@ -93,7 +92,6 @@ const Dashboard = async ({ event }: { event: string }) => {
         <Rules showRules={showRules!}/>
       </div>
 
-      <MarkdownTest/>
     </div>
   );
 };

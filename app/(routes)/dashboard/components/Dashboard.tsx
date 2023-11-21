@@ -5,10 +5,10 @@ import TestmonialsManager from "./testmonials/TestmonialsManager";
 import SearchInput from "./SearchInput";
 import Rules from "./rules/Rules";
 import Partnership from "./parteneriat/Partnership";
-import Gallery from "@/components/about/Gallery";
 import GalleryManager from "./gallery/GalleryManager";
 import EditEventContainer from "./event/EditEventContainer";
 import EditPartnershipContainer from "./parteneriat/EditPartnershipContainer";
+import MarkdownTest from "./MarkdownTest";
 
 
 export const revalidate = 0;
@@ -92,6 +92,8 @@ const Dashboard = async ({ event }: { event: string }) => {
       <div className="my-20">
         <Rules showRules={showRules!}/>
       </div>
+
+      <MarkdownTest/>
     </div>
   );
 };

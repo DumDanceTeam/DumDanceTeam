@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn, extractYouTubeVideoID } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/Button";
+import EvMarkdown from "./EvMarkdown";
 
 interface EventProps {
   index: number;
@@ -21,9 +22,7 @@ const Event: React.FC<EventProps> = ({ index, event, showInfoButton }) => {
           <p className="font-bold text-[1.5em] text-center">
             {event.title}
           </p>
-          <p className="font-light text-[1em] md:line-clamp-6 text-start sm:text-center lg:text-start md:break-words md:overflow-y-scroll lg:min-h-[400px] p-0 sm:p-2">
-            {event.description}
-          </p>
+          <EvMarkdown desc={event.description}/>
         </div>
         <Link
           className="cursor-pointer flex-1"

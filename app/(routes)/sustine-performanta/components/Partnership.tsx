@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn, extractYouTubeVideoID } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/Button";
+import EvMarkdown from "../../evenimente/components/EvMarkdown";
 
 interface PartnershipProps {
   index: number;
@@ -20,9 +21,7 @@ const Partnership: React.FC<PartnershipProps> = ({ index, partnership }) => {
           <p className="font-bold text-[1.5em] text-center">
             {partnership.title}
           </p>
-          <p className="font-light text-[1em] md:line-clamp-6 text-start sm:text-center lg:text-start md:break-words md:overflow-y-scroll lg:min-h-[400px] p-0 sm:p-2">
-            {partnership.description}
-          </p>
+          <EvMarkdown desc={partnership.description}/>
         </div>
         <Link
           className="cursor-pointer flex-1"

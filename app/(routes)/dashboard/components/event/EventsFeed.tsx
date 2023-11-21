@@ -113,7 +113,7 @@ const EventsFeed: FC<EventsFeedProps> = ({
                 }else{
                   setIsOpen(!isOpen);
                 }
-              }} className="w-6 h-6 text-lightRed" />
+              }} className="w-6 h-6 text-lightRed cursor-pointer" />
               </div>
             </div>
           );
@@ -139,7 +139,7 @@ const EventsFeed: FC<EventsFeedProps> = ({
                 }else{
                   setIsOpen(!isOpen);
                 }
-              }} className="w-6 h-6 text-lightRed" />
+              }} className="w-6 h-6 text-lightRed cursor-pointer" />
                 </div>
                 
               </div>
@@ -165,7 +165,7 @@ const EventsFeed: FC<EventsFeedProps> = ({
                   setEv(ev);
                   setIsOpen(!isOpen);
                 }
-              }} className="w-6 h-6 text-lightRed" />
+              }} className="w-6 h-6 text-lightRed cursor-pointer" />
                 </div>
               </div>
             );

@@ -69,7 +69,7 @@ const Dashboard = async ({ event }: { event: string }) => {
               initialEvents={initialEvents}
               eventString={event}
             />
-            <div className="mt-5">
+            <div className="mt-10">
               <EditEventContainer/>
             </div>
           </div>

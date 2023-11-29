@@ -70,7 +70,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
                             }
                             if(data.parentName.trim().length>=2 && data.childName.trim().length>=2){
                               {/* @ts-ignore */}
-                              window.location.href=`https://wa.me/${phone_number}?text=Bună mă numesc ${data.parentName}, sunt interesat/ă de o ședință de dans gratuită în data de ${months[selectedDate.month()]}, ${selectedDate.date()} ${selectedDate.year()} pentru ${data.childName} în vârstă de ${data.childAge} ani`
+                              window.location.href=`https://wa.me/${phone_number}?text=Bună mă numesc ${data.parentName}, sunt interesat/ă de o ședință de dans gratuită în data de ${selectedDate.date()} ${months[selectedDate.month()]} ${selectedDate.year()} ${selectedDate.day()===2 || selectedDate.day()===4 ? "de la ora 16 la 17":"de la ora 10 la 11"}, pentru ${data.childName} în vârstă de ${data.childAge} ani`
                             }
                           })
                     } variant={"fill"} className="active:scale-95 transition-transform text-xs sm:text-[1.5em] mt-2.5">Programează ședința</Button>

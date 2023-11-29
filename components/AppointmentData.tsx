@@ -42,7 +42,9 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
       setAgreeTermsMessage("");
     },2700);
   },[agreeWithTermsMessage]);
-
+  //@ts-ignore
+  console.log(selectedDate.day());
+  
   return (
     <div className='flex flex-col md:flex-row items-center md:items-baseline justify-center gap-5'>
         <div className="flex flex-col items-center justify-center gap-1 sm:gap-10 text-xs">
@@ -58,7 +60,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
                 </div>
                 <div className="flex flex-col mt-10 items-center justify-center gap-1 sm:gap-2.5 text-xs">
                     {/*@ts-ignore */}
-                    <p className="font-semibold text-center xxs:text-start sm:text-[1.4em]">Programează pentru data de: {months[selectedDate.month()]}, {selectedDate.date()} {selectedDate.year()}</p>
+                    <p className="font-semibold text-center xxs:text-start sm:text-[1.4em]">Programează pentru data de: {selectedDate.date()} {months[selectedDate.month()]} {selectedDate.year()}, {selectedDate.day()===2 || selectedDate.day()===4 ? "de la ora 16 la 17":"de la ora 10 la 11"}</p>
                   {/*@ts-ignore */}
                     <Button aria-label="Programează ședința" onClick={
                           handleSubmit((data)=>{

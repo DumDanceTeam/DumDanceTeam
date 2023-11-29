@@ -11,4 +11,4 @@ const EvMarkdown = ({desc}:{desc: string}) => {
   )
 }
 
-export default EvMarkdown
+export default EvMarkdown;

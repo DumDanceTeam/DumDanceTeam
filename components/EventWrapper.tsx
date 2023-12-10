@@ -44,6 +44,13 @@ const EventWrapper = ({
           </NavigationMenuTrigger>
 
           <NavigationMenuContent className="bg-ddtWhite">
+            <a href={`/evenimente/GalerieOnline`}>
+              <div className="w-48 p-1.5 hover:bg-slate-200 transition-colors active:scale-95 active:border-none duration-200 border-b border-lightRed">
+                <ul className="truncate text-black text-sm font-medium">
+                  Galerie Online Gala Dum Dance Team
+                </ul>
+              </div>
+            </a>{" "}
             {events.map((ev, index) => (
               <a href={`/evenimente/${ev.id}`} key={index}>
                 <div className="w-48 p-1.5 hover:bg-slate-200 transition-colors active:scale-95 active:border-none duration-200 border-b border-lightRed">

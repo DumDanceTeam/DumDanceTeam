@@ -1,4 +1,3 @@
-import GalleryImage from "./GalleryImage";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/Button";
 import prismadb from "@/lib/db";
@@ -9,7 +8,6 @@ const Gallery: React.FC = async () => {
     take:4,
   });
 
-  
 
   return (
     <div>

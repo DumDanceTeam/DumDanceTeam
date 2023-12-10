@@ -2,38 +2,16 @@ import EventManager from "./event/EventManager";
 import EventsFeed from "./event/EventsFeed";
 import prismadb from "@/lib/db";
 import TestmonialsManager from "./testmonials/TestmonialsManager";
-import SearchInput from "./SearchInput";
 import Rules from "./rules/Rules";
 import Partnership from "./parteneriat/Partnership";
 import GalleryManager from "./gallery/GalleryManager";
 import EditEventContainer from "./event/EditEventContainer";
 import EditPartnershipContainer from "./parteneriat/EditPartnershipContainer";
-
+import OnlineGallery from "./onlineGallery/OnlineGallery";
 
 export const revalidate = 0;
 
 const Dashboard = async ({ event }: { event: string }) => {
-  let searchedEvents;
-  if (event !== "" && event !== undefined) {
-    searchedEvents = await prismadb.event.findMany({
-      where: {
-        OR: [
-          {
-            title: {
-              contains: event,
-              mode: "insensitive",
-            },
-          },
-          {
-            description: {
-              contains: event,
-              mode: "insensitive",
-            },
-          },
-        ],
-      },
-    });
-  }
 
   const initialEvents = await prismadb.event.findMany({
     orderBy: {
@@ -62,36 +40,36 @@ const Dashboard = async ({ event }: { event: string }) => {
         <div className="mt-10">
           <div className="flex flex-col">
             <div className="self-end mb-2.5">
-              <SearchInput />
             </div>
             <EventsFeed
-              searchedEvents={searchedEvents}
               initialEvents={initialEvents}
               eventString={event}
             />
             <div className="mt-10">
-              <EditEventContainer/>
+              <EditEventContainer />
             </div>
           </div>
         </div>
       </div>
       <div className="my-20">
-        <Partnership partnerships={initialPartnership}/>
+        <Partnership partnerships={initialPartnership} />
         <div className="mt-10">
-          <EditPartnershipContainer/>
+          <EditPartnershipContainer />
         </div>
       </div>
       <div className="my-20">
-        <GalleryManager/>
+        <OnlineGallery />
+      </div>
+      <div className="my-20">
+        <GalleryManager />
       </div>
 
       <div className="my-20">
         <TestmonialsManager />
       </div>
       <div className="my-20">
-        <Rules showRules={showRules!}/>
+        <Rules showRules={showRules!} />
       </div>
-
     </div>
   );
 };

@@ -14,7 +14,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
   
   return (
     <div className="ring-offset-2 p-5 rounded-md flex flex-col items-center xl:flex-row xl:divide-x-2 divide-zinc-400 xl:space-x-5 text-black">
-      {post.attachments?.data[0].media.image.src ? (
+      {post?.attachments?.data[0]?.media?.image?.src ? (
         <Image
           quality={100}
           width={766}

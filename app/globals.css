@@ -19,6 +19,9 @@
 .activeMenu.line2{
   transform: rotate(-45deg) translateY(-5px) translateX(-2px);
 }
+.activeMenu.line3{
+  display: none;
+}
 
 hr {
   border: 0;

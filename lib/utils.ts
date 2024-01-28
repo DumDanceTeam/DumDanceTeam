@@ -66,7 +66,7 @@ export function constructMetadata({
 } = {}): Metadata {
   return {
     title,
-    keywords:["DDT","cluburi de dans","dum dance team","Dum Dance Team","cluburi de dans romania","cluburi de dans arad","dans","scoala de dans","dans romania","dumdanceteam"],
+    keywords:["dum dance team","DDT","cluburi de dans","Dum Dance Team","cluburi de dans romania","cluburi de dans arad","dans","scoala de dans","dans romania","dumdanceteam"],
     description,
     openGraph: {
       title,

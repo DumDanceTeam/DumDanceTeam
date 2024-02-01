@@ -14,7 +14,6 @@ import { BsDot } from "react-icons/bs";
 import CoursesWrapper from "./CoursesWrapper";
 import EventWrapper from "./EventWrapper";
 import prismadb from "@/lib/db";
-import Link from "next/link";
 
 interface FooterProps {}
 

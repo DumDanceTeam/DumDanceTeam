@@ -9,7 +9,7 @@ import { FaFacebook } from "react-icons/fa"
 interface PostProps {
   post: FacebookPost;
 }
-
+//.env
 const Post: React.FC<PostProps> = ({ post }) => {
   
   return (

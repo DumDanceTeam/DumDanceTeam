@@ -42,7 +42,7 @@ const FAQ: React.FC = () => {
         </Accordion>
       </div>
     </div>
-  );
+  );//ceva
 };
 
 export default FAQ;

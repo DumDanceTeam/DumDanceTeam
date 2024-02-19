@@ -96,7 +96,6 @@ export function extractYouTubeVideoID(url: string) {
   if (match) {
     return match[1];
   } else {
-    // Handle the case when the URL format doesn't match.
     return null;
   }
 }

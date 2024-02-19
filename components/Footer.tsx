@@ -15,11 +15,10 @@ import CoursesWrapper from "./CoursesWrapper";
 import EventWrapper from "./EventWrapper";
 import prismadb from "@/lib/db";
 
-interface FooterProps {}
 
 import Image from "next/image";
 
-const Footer: FC<FooterProps> = async ({}) => {
+const Footer= async ({}) => {
   const events = await prismadb.event.findMany({
     take: 7,
     select: {

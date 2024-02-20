@@ -26,7 +26,7 @@ const Testmonials: React.FC = async () => {
                 </p>
               </div>
             ) : (
-              testmonials.map((t:any, index) => (
+              testmonials.map((t:any, index:number) => (
                 <TestmonialCard
                   key={index}
                   profileImage={t?.profileUrl}

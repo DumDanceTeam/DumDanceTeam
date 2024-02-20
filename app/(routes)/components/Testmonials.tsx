@@ -1,6 +1,7 @@
 import TestmonialCard from "@/components/ui/TestmonialCard";
 import RevealRightSlideIn from "@/components/Reveal/RevealRightSlide";
 import prismadb from "@/lib/db";
+import { Testmonial } from "@prisma/client";
 
 const Testmonials: React.FC = async () => {
   const testmonials = await prismadb.testmonial.findMany({
@@ -26,7 +27,7 @@ const Testmonials: React.FC = async () => {
                 </p>
               </div>
             ) : (
-              testmonials.map((t, index) => (
+              testmonials.map((t:Testmonial, index) => (
                 <TestmonialCard
                   key={index}
                   profileImage={t.profileUrl}

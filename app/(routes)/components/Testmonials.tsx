@@ -9,6 +9,8 @@ const Testmonials: React.FC = async () => {
     },
   });
 
+  //change .env
+
   return (
     <div>
       <RevealRightSlideIn>

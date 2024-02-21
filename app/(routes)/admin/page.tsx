@@ -1,5 +1,4 @@
 import Hero from '@/components/Hero';
-
 import Auth from './components/Auth';
 
 const AdminPage = () => {

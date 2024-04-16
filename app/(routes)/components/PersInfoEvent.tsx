@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -25,12 +25,14 @@ import {
 const formSchema = z.object({
   nume_copil: z.string().min(2).max(50),
   prenume_copil: z.string().min(2).max(50),
-  varsta_copil: z.number().min(3, "Copilul nu poate fi mai mic de 3 ani"),
+  varsta_copil: z.string(),
   grupa_copil: z.string().min(2).max(50),
   nume_parinte: z.string().min(2).max(50),
   prenume_parinte: z.string().min(2).max(50),
   nume_parinte_eveniment: z.string().min(2).max(50),
   email_parinte: z.string().min(2).max(50),
+  sesiune_foto: z.boolean().optional(),
+  tombola: z.boolean().optional(),
 });
 
 interface PersInfoEventProps {}
@@ -100,19 +102,19 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Grupă vârstă</FormLabel>
-              <FormControl>
-                <Select>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
                   <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Theme" />
+                    <SelectValue placeholder="selectează grupa" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="light">4 - 7 ani</SelectItem>
-                    <SelectItem value="dark">8 - 12 ani</SelectItem>
-                    <SelectItem value="system">12 - 16 ani</SelectItem>
-                  </SelectContent>
-                </Select>
-                {/* <Input placeholder="" {...field} /> */}
-              </FormControl>
+                </FormControl>
+
+                <SelectContent>
+                  <SelectItem value="4 - 7 ani">4 - 7 ani</SelectItem>
+                  <SelectItem value="8 - 12 ani">8 - 12 ani</SelectItem>
+                  <SelectItem value="12 - 16 ani">12 - 16 ani</SelectItem>
+                </SelectContent>
+              </Select>
               <FormDescription>
                 Grupa de vârstă în care se încadrează copilul tău
               </FormDescription>
@@ -178,12 +180,16 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         />
         <FormField
           control={form.control}
-          name="email_parinte"
+          name="sesiune_foto"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Sesiune foto Mihai Petre (Opțional)</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} type="checkbox" />
+                <Input
+                  {...field}
+                  type="checkbox"
+                  value={field.value ? "true" : "false"}
+                />
               </FormControl>
 
               <FormMessage />
@@ -192,15 +198,19 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         />
         <FormField
           control={form.control}
-          name="email_parinte"
+          name="tombola"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Doresc să particip și la tombolă (Opțional)</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} type="checkbox" />
+                <Input
+                  {...field}
+                  type="checkbox"
+                  value={field.value ? "true" : "false"}
+                />
               </FormControl>
               <FormDescription>
-                Nu-ți fă griji! toți copiii vor fi premiați, dar avem și o
+                Nu-ți fă griji! Toți copiii vor fi premiați, dar avem și o
                 tombolă specială cu premii educative pentru copii.
               </FormDescription>
               <FormMessage />

@@ -21,37 +21,69 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-const formSchema = z.object({
-  nume_copil: z.string().min(2).max(50),
-  prenume_copil: z.string().min(2).max(50),
-  varsta_copil: z.string(),
-  grupa_copil: z.string().min(2).max(50),
-  nume_parinte: z.string().min(2).max(50),
-  prenume_parinte: z.string().min(2).max(50),
-  nume_parinte_eveniment: z.string().min(2).max(50),
-  email_parinte: z.string().min(2).max(50),
-  sesiune_foto: z.boolean().optional(),
-  tombola: z.boolean().optional(),
-});
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import {
+  RegistrationDataRequest,
+  RegistrationDataValidator,
+} from "@/validators";
 
 interface PersInfoEventProps {}
 
 export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<RegistrationDataRequest>({
+    resolver: zodResolver(RegistrationDataValidator),
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  const { mutate: createRegistration } = useMutation({
+    mutationFn: async ({
+      nume_copil,
+      prenume_copil,
+      varsta_copil,
+      grupa_copil,
+      nume_parinte,
+      prenume_parinte,
+      nume_parinte_eveniment,
+      email_parinte,
+      sesiune_foto,
+      tombola,
+    }: RegistrationDataRequest) => {
+      const payload: RegistrationDataRequest = {
+        nume_copil,
+        prenume_copil,
+        varsta_copil,
+        grupa_copil,
+        nume_parinte,
+        prenume_parinte,
+        nume_parinte_eveniment,
+        email_parinte,
+        sesiune_foto,
+        tombola,
+      };
+
+      const { data } = await axios.post("/api/inscriereEveniment", payload);
+
+      return data;
+    },
+  });
 
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit(() =>
+          createRegistration({
+            nume_copil: form.getValues("nume_copil"),
+            prenume_copil: form.getValues("prenume_copil"),
+            varsta_copil: form.getValues("varsta_copil"),
+            grupa_copil: form.getValues("grupa_copil"),
+            nume_parinte: form.getValues("nume_parinte"),
+            prenume_parinte: form.getValues("prenume_parinte"),
+            nume_parinte_eveniment: form.getValues("nume_parinte_eveniment"),
+            email_parinte: form.getValues("email_parinte"),
+            sesiune_foto: form.getValues("sesiune_foto"),
+            tombola: form.getValues("tombola"),
+          })
+        )}
         className="border-2 border-lightRed rounded-[6px] p-10 space-y-8"
       >
         <FormField

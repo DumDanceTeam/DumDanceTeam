@@ -61,3 +61,17 @@ model Rule {
   id   String  @id @default(uuid())
   show Boolean @default(false)
 }
+
+model Registration {
+  id                     String @id @default(uuid())
+  nume_copil             String
+  prenume_copil          String
+  varsta_copil           String
+  grupa_copil            String
+  nume_parinte           String
+  prenume_parinte        String
+  nume_parinte_eveniment String
+  email_parinte          String
+  sesiune_foto           String
+  tombola                String
+}

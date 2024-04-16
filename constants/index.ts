@@ -21,10 +21,10 @@ export const navbarLinks: Array<NavbarLink> = [
     label: "susține performanțele DDT",
     link: `/sustine-performanta`,
   },
-  {
-    label: "Înscrie-te la eveniment",
-    link: "/inscriere-eveniment",
-  },
+  // {
+  //   label: "Înscrie-te la eveniment",
+  //   link: "/inscriere-eveniment",
+  // },
 ];
 
 export const faq: Array<FAQItem> = [

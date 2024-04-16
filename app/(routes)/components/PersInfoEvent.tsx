@@ -16,7 +16,14 @@ import {
 import { Input } from "@/components/ui/Input";
 
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
+  nume_copil: z.string().min(2).max(50),
+  prenume_copil: z.string().min(2).max(50),
+  varsta_copil: z.number().min(3, "Copilul nu poate fi mai mic de 3 ani"),
+  grupa_copil: z.string().min(2).max(50),
+  nume_parinte: z.string().min(2).max(50),
+  prenume_parinte: z.string().min(2).max(50),
+  nume_parinte_eveniment: z.string().min(2).max(50),
+  email_parinte: z.string().min(2).max(50),
 });
 
 interface PersInfoEventProps {}
@@ -25,7 +32,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      nume_copil: "",
     },
   });
 
@@ -43,7 +50,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
       >
         <FormField
           control={form.control}
-          name="username"
+          name="nume_copil"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Nume copil</FormLabel>
@@ -59,12 +66,12 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         />{" "}
         <FormField
           control={form.control}
-          name="username"
+          name="prenume_copil"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Prenume copil</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field}  type="number"/>
+                <Input placeholder="" {...field} />
               </FormControl>
               <FormDescription>
                 This is your public display name.
@@ -75,10 +82,90 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         />
         <FormField
           control={form.control}
-          name="username"
+          name="varsta_copil"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Vârstă copil</FormLabel>
+              <FormControl>
+                <Input placeholder="" {...field} type="number" />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* <FormField
+          control={form.control}
+          name="dropw"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Dropdown</FormLabel>
+              <FormControl>
+                <Input placeholder="" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        /> */}
+        <FormField
+          control={form.control}
+          name="nume_parinte"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nume tutore</FormLabel>
+              <FormControl>
+                <Input placeholder="" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="prenume_parinte"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Prenume tutore</FormLabel>
+              <FormControl>
+                <Input placeholder="" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="nume_parinte_eveniment"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nume părinte însoțitor eveniment</FormLabel>
+              <FormControl>
+                <Input placeholder="" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email_parinte"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email părinte</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>

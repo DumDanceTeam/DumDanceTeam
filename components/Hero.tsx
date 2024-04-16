@@ -16,10 +16,9 @@ const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
         muted
         preload="auto"
         playsInline
-        className="object-cover w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh]"
+        className="object-cover w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
       ></video>
 
-      <div className="absolute w-full h-full -top-[30px] big:top-0 bg-[rgba(0,0,0,.7)]" />
       <div className="container mx-auto w-full h-full">
         <div className="w-full absolute top-0 left-0 right-0 p-2 sm:px-5 sm:py-2.5 md:px-10 md:py-5 z-50">
           <Navbar noutati={noutati}/>

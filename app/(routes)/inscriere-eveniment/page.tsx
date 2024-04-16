@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { PersInfoEvent } from "../components/PersInfoEvent";
-import prismadb from "@/lib/db";
 
 interface pageProps {}
 

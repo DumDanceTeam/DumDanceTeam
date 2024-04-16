@@ -8,11 +8,11 @@ import GalleryManager from "./gallery/GalleryManager";
 import EditEventContainer from "./event/EditEventContainer";
 import EditPartnershipContainer from "./parteneriat/EditPartnershipContainer";
 import OnlineGallery from "./onlineGallery/OnlineGallery";
+import Registrations from "./registrations/Registrations";
 
 export const revalidate = 0;
 
 const Dashboard = async ({ event }: { event: string }) => {
-
   const initialEvents = await prismadb.event.findMany({
     orderBy: {
       createdAt: "desc",
@@ -28,6 +28,12 @@ const Dashboard = async ({ event }: { event: string }) => {
     },
   });
 
+  const registrations = await prismadb.registration.findMany({
+    orderBy:{
+      createdAt:"desc"
+    }
+  })
+
   return (
     <div className="">
       <h3 className="font-bold text-center text-[1.2em] sm:text-[1.3em] md:text-[1.5em] lg:text-[2em]">
@@ -39,12 +45,8 @@ const Dashboard = async ({ event }: { event: string }) => {
 
         <div className="mt-10">
           <div className="flex flex-col">
-            <div className="self-end mb-2.5">
-            </div>
-            <EventsFeed
-              initialEvents={initialEvents}
-              eventString={event}
-            />
+            <div className="self-end mb-2.5"></div>
+            <EventsFeed initialEvents={initialEvents} eventString={event} />
             <div className="mt-10">
               <EditEventContainer />
             </div>
@@ -69,6 +71,10 @@ const Dashboard = async ({ event }: { event: string }) => {
       </div>
       <div className="my-20">
         <Rules showRules={showRules!} />
+      </div>
+
+      <div className="my-20">
+        <Registrations allRegistrations={registrations}/>
       </div>
     </div>
   );

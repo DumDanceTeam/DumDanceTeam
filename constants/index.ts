@@ -1,8 +1,4 @@
-import {
-  FAQItem,
-  FooterInfo,
-  NavbarLink,
-} from "@/types";
+import { FAQItem, FooterInfo, NavbarLink } from "@/types";
 
 export const navbarLinks: Array<NavbarLink> = [
   {
@@ -14,19 +10,22 @@ export const navbarLinks: Array<NavbarLink> = [
     link: "/noutati",
   },
   {
-    label:"Dansul mirilor",
-    link: "/dansul-mirilor"
+    label: "Dansul mirilor",
+    link: "/dansul-mirilor",
   },
   {
-    label:"Regulament",
+    label: "Regulament",
     link: "/regulament",
   },
   {
-    label:"susține performanțele DDT",
+    label: "susține performanțele DDT",
     link: `/sustine-performanta`,
-  }
+  },
+  {
+    label: "Înscrie-te la eveniment",
+    link: "/inscriere-eveniment",
+  },
 ];
-
 
 export const faq: Array<FAQItem> = [
   {
@@ -36,9 +35,10 @@ export const faq: Array<FAQItem> = [
   },
   {
     question: "Cum și când ne putem înscrie ?",
-    answer:"Programează o ședința gratuită și noi îți ghidăm primii pași în lumea dansului !",
-    linkUrl:"/#calendar",
-    linkLabel:"Înscrie-te aici la un curs de încercare"
+    answer:
+      "Programează o ședința gratuită și noi îți ghidăm primii pași în lumea dansului !",
+    linkUrl: "/#calendar",
+    linkLabel: "Înscrie-te aici la un curs de încercare",
   },
   {
     question: "Ce se învață la cursurile DDT ?",
@@ -46,7 +46,6 @@ export const faq: Array<FAQItem> = [
       "Pe lângă dezvoltarea abilităților de dans, încurajăm și adoptarea unei posturi corecte într-un colectiv educat si disciplinat. Respectul, grația, eleganța, socializarea și munca în echipă sunt câteva dintre oportunitățile de dezvoltare pe care copilul dvs. cu siguranță le va dobândi. Suntem nerăbdători să ne cunoaștem !",
   },
 ];
-
 
 export const footerInfo: Array<FooterInfo> = [
   {

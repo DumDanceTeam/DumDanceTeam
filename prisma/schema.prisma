@@ -74,4 +74,6 @@ model Registration {
   email_parinte          String
   sesiune_foto           String
   tombola                String
+
+    createdAt    DateTime @default(now())
 }

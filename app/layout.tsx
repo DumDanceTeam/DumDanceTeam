@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Provider from "@/components/provider/Provider";
 import { constructMetadata } from "@/lib/utils";
 import { Analytics } from '@vercel/analytics/react';
+import InscriereModal from "@/components/InscriereModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="bg-ddtWhite antialiased">
           <Provider>
+            <InscriereModal/>
             {children}
             <Footer />
           </Provider>

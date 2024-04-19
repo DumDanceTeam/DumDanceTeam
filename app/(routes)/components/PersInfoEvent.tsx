@@ -28,10 +28,13 @@ import {
   RegistrationDataValidator,
 } from "@/validators";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 interface PersInfoEventProps {}
 
 export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const form = useForm<RegistrationDataRequest>({
     resolver: zodResolver(RegistrationDataValidator),
   });
@@ -39,23 +42,24 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
   const { mutate: createRegistration } = useMutation({
     mutationFn: async ({
       nume_copil,
-      prenume_copil,
       varsta_copil,
+      scoala,
       grupa_copil,
       nume_parinte,
-      prenume_parinte,
+      numar_telefon,
       nume_parinte_eveniment,
       email_parinte,
       sesiune_foto,
       tombola,
     }: RegistrationDataRequest) => {
+      setIsLoading(true);
       const payload: RegistrationDataRequest = {
         nume_copil,
-        prenume_copil,
         varsta_copil,
+        scoala,
         grupa_copil,
         nume_parinte,
-        prenume_parinte,
+        numar_telefon,
         nume_parinte_eveniment,
         email_parinte,
         sesiune_foto,
@@ -66,6 +70,27 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
 
       return data;
     },
+    onSuccess:()=>{
+      toast.success("Te-ai înregistrat cu succes!")
+    },
+    onError:()=>{
+      toast.error("Ceva a mers greșit. Te rugăm să ne contactezi la numărul nostru de telefon sau încearcă mai târziu.")
+    },
+    onSettled:()=>{
+      setIsLoading(false);
+      setTimeout(()=>{
+        form.setValue("nume_copil","");
+        form.setValue("varsta_copil","");
+        form.setValue("scoala","");
+        form.setValue("grupa_copil","");
+        form.setValue("nume_parinte","");
+        form.setValue("numar_telefon","");
+        form.setValue("nume_parinte_eveniment","");
+        form.setValue("email_parinte","");
+        form.setValue("sesiune_foto",false);
+        form.setValue("tombola",false);
+      }, 1000);
+    }
   });
 
   return (
@@ -76,11 +101,11 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         onSubmit={form.handleSubmit(() =>
           createRegistration({
             nume_copil: form.getValues("nume_copil"),
-            prenume_copil: form.getValues("prenume_copil"),
             varsta_copil: form.getValues("varsta_copil"),
+            scoala: form.getValues("scoala"),
             grupa_copil: form.getValues("grupa_copil"),
             nume_parinte: form.getValues("nume_parinte"),
-            prenume_parinte: form.getValues("prenume_parinte"),
+            numar_telefon: form.getValues("numar_telefon"),
             nume_parinte_eveniment: form.getValues("nume_parinte_eveniment"),
             email_parinte: form.getValues("email_parinte"),
             sesiune_foto: form.getValues("sesiune_foto"),
@@ -98,7 +123,6 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
@@ -110,7 +134,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
             <FormItem>
               <FormLabel>Vârstă Copil</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} type="number" />
+                <Input placeholder="" {...field} type="number" min={1}/>
               </FormControl>
 
               <FormMessage />
@@ -119,14 +143,13 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         />
         <FormField
           control={form.control}
-          name="varsta_copil"
+          name="scoala"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Școală / Grădiniță</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
@@ -173,10 +196,23 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         />
         <FormField
           control={form.control}
+          name="numar_telefon"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Număr Telefon</FormLabel>
+              <FormControl>
+                <Input placeholder="" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name="nume_parinte_eveniment"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Numele și prenumele însoțitorului la eveniment</FormLabel>
+              <FormLabel>Numele și Prenumele însoțitorului la eveniment</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -238,7 +274,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="bg-[#FFCC02] w-full">Trimite</Button>
+        <Button isLoading={isLoading} disabled={isLoading} type="submit" className="bg-[#FFCC02] w-full">Trimite</Button>
       </form>
     </Form>
     </div>

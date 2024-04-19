@@ -116,14 +116,14 @@ export const AppointmentDataValidator = z.object({
 export type AppointmentDataRequest = z.infer<typeof AppointmentDataValidator>;
 
 export const RegistrationDataValidator = z.object({
-  nume_copil: z.string().min(2).max(50),
-  prenume_copil: z.string().min(2).max(50),
-  varsta_copil: z.string(),
-  grupa_copil: z.string().min(2).max(50),
-  nume_parinte: z.string().min(2).max(50),
-  prenume_parinte: z.string().min(2).max(50),
-  nume_parinte_eveniment: z.string().min(2).max(50),
-  email_parinte: z.string().min(2).max(50),
+  nume_copil: z.string({required_error:"Introdu numele și prenumele copilului", invalid_type_error:"Introdu numele și prenumele copilului"}).min(2, {message:"Numele trebuie să conțină cel puțin 2 caractere"}).max(50, {message:"Numele trebuie să conțină cel mult 50 caractere"}),
+  varsta_copil: z.string({required_error:"Introdu vârsta copilului"}),
+  scoala: z.string({required_error:"Introdu școala copilului",invalid_type_error:"Introdu școala copilului"}).min(2,{message:"Școala trebuie să conțină cel puțin 2 caractere"}).max(50,{message:"Școala trebuie să conțină cel mult 50 caractere"}),
+  grupa_copil: z.string({required_error:"Introdu grupa în care să participe copilul"}).min(2).max(50),
+  nume_parinte: z.string({required_error:"Introdu numele părintelui",invalid_type_error:"Introdu numele părintelui"}).min(2, {message:"Numele părintelui trebuie să conțină cel puțin 2 caractere"}).max(50, {message:"Numele părintelui trebuie să conțină cel mult 50 caractere"}),
+  numar_telefon: z.string({required_error:"Introdu numărul de telefon al părintelui", invalid_type_error:"Introdu numărul de telefon al părintelui"}).min(2, {message:"Introdu numărul de telefon al părintelui"}).max(30, "Prea multe caractere"),
+  nume_parinte_eveniment: z.string({required_error:"Introdu numele și prenumele însoțitorului la eveniment", invalid_type_error:"Introdu numele și prenumele însoțitorului la eveniment"}).min(2, {message:"Introdu numele și prenumele însoțitorului la eveniment"}).max(50, {message:"Numele și prenumele însoțitorului la eveniment trebuie să conțină cel mult 50 de caractere"}),
+  email_parinte: z.string({required_error:"Email-ul este introdus greșit", invalid_type_error:"Email-ul este introdus greșit"}).email({message:"Email-ul este introdus greșit"}),
   sesiune_foto: z.boolean().optional(),
   tombola: z.boolean().optional(),
 });

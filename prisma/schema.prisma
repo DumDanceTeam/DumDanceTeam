@@ -5,7 +5,6 @@ generator client {
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
 
 model Token {
@@ -65,15 +64,14 @@ model Rule {
 model Registration {
   id                     String @id @default(uuid())
   nume_copil             String
-  prenume_copil          String
   varsta_copil           String
+  scoala                 String
   grupa_copil            String
   nume_parinte           String
-  prenume_parinte        String
+  numar_telefon          String
   nume_parinte_eveniment String
   email_parinte          String
   sesiune_foto           String
   tombola                String
-
-    createdAt    DateTime @default(now())
+  createdAt    DateTime @default(now())
 }

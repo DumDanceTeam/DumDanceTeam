@@ -14,11 +14,11 @@ export async function POST(req: NextRequest) {
     await prismadb.registration.create({
       data: {
         nume_copil: data1.nume_copil,
-        prenume_copil: data1.prenume_copil,
         varsta_copil: data1.varsta_copil,
+        scoala: data1.scoala,
         grupa_copil: data1.grupa_copil,
         nume_parinte: data1.nume_parinte,
-        prenume_parinte: data1.prenume_parinte,
+        numar_telefon: data1.numar_telefon,
         nume_parinte_eveniment: data1.nume_parinte_eveniment,
         email_parinte: data1.email_parinte,
         sesiune_foto: data1.sesiune_foto === true ? "true" : "false",

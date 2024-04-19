@@ -5,10 +5,12 @@ interface pageProps {}
 
 const page: FC<pageProps> = async ({}) => {
   return (
-    <div className="container mx-auto p-10">
-      <h1 className="text-center font-bold text-4xl mb-5">
-        Inscrie-te la eveniment
+    <div className="container relative mx-auto p-10">
+
+      <h1 className="text-center font-bold text-4xl">
+        Formular de înscriere
       </h1>
+      <p className="text-center mb-5 font-bold">Completează formularul de mai jos. Locurile sunt limitate</p>
       <PersInfoEvent />
       
     </div>

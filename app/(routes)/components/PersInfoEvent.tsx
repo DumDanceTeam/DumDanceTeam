@@ -27,6 +27,7 @@ import {
   RegistrationDataRequest,
   RegistrationDataValidator,
 } from "@/validators";
+import Image from "next/image";
 
 interface PersInfoEventProps {}
 
@@ -68,7 +69,9 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
   });
 
   return (
-    <Form {...form}>
+    <div>
+      <Image width={1600} height={800} src={"/event.jpeg"} quality={100} priority className="w-full h-full rounded-[10px]" alt="event"/>
+      <Form {...form}>
       <form
         onSubmit={form.handleSubmit(() =>
           createRegistration({
@@ -84,14 +87,14 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
             tombola: form.getValues("tombola"),
           })
         )}
-        className="border-2 border-lightRed rounded-[6px] p-10 space-y-8"
+        className="border-2 mt-10 border-[#3AB5FB] rounded-[6px] p-10 space-y-8 max-w-[500px] mx-auto"
       >
         <FormField
           control={form.control}
           name="nume_copil"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nume copil</FormLabel>
+              <FormLabel>Nume Și Prenume Copil</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -102,12 +105,12 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         />{" "}
         <FormField
           control={form.control}
-          name="prenume_copil"
+          name="varsta_copil"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Prenume copil</FormLabel>
+              <FormLabel>Vârstă Copil</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} />
+                <Input placeholder="" {...field} type="number" />
               </FormControl>
 
               <FormMessage />
@@ -119,9 +122,9 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
           name="varsta_copil"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Vârstă copil</FormLabel>
+              <FormLabel>Școală / Grădiniță</FormLabel>
               <FormControl>
-                <Input placeholder="" {...field} type="number" />
+                <Input placeholder="" {...field} />
               </FormControl>
 
               <FormMessage />
@@ -133,7 +136,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
           name="grupa_copil"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Grupă vârstă</FormLabel>
+              <FormLabel>Grupă de Vârstă Aleasă în Cadrul Evenimentului</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="w-[180px]">
@@ -159,21 +162,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
           name="nume_parinte"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nume tutore</FormLabel>
-              <FormControl>
-                <Input placeholder="" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="prenume_parinte"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Prenume tutore</FormLabel>
+              <FormLabel>Nume și Prenume Tutore / Reprezentat legal</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -187,7 +176,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
           name="nume_parinte_eveniment"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nume părinte însoțitor eveniment</FormLabel>
+              <FormLabel>Numele și prenumele însoțitorului la eveniment</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -201,7 +190,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
           name="email_parinte"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email părinte</FormLabel>
+              <FormLabel>Email Părinte</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -249,8 +238,10 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
             </FormItem>
           )}
         />
-        <Button type="submit">Trimite</Button>
+        <Button type="submit" className="bg-[#FFCC02] w-full">Trimite</Button>
       </form>
     </Form>
+    </div>
+    
   );
 };

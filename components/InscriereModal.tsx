@@ -9,19 +9,28 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
-import { setLazyProp } from "next/dist/server/api-utils";
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
+import Image from "next/image"
+import { Button } from "./ui/Button"
+import Link from "next/link"
+import { X } from "lucide-react"
 
 const InscriereModal = () => {
     const [isOpen, setIsOpen] = useState<boolean>();
+    const path = usePathname();
     
     useEffect(()=>{
-        const alreadyOpen = localStorage.getItem("eventOpen");
 
-        if(!alreadyOpen || alreadyOpen==="false"){
-            setIsOpen(true);
-            localStorage.setItem("eventOpen", JSON.stringify(true));
+        if(path==="/"){
+            const alreadyOpen = localStorage.getItem("eventOpen");
+
+            if(!alreadyOpen || alreadyOpen==="false"){
+                setIsOpen(true);
+                localStorage.setItem("eventOpen", JSON.stringify(true));
+            }
         }
+        
 
         window.addEventListener("beforeunload", ()=>{
             localStorage.clear();
@@ -35,22 +44,18 @@ const InscriereModal = () => {
     },[]);
 
   return (
-    <div>
-    <Dialog open={isOpen}>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <button onClick={()=>setIsOpen(false)}>close</button>
-          <DialogDescription>
-            Make changes to your profile here. Click save when youre done.
-          </DialogDescription>
-        </DialogHeader>
-        
-        <DialogFooter>
-        </DialogFooter>
+    <Link href={"/inscriere-eveniment"} onClick={()=>setIsOpen(false)} className="cursor-pointer">
+    <Dialog open={isOpen} >
+      <DialogContent className="p-1 cursor-pointer">
+      <X onClick={(e)=>{
+        e.stopPropagation();
+        setIsOpen(false)
+      }} className="w-7 h-7 text-black absolute right-0"/>
+            <Image src={"/event.jpeg"} width={1600} height={800} className="max-w-full max-h-full" alt="event"/>
+            <Button className="bg-[#5485A7]">Înscrie-te acum</Button>
       </DialogContent>
     </Dialog>
-    </div>
+    </Link>
 
   )
 }

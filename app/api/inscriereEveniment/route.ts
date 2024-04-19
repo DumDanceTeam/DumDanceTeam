@@ -33,6 +33,8 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (err) {
+    console.log(err);
+    
     return new NextResponse(
       "Ceva a mers greșit, te rugăm să încerci mai tărziu !",
       { status: 400 }

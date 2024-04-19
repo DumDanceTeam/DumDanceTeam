@@ -19,16 +19,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-10">
-          <p>prenume_copil</p>
-          <div className="space-y-5">
-            {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
-                <p>{reg.prenume_copil}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+       
         <div className="flex flex-col gap-10">
           <p>varsta_copil</p>
           <div className="space-y-5">
@@ -55,16 +46,6 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
             {allRegistrations.map((reg) => (
               <div key={reg.id} className="text-sm font-normal">
                 <p>{reg.nume_parinte}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="flex flex-col gap-10">
-          <p>prenume_parinte</p>
-          <div className="space-y-5">
-            {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
-                <p>{reg.prenume_copil}</p>
               </div>
             ))}
           </div>

@@ -22,11 +22,12 @@ export async function GET(req:Request){
 
         const accessToken = await prismadb.token.findMany();
         const currentDate = new Date();
+        
         //@ts-ignore
-        const daysPassed = Math.floor((currentDate - accessToken[0].createdAt) / (1000 * 60 * 60 * 24));
+        const daysPassed = Math.floor((currentDate - accessToken[1].createdAt) / (1000 * 60 * 60 * 24));
         
         if(daysPassed>10){
-            const newAccessToken = await axios.get(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${process.env.FACEBOOK_CLIENTID}&client_secret=${process.env.FACEBOOK_CLIENTSECRET}&fb_exchange_token=${accessToken[0].token}`);
+            const newAccessToken = await axios.get(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${process.env.FACEBOOK_CLIENTID}&client_secret=${process.env.FACEBOOK_CLIENTSECRET}&fb_exchange_token=${accessToken[1].token}`);
             await prismadb.token.deleteMany();
             await prismadb.token.create({
                 data:{

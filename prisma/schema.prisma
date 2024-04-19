@@ -61,6 +61,11 @@ model Rule {
   show Boolean @default(false)
 }
 
+model EventToggle {
+  id   String  @id @default(uuid())
+  show Boolean @default(false)
+}
+
 model Registration {
   id                     String @id @default(uuid())
   nume_copil             String

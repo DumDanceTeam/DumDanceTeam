@@ -9,6 +9,7 @@ import EditEventContainer from "./event/EditEventContainer";
 import EditPartnershipContainer from "./parteneriat/EditPartnershipContainer";
 import OnlineGallery from "./onlineGallery/OnlineGallery";
 import Registrations from "./registrations/Registrations";
+import { ToggleEvent } from "./toggle_event/ToggleEvent";
 
 export const revalidate = 0;
 
@@ -21,6 +22,7 @@ const Dashboard = async ({ event }: { event: string }) => {
   });
 
   const showRules = await prismadb.rule.findFirst();
+  const showEvent = await prismadb.eventToggle.findFirst();
 
   const initialPartnership = await prismadb.partnership.findMany({
     orderBy: {
@@ -71,6 +73,9 @@ const Dashboard = async ({ event }: { event: string }) => {
       </div>
       <div className="my-20">
         <Rules showRules={showRules!} />
+      </div>
+      <div className="my-20">
+        <ToggleEvent showEvent={showEvent!}/>
       </div>
 
       <div className="my-20">

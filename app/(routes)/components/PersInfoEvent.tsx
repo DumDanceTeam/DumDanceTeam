@@ -100,9 +100,9 @@ export const PersInfoEvent = ({}) => {
   return (
     <div>
       <Image
-        width={1600}
-        height={800}
-        src={"/event.jpeg"}
+        width={6000}
+        height={3140}
+        src={"/mihai.png"}
         quality={100}
         priority
         className="w-full h-full rounded-[10px]"
@@ -193,12 +193,12 @@ export const PersInfoEvent = ({}) => {
 
                   <SelectContent>
                     <SelectItem value="4 - 7 ani">4 - 7 ani</SelectItem>
-                    <SelectItem value="8 - 12 ani">8 - 12 ani</SelectItem>
-                    <SelectItem value="12 - 16 ani">12 - 16 ani</SelectItem>
+                    <SelectItem value="8 - 13 ani">8 - 13 ani</SelectItem>
+                    <SelectItem value="14 - 18 ani">14 - 18 ani</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormDescription>
-                  Deocamdată nu avem orele exacte...dar estimăm că în jurul prânzului. Vă vom comunica ora exactă a evenimentului personal, după încheierea perioadei de înscriere. Este important pentru noi să organizăm totul cu mare atenție și să ne asigurăm că fiecare participant se va bucura de o experiență de neuitat.
+                  Deocamdată nu avem orele exacte...dar estimăm în jurul prânzului. Vă vom comunica ora exactă a evenimentului personal, după încheierea perioadei de înscriere. Este important pentru noi să organizăm totul cu mare atenție și să ne asigurăm că fiecare participant se va bucura de o experiență de neuitat.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -229,7 +229,7 @@ export const PersInfoEvent = ({}) => {
                   Număr telefon de contact
                 </FormLabel>
                 <FormDescription>
-                  Vă rugăm ca acest număr sa fie corect petnru ca pe acest număr te vom anunța ora și toate detaliile.
+                  Te rugăm să verfici ca numărul fie corect. Pentru că aici te vom anunța ora și toate detaliile.
                 </FormDescription>
                 <FormControl>
                   <Input placeholder="" {...field} />
@@ -246,6 +246,9 @@ export const PersInfoEvent = ({}) => {
                 <FormLabel className="font-bold text-lg">
                   Numele și prenumele adultului însoțitor la eveniment
                 </FormLabel>
+                <FormDescription>
+                  Copii trebuie să fie însoțiți la eveniment, fie de un părinte, o bunică sau o mătușă...Scrie-ne cine îl va însoți pe copilul tău.
+                </FormDescription>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
@@ -274,17 +277,20 @@ export const PersInfoEvent = ({}) => {
             control={form.control}
             name="sesiune_foto"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel className="font-bold text-lg">
+              <FormItem className="flex flex-col sm:flex-row items-center">
+                <FormLabel className="font-bold text-lg md:whitespace-nowrap">
                   Optez pentru o sesiune foto cu Mihai Petre și prietenii
                 </FormLabel>
-                <FormControl>
-                  <Input
+               
+                     <FormControl>
+                      <Input
                     {...field}
                     type="checkbox"
                     value={field.value ? "true" : "false"}
-                  />
+                    />
+                
                 </FormControl>
+             
 
                 <FormMessage />
               </FormItem>
@@ -294,7 +300,7 @@ export const PersInfoEvent = ({}) => {
             control={form.control}
             name="tombola"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="flex flex-col sm:flex-row items-center">
                 <FormLabel className="font-bold text-lg">
                   Optez pentru participarea copilului la tombola cu premii educaționale din cadrul evenimentului
                 </FormLabel>
@@ -310,8 +316,16 @@ export const PersInfoEvent = ({}) => {
                   />
                 </FormControl>
                 
-                <div className="mt-10">
-                  <p className="text-center font-bold text-[1.5em]">
+              
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+            <div className="mt-10">
+            <p className="text-center font-bold text-[1.5em]">
+                    Informații eveniment
+                  </p>
+                  <p className="text-start text-[1.5em]">
                     Ce aducem noi?
                   </p>
                   <p>
@@ -323,8 +337,8 @@ export const PersInfoEvent = ({}) => {
 <span className="font-bold">Tombolă cu premii de neratat!</span>  Ce zici de o aventură educațională plină de surprize? Participă la tombolă și poți câștiga premii deosebite care îți vor deschide mintea și inima!<br/><br/>
 <span className="font-bold">Posibilitatea părinților de a se relaxa sau chiar de a intra în ritm!</span>  Părinții curajoși pot lăsa toate grijile acasă și pot lua parte la distracție, fie stând pe margine și savurând momentele, fie dând o tură de dans alături de cei mici!
 <br/><br/>
-<span className="font-bold">🎉 Ce aduceți voi?</span>
-Bună dispoziție în pachet mare!
+<span className="text-start text-[1.5em]">🎉 Ce aduceți voi? </span>
+ Bună dispoziție în pachet mare!
 O ținută lejeră pentru dans și distracție!
 Pantofi curați de schimb pentru a face față provocărilor cursului de dans!
 ...iar de restul ne ocupăm noi! 🎶
@@ -334,49 +348,30 @@ Așadar, pregătește-ți zâmbetul și spiritul de aventură, pentru că noi su
                 </div>
                 <div className="bg-white p-2 rounded-md max-h-[300px] overflow-scroll">
                   <p>
-                    Termeni și condiții *Completarea acestui formular reprezintă
-                    acordul expres, clar, liber consimţit şi neechivoc în ceea
-                    ce priveşte condiţiile, scopurile şi metodele de procesare a
-                    datelor şi informaţiilor cu caracter personal (inclusiv
-                    propriile imagini – sub formă de poze sau filmări)
-                    respectând astfel cerinţele Regulamentului (UE) 2016/679
-                    (GDPR) privind consimţământul persoanelor fizice cu privire
-                    la prelucrarea datelor cu caracter personal. *Prin
-                    înscrierea la această activitate, înțeleg ca locul copilului
-                    meu este rezervat si ma oblig sa particip la data si ora
-                    aleasa. Ma angajez ca vom fi prezenti cu 10 minute inainte
-                    de inceperea activitatii. *DDT își rezervă dreptul de a face
-                    orice modificări ulterioare necesare, cu condiția de a fi
-                    anunțate în cel mai scurt timp posibil. *Declarația de
-                    acord: Prin prezenta, confirm că am citit și am înțeles
-                    regulile și regulamentele activității și mă angajez să le
-                    respect în totalitate. *Exonerare de răspundere: În calitate
-                    de reprezentant legat al participantului, înțeleg și accept
-                    că organizatorul nu este responsabil pentru accidentele sau
-                    daunele care pot surveni în timpul sau în legătură cu acest
-                    eveniment, și renunț la orice pretenție legală împotriva
-                    organizatorului. *Informații cu caracter personal: Sunt de
-                    acord ca datele personale, furnizate în cadrul acestui
-                    formular, să fie colectate și prelucrate în conformitate cu
-                    politica de confidențialitate a organizatorului.
-                    *Consimțământ pentru minori: Declar că am autoritatea de a
-                    înregistra și a da consimțământul în numele minorilor care
-                    participă la acest eveniment. *Drepturile de imagine: Aprob
-                    utilizarea imaginilor și înregistrărilor video realizate în
-                    timpul acestui eveniment pentru scopuri promoționale sau
-                    informative. *Termenii și condițiile generale: Participarea
-                    la acest eveniment implică acceptarea tuturor termenilor și
-                    condițiilor stabilite de organizator. *Acord de
-                    confidențialitate: Datele personale furnizate vor fi
-                    păstrate confidențiale și nu vor fi partajate cu terțe părți
-                    fără consimțământul dumneavoastră, cu excepția cazurilor
-                    prevăzute de lege.
+                  Termeni și Condiții
+
+                  <br/><br/>1. Participarea: Participarea la eveniment este gratuită și deschisă tuturor persoanelor interesate, indiferent de vârstă sau nivel de pregătire în dans.
+<br/><br/>2. Înregistrarea: Participarea la cursul de dans organizat in cadrul evenimentului ”Te invitam la dans cu Dum Dance Team și Mihai Petre” din 11 mai 2024 de la Palatul Cultural Arad, este condiționată de înscrierea în prealabil prin intermediul site-ului nostru web www.dumdanceteam.com, până în data de 08.05.2024, inclusiv. Pentru orice alte informații folosiți următoarele date de contact: e-mail dumdanceteam@yahoo.com sau la numărul de telefon 0747914993.
+<br/><br/>3. Limita de participanți: Numărul de locuri disponibile este limitat, iar înscrierile se vor face în ordinea cronologică. În momentul ocupării tuturor locurile disponibile, înscrierile vor fi închise. Prin înscrierea la această activitate, înțeleg ca locul copilului meu este rezervat si ma oblig sa particip la data si ora aleasa. Mă angajez ca vom fi prezenti cu 10 minute inainte de începerea activitatii.
+<br/><br/>4. Accesul la locație: Accesul la locația evenimentului se va face cu 10 minute înainte de începerea activității, conform instrucțiunilor primite de la personalul de organizare. Participanții (copiii) trebuie să fie însoțiți și sunt rugați să respecte regulile și indicațiile echipei de securitate pentru a asigura un mediu sigur și plăcut pentru toți.
+<br/><br/>5. Responsabilitate: Participanții își asumă întreaga responsabilitate pentru eventualele accidente sau prejudicii suferite în timpul participării la cursuri sau activitățile organizate în cadrul evenimentului.
+<br/><br/>6. Confidențialitate: Toate informațiile personale furnizate în timpul înregistrării vor fi tratate cu confidențialitate și vor fi utilizate exclusiv în scopul organizării acestui eveniment. Nu vom partaja informațiile cu terțe părți fără consimțământul explicit al participantului.
+<br/><br/>7. Drepturi de imagine: Participanții își exprimă acordul pentru utilizarea imaginilor sau înregistrărilor video realizate în timpul evenimentului în scopuri de promovare și publicitate a activităților noastre. 
+<br/><br/>8. Modificări și anulări: Echipa de organizare își rezervă dreptul de a face modificări în programul evenimentului sau de a anula anumite activități în caz de forță majoră sau alte circumstanțe neprevăzute. Participanții vor fi informați în timp util despre orice modificări sau anulări.
+<br/><br/>9. Consimțământ legal: Prin participarea la eveniment, fiecare participant confirmă că a citit și înțeles acești termeni și condiții și își exprimă consimțământul în mod liber și informat pentru participarea la activitățile organizate în cadrul evenimentului. Completarea acestui formular reprezintă acordul expres, clar, liber consimţit şi neechivoc în ceea ce priveşte condiţiile, scopurile şi metodele de procesare a datelor şi informaţiilor cu caracter personal (inclusiv propriile imagini – sub formă de poze sau filmări) respectând astfel cerinţele Regulamentului (UE) 2016/679 (GDPR) privind consimţământul persoanelor fizice cu privire la prelucrarea datelor cu caracter personal.
+<br/><br/>10. Eventuale modificări: DDT își rezervă dreptul de a face orice modificări ulterioare necesare, cu condiția de a fi anunțate în cel mai scurt timp posibil.
+<br/><br/>11. Exonerare de răspundere: În calitate de reprezentant legat al participantului, înțeleg și accept că organizatorul nu este responsabil pentru accidentele sau daunele care pot surveni în timpul sau în legătură cu acest eveniment, și renunț la orice pretenție legală împotriva organizatorului.
+
+
+<br/><br/>12. Consimțământ pentru minori: Declar că am autoritatea de a înregistra și a da consimțământul în numele minorilor care participă la acest eveniment.
+
+<br/><br/>13. Drepturile de imagine: Aprob utilizarea imaginilor și înregistrărilor video realizate în timpul acestui eveniment pentru scopuri promoționale sau informative.
+
+<br/><br/>14. Termenii și condițiile generale: Participarea la acest eveniment implică acceptarea tuturor termenilor și condițiilor stabilite de organizator.
+
+<br/><br/>15. Declarația de acord: Prin prezenta, confirm că am citit și am înțeles regulile și regulamentele activității și mă angajez să le respect în totalitate.
                   </p>
                 </div>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <Button
             isLoading={isLoading}
             disabled={isLoading}

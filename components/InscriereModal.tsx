@@ -51,7 +51,7 @@ const InscriereModal = () => {
         e.stopPropagation();
         setIsOpen(false)
       }} className="w-7 h-7 text-black absolute right-0"/>
-            <Image src={"/event.jpeg"} width={1600} height={800} className="max-w-full max-h-full" alt="event"/>
+            <Image src={"/mihai.png"} width={1600} height={800} className="max-w-full max-h-full" alt="event"/>
             <Button className="bg-[#5485A7]">Înscrie-te acum</Button>
       </DialogContent>
     </Dialog>

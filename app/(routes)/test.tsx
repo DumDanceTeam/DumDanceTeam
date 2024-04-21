@@ -1,63 +1,63 @@
-import prismadb from "@/lib/db"
+import prismadb from"@/lib/db"
 
-const Test = async () => {
+const Test = async()=>{
 
-  const data = [
-    { name: "Balan Andrei", invitationLink: "https://dumdanceteam.com/Balan Andrei" },
-    { name: "Bondor Alexandru", invitationLink: "https://dumdanceteam.com/Bondor Alexandru" },
-    { name: "Borlea Andrei", invitationLink: "https://dumdanceteam.com/Borlea Andrei" },
-    { name: "Bozga Alexandra", invitationLink: "https://dumdanceteam.com/Bozga Alexandra" },
-    { name: "Bozga Alexandru", invitationLink: "https://dumdanceteam.com/Bozga Alexandru" },
-    { name: "Brinzan Ava", invitationLink: "https://dumdanceteam.com/Brinzan Ava" },
-    { name: "Bubulici Ilinca", invitationLink: "https://dumdanceteam.com/Bubulici Ilinca" },
-    { name: "Busta Rania", invitationLink: "https://dumdanceteam.com/Busta Rania" },
-    { name: "Buta Armin", invitationLink: "https://dumdanceteam.com/Buta Armin" },
-    { name: "Chebeleu Cedric", invitationLink: "https://dumdanceteam.com/Chebeleu Cedric" },
-    { name: "Ciulean Stefan", invitationLink: "https://dumdanceteam.com/Ciulean Stefan" },
-    { name: "Cristea Antonia", invitationLink: "https://dumdanceteam.com/Cristea Antonia" },
-    { name: "Cujba Lavinia", invitationLink: "https://dumdanceteam.com/Cujba Lavinia" },
-    { name: "Curt Cataleya", invitationLink: "https://dumdanceteam.com/Curt Cataleya" },
-    { name: "Dan Maria", invitationLink: "https://dumdanceteam.com/Dan Maria" },
-    { name: "Dragan Andrei", invitationLink: "https://dumdanceteam.com/Dragan Andrei" },
-    { name: "Dugulescu Gabriel", invitationLink: "https://dumdanceteam.com/Dugulescu Gabriel" },
-    { name: "Farcas Dominic", invitationLink: "https://dumdanceteam.com/Farcas Dominic" },
-    { name: "Flescan David", invitationLink: "https://dumdanceteam.com/Flescan David" },
-    { name: "Gheorghies Bogdan", invitationLink: "https://dumdanceteam.com/Gheorghies Bogdan" },
-    { name: "Ghilinta Carla", invitationLink: "https://dumdanceteam.com/Ghilinta Carla" },
-    { name: "Ghilinta Sophia", invitationLink: "https://dumdanceteam.com/Ghilinta Sophia" },
-    { name: "Giurgiu Carina", invitationLink: "https://dumdanceteam.com/Giurgiu Carina" },
-    { name: "Grigorete Andrei", invitationLink: "https://dumdanceteam.com/Grigorete Andrei" },
-    { name: "Griu Iris", invitationLink: "https://dumdanceteam.com/Griu Iris" },
-    { name: "Grofu Edi", invitationLink: "https://dumdanceteam.com/Grofu Edi" },
-    { name: "Hebristean Maisa", invitationLink: "https://dumdanceteam.com/Hebristean Maisa" },
-    { name: "Ioja Rares", invitationLink: "https://dumdanceteam.com/Ioja Rares" },
-    { name: "Iorgov Andrei", invitationLink: "https://dumdanceteam.com/Iorgov Andrei" },
-    { name: "Judea Ana Maria", invitationLink: "https://dumdanceteam.com/Judea Ana Maria" },
-    { name: "Jurca Dragos", invitationLink: "https://dumdanceteam.com/Jurca Dragos" },
-    { name: "Kallikkot Aman", invitationLink: "https://dumdanceteam.com/Kallikkot Aman" },
-    { name: "Lazea Eve", invitationLink: "https://dumdanceteam.com/Lazea Eve"},
+const data=[
+{name:"BalanAndrei",invitationLink:"https://dumdanceteam.com/BalanAndrei"},
+{name:"BondorAlexandru",invitationLink:"https://dumdanceteam.com/BondorAlexandru"},
+{name:"BorleaAndrei",invitationLink:"https://dumdanceteam.com/BorleaAndrei"},
+{name:"BozgaAlexandra",invitationLink:"https://dumdanceteam.com/BozgaAlexandra"},
+{name:"BozgaAlexandru",invitationLink:"https://dumdanceteam.com/BozgaAlexandru"},
+{name:"BrinzanAva",invitationLink:"https://dumdanceteam.com/BrinzanAva"},
+{name:"BubuliciIlinca",invitationLink:"https://dumdanceteam.com/BubuliciIlinca"},
+{name:"BustaRania",invitationLink:"https://dumdanceteam.com/BustaRania"},
+{name:"ButaArmin",invitationLink:"https://dumdanceteam.com/ButaArmin"},
+{name:"ChebeleuCedric",invitationLink:"https://dumdanceteam.com/ChebeleuCedric"},
+{name:"CiuleanStefan",invitationLink:"https://dumdanceteam.com/CiuleanStefan"},
+{name:"CristeaAntonia",invitationLink:"https://dumdanceteam.com/CristeaAntonia"},
+{name:"CujbaLavinia",invitationLink:"https://dumdanceteam.com/CujbaLavinia"},
+{name:"CurtCataleya",invitationLink:"https://dumdanceteam.com/CurtCataleya"},
+{name:"DanMaria",invitationLink:"https://dumdanceteam.com/DanMaria"},
+{name:"DraganAndrei",invitationLink:"https://dumdanceteam.com/DraganAndrei"},
+{name:"DugulescuGabriel",invitationLink:"https://dumdanceteam.com/DugulescuGabriel"},
+{name:"FarcasDominic",invitationLink:"https://dumdanceteam.com/FarcasDominic"},
+{name:"FlescanDavid",invitationLink:"https://dumdanceteam.com/FlescanDavid"},
+{name:"GheorghiesBogdan",invitationLink:"https://dumdanceteam.com/GheorghiesBogdan"},
+{name:"GhilintaCarla",invitationLink:"https://dumdanceteam.com/GhilintaCarla"},
+{name:"GhilintaSophia",invitationLink:"https://dumdanceteam.com/GhilintaSophia"},
+{name:"GiurgiuCarina",invitationLink:"https://dumdanceteam.com/GiurgiuCarina"},
+{name:"GrigoreteAndrei",invitationLink:"https://dumdanceteam.com/GrigoreteAndrei"},
+{name:"GriuIris",invitationLink:"https://dumdanceteam.com/GriuIris"},
+{name:"GrofuEdi",invitationLink:"https://dumdanceteam.com/GrofuEdi"},
+{name:"HebristeanMaisa",invitationLink:"https://dumdanceteam.com/HebristeanMaisa"},
+{name:"IojaRares",invitationLink:"https://dumdanceteam.com/IojaRares"},
+{name:"IorgovAndrei",invitationLink:"https://dumdanceteam.com/IorgovAndrei"},
+{name:"JudeaAnaMaria",invitationLink:"https://dumdanceteam.com/JudeaAnaMaria"},
+{name:"JurcaDragos",invitationLink:"https://dumdanceteam.com/JurcaDragos"},
+{name:"KallikkotAman",invitationLink:"https://dumdanceteam.com/KallikkotAman"},
+{name:"LazeaEve",invitationLink:"https://dumdanceteam.com/LazeaEve"},
 
-    { name: "Liusnea Alexandra", invitationLink: "https://dumdanceteam.com/Liusnea Alexandra"},
-    { name: "Lup Ana Maria", invitationLink: "https://dumdanceteam.com/Lup Ana Maria"},
-    { name: "Marc Ilinca", invitationLink: "https://dumdanceteam.com/Marc Ilinca"},
-    { name: "Marian Amalia", invitationLink: "https://dumdanceteam.com/Marian Amalia"},
-    { name: "Memete David", invitationLink: "https://dumdanceteam.com/Memete David"},
-    { name: "Mocan Andreea", invitationLink: "https://dumdanceteam.com/Mocan Andreea"},
-    { name: "Motocan Natalia", invitationLink: "https://dumdanceteam.com/Motocan Natalia"},
-    { name: "Onea Sophia", invitationLink: "https://dumdanceteam.com/Onea Sophia"},
-    { name: "Paiusan Sergiu", invitationLink: "https://dumdanceteam.com/Paiusan Sergiu"},
-    { name: "Petreus Bogdan", invitationLink: "https://dumdanceteam.com/Petreus Bogdan"},
-    { name: "Pim Mihaela", invitationLink: "https://dumdanceteam.com/Pim Mihaela"},
-    { name: "Rapcau Rares", invitationLink: "https://dumdanceteam.com/Rapcau Rares"},
-    { name: "Rusu Antonia", invitationLink: "https://dumdanceteam.com/Rusu Antonia"},
-    { name: "Stan Edi", invitationLink: "https://dumdanceteam.com/Stan Edi"},
-    { name: "Turcus Ania", invitationLink: "https://dumdanceteam.com/Turcus Ania"},
+{name:"LiusneaAlexandra",invitationLink:"https://dumdanceteam.com/LiusneaAlexandra"},
+{name:"LupAnaMaria",invitationLink:"https://dumdanceteam.com/LupAnaMaria"},
+{name:"MarcIlinca",invitationLink:"https://dumdanceteam.com/MarcIlinca"},
+{name:"MarianAmalia",invitationLink:"https://dumdanceteam.com/MarianAmalia"},
+{name:"MemeteDavid",invitationLink:"https://dumdanceteam.com/MemeteDavid"},
+{name:"MocanAndreea",invitationLink:"https://dumdanceteam.com/MocanAndreea"},
+{name:"MotocanNatalia",invitationLink:"https://dumdanceteam.com/MotocanNatalia"},
+{name:"OneaSophia",invitationLink:"https://dumdanceteam.com/OneaSophia"},
+{name:"PaiusanSergiu",invitationLink:"https://dumdanceteam.com/PaiusanSergiu"},
+{name:"PetreusBogdan",invitationLink:"https://dumdanceteam.com/PetreusBogdan"},
+{name:"PimMihaela",invitationLink:"https://dumdanceteam.com/PimMihaela"},
+{name:"RapcauRares",invitationLink:"https://dumdanceteam.com/RapcauRares"},
+{name:"RusuAntonia",invitationLink:"https://dumdanceteam.com/RusuAntonia"},
+{name:"StanEdi",invitationLink:"https://dumdanceteam.com/StanEdi"},
+{name:"TurcusAnia",invitationLink:"https://dumdanceteam.com/TurcusAnia"},
 
-  ]
-  
-  return (
-    <div>Test</div>
-  )
+]
+
+return(
+<div>Test</div>
+)
 }
 
 export default Test

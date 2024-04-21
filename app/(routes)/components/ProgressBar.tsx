@@ -11,16 +11,58 @@ export function ProgressBar() {
 
   React.useEffect(() => {
     if (currentDate.getDate() === 21) {
-      setProgress(25);
+      setProgress(0);
     }
     if (currentDate.getDate() === 22) {
-      setProgress(50);
+      setProgress((prevState)=>prevState+5.5);
     }
     if (currentDate.getDate() === 23) {
-      setProgress(75);
+      setProgress((prevState)=>prevState+5.5);
     }
     if (currentDate.getDate() === 24) {
-      setProgress(100);
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 25) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 26) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 27) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 28) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 29) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 30) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 1) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() ===2) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 3) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 4) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 5) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 6) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 7) {
+      setProgress((prevState)=>prevState+5.5);
+    }
+    if (currentDate.getDate() === 8) {
+      setProgress((prevState)=>prevState+5.5);
     }
   }, []);
 

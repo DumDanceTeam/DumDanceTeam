@@ -302,7 +302,8 @@ export const PersInfoEvent = ({}) => {
             render={({ field }) => (
               <FormItem className="flex flex-col sm:flex-row items-center">
                 <FormLabel className="font-bold text-lg">
-                  Optez pentru participarea copilului la tombola cu premii educaționale din cadrul evenimentului
+                  Optez pentru participarea copilului la tombola cu premii
+                  educaționale din cadrul evenimentului
                 </FormLabel>
                 <FormDescription>
                   Nu-ți fă griji! Toți copiii vor fi premiați, dar avem și o

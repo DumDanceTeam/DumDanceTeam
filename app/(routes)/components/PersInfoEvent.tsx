@@ -301,14 +301,17 @@ export const PersInfoEvent = ({}) => {
             name="tombola"
             render={({ field }) => (
               <FormItem className="flex flex-col sm:flex-row items-center">
-                <FormLabel className="font-bold text-lg">
-                  Optez pentru participarea copilului la tombola cu premii
-                  educaționale din cadrul evenimentului
-                </FormLabel>
-                <FormDescription>
-                  Nu-ți fă griji! Toți copiii vor fi premiați, dar avem și o
-                  tombolă specială cu premii educative pentru copii.
-                </FormDescription>
+                <div className="flex flex-col">
+                  <FormLabel className="font-bold text-lg">
+                    Optez pentru participarea copilului la tombola cu premii
+                    educaționale din cadrul evenimentului
+                  </FormLabel>
+                  <FormDescription>
+                    Nu-ți fă griji! Toți copiii vor fi premiați, dar avem și o
+                    tombolă specială cu premii educative pentru copii.
+                  </FormDescription>
+                </div>
+                
                 <FormControl>
                   <Input
                     {...field}
@@ -338,12 +341,16 @@ export const PersInfoEvent = ({}) => {
 <span className="font-bold">Tombolă cu premii de neratat!</span>  Ce zici de o aventură educațională plină de surprize? Participă la tombolă și poți câștiga premii deosebite care îți vor deschide mintea și inima!<br/><br/>
 <span className="font-bold">Posibilitatea părinților de a se relaxa sau chiar de a intra în ritm!</span>  Părinții curajoși pot lăsa toate grijile acasă și pot lua parte la distracție, fie stând pe margine și savurând momentele, fie dând o tură de dans alături de cei mici!
 <br/><br/>
-<span className="text-start text-[1.5em]">🎉 Ce aduceți voi? </span>
- Bună dispoziție în pachet mare!
-O ținută lejeră pentru dans și distracție!
-Pantofi curați de schimb pentru a face față provocărilor cursului de dans!
+<span className="text-start text-[1.5em]">🎉 Ce aduceți voi? </span><br/>
+ <span className="font-bold">Bună dispoziție</span> în pachet mare!<br/><br/>
+ <span className="font-bold">
+  O ținută lejeră
+ </span> pentru dans și distracție!<br/><br/>
+ <span className="font-bold">
+ Pantofi curați
+ </span> de schimb pentru a face față provocărilor cursului de dans!<br/>
 ...iar de restul ne ocupăm noi! 🎶
-
+<br/><br/>
 Așadar, pregătește-ți zâmbetul și spiritul de aventură, pentru că noi suntem aici să ne asigurăm că vei pleca acasă cu amintiri minunate în pași de dans și cu inima plină de bucurie! 💃🕺
                   </p>
                 </div>

@@ -16,6 +16,9 @@ const page = async ({searchParams}:{searchParams:{nume: string}}) => {
       <p className="text-center mb-5 font-bold">
         Completează formularul de mai jos. Locurile sunt limitate
       </p>
+      <p>
+      Înscrierea la evenimentul ”Ritmul DDT: Aradul dansează cu Mihai Petre și Dum Dance Team” se realizează completând acest formular, pană în data de 08.05.2024, în limita locurilor disponibile. Locurile sunt limitate, deci nu rata șansa pentru prima dată în Arad. Înscrie-te acum pentru a fi sigur că ai parte de o experiență cultural-educativă minunată ! 🌟
+      </p>
       <div className="my-10">
         <ProgressBar />
       </div>

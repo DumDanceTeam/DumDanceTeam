@@ -10,7 +10,7 @@ const page = ({ params }: { params: { numeCopil: string } }) => {
         <p className="font-bold text-xl text-center mb-5">
           <span className="underline underline-offset-2">
             {decodeURIComponent(params.numeCopil)}{" "}
-          </span>
+          </span><br/>
           te-a invitat la eveniment!
         </p>
         <Image

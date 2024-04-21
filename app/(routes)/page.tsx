@@ -12,12 +12,10 @@ import Gallery from "@/components/about/Gallery";
 import Referinte from "./components/Referinte";
 import Recommends from "./components/Recommends";
 import RevealRightSlideIn from "@/components/Reveal/RevealRightSlide";
-import Test from "./test";
 
 export default function Home() {
   return (
     <main className="">
-      <Test/>
       <Hero />
       <div className="my-10 sm:mb-20 w-full">
         <div className="hidden sm:block">

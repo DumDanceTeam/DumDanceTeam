@@ -285,20 +285,17 @@ export const PersInfoEvent = ({}) => {
               </FormItem>
             )}
           />
-           {/* <FormField
+
+      
+          <FormField
             control={form.control}
-            name="tombola"
+            name="sesiune_foto"
             render={({ field }) => (
-              <FormItem className="flex flex-col sm:flex-row items-center justify-between">
+              <FormItem className="flex flex-col sm:flex-row items-center justify-between gap-5">
                 <div className="flex flex-col">
-                  <FormLabel className="font-bold text-lg">
-                    Optez pentru participarea copilului la tombola cu premii
-                    educaționale din cadrul evenimentului
+                  <FormLabel className="font-bold text-lg md:whitespace-nowrap">
+                    Optez pentru o sesiune foto cu Mihai Petre și prietenii
                   </FormLabel>
-                  <FormDescription>
-                    Nu-ți fă griji! Toți copiii vor fi premiați, dar avem și o
-                    tombolă specială cu premii educative pentru copii.
-                  </FormDescription>
                 </div>
 
                 <FormControl>
@@ -315,34 +312,12 @@ export const PersInfoEvent = ({}) => {
                 <FormMessage />
               </FormItem>
             )}
-          /> */}
-          <FormField
-            control={form.control}
-            name="sesiune_foto"
-            render={({ field }) => (
-              <FormItem className="flex flex-col sm:flex-row items-center">
-                <FormLabel className="font-bold text-lg md:whitespace-nowrap">
-                  Optez pentru o sesiune foto cu Mihai Petre și prietenii
-                </FormLabel>
-
-                <FormControl>
-                  <Input
-                    {...field}
-                    type="checkbox"
-                    value={field.value ? "true" : "false"}
-                  />
-                </FormControl>
-
-                <FormMessage />
-              </FormItem>
-            )}
           />
-
           <FormField
             control={form.control}
             name="tombola"
             render={({ field }) => (
-              <FormItem className="flex flex-col sm:flex-row items-center justify-between">
+              <FormItem className="flex flex-col sm:flex-row items-center justify-between gap-5">
                 <div className="flex flex-col">
                   <FormLabel className="font-bold text-lg">
                     Optez pentru participarea copilului la tombola cu premii

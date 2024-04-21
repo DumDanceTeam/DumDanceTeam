@@ -11,7 +11,7 @@ export function ProgressBar() {
 
   React.useEffect(() => {
     if (currentDate.getDate() === 21) {
-      setProgress(0);
+      setProgress(1);
     }
     if (currentDate.getDate() === 22) {
       setProgress((prevState)=>prevState+5.5);

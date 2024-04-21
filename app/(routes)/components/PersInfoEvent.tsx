@@ -198,7 +198,12 @@ export const PersInfoEvent = ({}) => {
                   </SelectContent>
                 </Select>
                 <FormDescription>
-                  Deocamdată nu avem orele exacte...dar estimăm că în jurul prânzului. Vă vom comunica ora exactă a evenimentului personal, după încheierea perioadei de înscriere. Este important pentru noi să organizăm totul cu mare atenție și să ne asigurăm că fiecare participant se va bucura de o experiență de neuitat.
+                  Deocamdată nu avem orele exacte...dar estimăm că în jurul
+                  prânzului. Vă vom comunica ora exactă a evenimentului
+                  personal, după încheierea perioadei de înscriere. Este
+                  important pentru noi să organizăm totul cu mare atenție și să
+                  ne asigurăm că fiecare participant se va bucura de o
+                  experiență de neuitat.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -229,7 +234,8 @@ export const PersInfoEvent = ({}) => {
                   Număr telefon de contact
                 </FormLabel>
                 <FormDescription>
-                  Vă rugăm ca acest număr sa fie corect petnru ca pe acest număr te vom anunța ora și toate detaliile.
+                  Vă rugăm ca acest număr sa fie corect petnru ca pe acest număr
+                  te vom anunța ora și toate detaliile.
                 </FormDescription>
                 <FormControl>
                   <Input placeholder="" {...field} />
@@ -296,7 +302,8 @@ export const PersInfoEvent = ({}) => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="font-bold text-lg">
-                  Optez pentru participarea copilului la tombola cu premii educaționale din cadrul evenimentului
+                  Optez pentru participarea copilului la tombola cu premii
+                  educaționale din cadrul evenimentului
                 </FormLabel>
                 <FormDescription>
                   Nu-ți fă griji! Toți copiii vor fi premiați, dar avem și o
@@ -309,27 +316,73 @@ export const PersInfoEvent = ({}) => {
                     value={field.value ? "true" : "false"}
                   />
                 </FormControl>
-                
+
                 <div className="mt-10">
                   <p className="text-center font-bold text-[1.5em]">
                     Ce aducem noi?
                   </p>
                   <p>
-                  <span className="font-bold">O oră de distracție non-stop!</span> Vom umple aerul cu ritmuri vesele, multă mișcare și o doză sănătoasă de bună dispoziție!<br/><br/>
-<span className="font-bold">Lecții de dans interactivă cu DDT !</span> Antrenorii și instructorii noștri DDT sunt gata să te învețe pașii cei mai cool și să-ți dea energie pozitivă pentru zile întregi!<br/><br/>
-<span className="font-bold">Dans cu Mihai Petre, pe bune !</span> Da, ai citit bine! Ai ocazia unică să înveți mișcări de dans de la legenda dansului, care este pentru prima dată în Arad !<br/><br/>
-<span className="font-bold">Sesiune foto de senzație!</span>  Hai să facem amintiri de neuitat! O poză cu Mihai Petre și prietenii tăi va fi cu siguranță momentul care va străluci în albumul tău de amintiri !<br/><br/>
-<span className="font-bold">Ceremonie de premiere pentru toți!</span>  Nu există niciun pierzător când vine vorba de distracție! Fiecare copil va primi o recompensă pentru efortul lor!<br/><br/>
-<span className="font-bold">Tombolă cu premii de neratat!</span>  Ce zici de o aventură educațională plină de surprize? Participă la tombolă și poți câștiga premii deosebite care îți vor deschide mintea și inima!<br/><br/>
-<span className="font-bold">Posibilitatea părinților de a se relaxa sau chiar de a intra în ritm!</span>  Părinții curajoși pot lăsa toate grijile acasă și pot lua parte la distracție, fie stând pe margine și savurând momentele, fie dând o tură de dans alături de cei mici!
-<br/><br/>
-<span className="font-bold">🎉 Ce aduceți voi?</span>
-Bună dispoziție în pachet mare!
-O ținută lejeră pentru dans și distracție!
-Pantofi curați de schimb pentru a face față provocărilor cursului de dans!
-...iar de restul ne ocupăm noi! 🎶
-
-Așadar, pregătește-ți zâmbetul și spiritul de aventură, pentru că noi suntem aici să ne asigurăm că vei pleca acasă cu amintiri minunate în pași de dans și cu inima plină de bucurie! 💃🕺
+                    <span className="font-bold">
+                      O oră de distracție non-stop!
+                    </span>{" "}
+                    Vom umple aerul cu ritmuri vesele, multă mișcare și o doză
+                    sănătoasă de bună dispoziție!
+                    <br />
+                    <br />
+                    <span className="font-bold">
+                      Lecții de dans interactivă cu DDT !
+                    </span>{" "}
+                    Antrenorii și instructorii noștri DDT sunt gata să te învețe
+                    pașii cei mai cool și să-ți dea energie pozitivă pentru zile
+                    întregi!
+                    <br />
+                    <br />
+                    <span className="font-bold">
+                      Dans cu Mihai Petre, pe bune !
+                    </span>{" "}
+                    Da, ai citit bine! Ai ocazia unică să înveți mișcări de dans
+                    de la legenda dansului, care este pentru prima dată în Arad
+                    !<br />
+                    <br />
+                    <span className="font-bold">
+                      Sesiune foto de senzație!
+                    </span>{" "}
+                    Hai să facem amintiri de neuitat! O poză cu Mihai Petre și
+                    prietenii tăi va fi cu siguranță momentul care va străluci
+                    în albumul tău de amintiri !<br />
+                    <br />
+                    <span className="font-bold">
+                      Ceremonie de premiere pentru toți!
+                    </span>{" "}
+                    Nu există niciun pierzător când vine vorba de distracție!
+                    Fiecare copil va primi o recompensă pentru efortul lor!
+                    <br />
+                    <br />
+                    <span className="font-bold">
+                      Tombolă cu premii de neratat!
+                    </span>{" "}
+                    Ce zici de o aventură educațională plină de surprize?
+                    Participă la tombolă și poți câștiga premii deosebite care
+                    îți vor deschide mintea și inima!
+                    <br />
+                    <br />
+                    <span className="font-bold">
+                      Posibilitatea părinților de a se relaxa sau chiar de a
+                      intra în ritm!
+                    </span>{" "}
+                    Părinții curajoși pot lăsa toate grijile acasă și pot lua
+                    parte la distracție, fie stând pe margine și savurând
+                    momentele, fie dând o tură de dans alături de cei mici!
+                    <br />
+                    <br />
+                    <span className="font-bold">🎉 Ce aduceți voi?</span> Bună
+                    dispoziție în pachet mare! O ținută lejeră pentru dans și
+                    distracție! Pantofi curați de schimb pentru a face față
+                    provocărilor cursului de dans! ...iar de restul ne ocupăm
+                    noi! 🎶 Așadar, pregătește-ți zâmbetul și spiritul de
+                    aventură, pentru că noi suntem aici să ne asigurăm că vei
+                    pleca acasă cu amintiri minunate în pași de dans și cu inima
+                    plină de bucurie! 💃🕺
                   </p>
                 </div>
                 <div className="bg-white p-2 rounded-md max-h-[300px] overflow-scroll">

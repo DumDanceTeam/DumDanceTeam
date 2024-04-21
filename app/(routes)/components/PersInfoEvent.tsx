@@ -125,7 +125,7 @@ export const PersInfoEvent = ({}) => {
               numeInvitatie: invitationName?.trim() || "",
             })
           )}
-          className="border-2 mt-10 border-[#3AB5FB] rounded-[6px] p-10 space-y-8 max-w-[500px] mx-auto"
+          className="border-2 mt-10 border-[#3AB5FB] rounded-[6px] p-10 space-y-8 max-w-[1000px] mx-auto"
         >
           <FormField
             control={form.control}
@@ -228,6 +228,9 @@ export const PersInfoEvent = ({}) => {
                 <FormLabel className="font-bold text-lg">
                   Număr telefon de contact
                 </FormLabel>
+                <FormDescription>
+                  Vă rugăm ca acest număr sa fie corect petnru ca pe acest număr te vom anunța ora și toate detaliile.
+                </FormDescription>
                 <FormControl>
                   <Input placeholder="" {...field} />
                 </FormControl>
@@ -273,7 +276,7 @@ export const PersInfoEvent = ({}) => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="font-bold text-lg">
-                  Optez pentru o sesiune foto cu Mihai Petre și prietenii (Opțional)
+                  Optez pentru o sesiune foto cu Mihai Petre și prietenii
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -293,8 +296,12 @@ export const PersInfoEvent = ({}) => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="font-bold text-lg">
-                Vrei să încerci norocul și să câștigi premii deosebite? Participă la tombola cu premii educaționale și lasă-te surprins de aventurile care te așteaptă!
+                  Optez pentru participarea copilului la tombola cu premii educaționale din cadrul evenimentului
                 </FormLabel>
+                <FormDescription>
+                  Nu-ți fă griji! Toți copiii vor fi premiați, dar avem și o
+                  tombolă specială cu premii educative pentru copii.
+                </FormDescription>
                 <FormControl>
                   <Input
                     {...field}
@@ -302,24 +309,21 @@ export const PersInfoEvent = ({}) => {
                     value={field.value ? "true" : "false"}
                   />
                 </FormControl>
-                <FormDescription>
-                  Nu-ți fă griji! Toți copiii vor fi premiați, dar avem și o
-                  tombolă specială cu premii educative pentru copii.
-                </FormDescription>
-                <div>
-                  <p className="text-center font-bold">
+                
+                <div className="mt-10">
+                  <p className="text-center font-bold text-[1.5em]">
                     Ce aducem noi?
                   </p>
                   <p>
                   <span className="font-bold">O oră de distracție non-stop!</span> Vom umple aerul cu ritmuri vesele, multă mișcare și o doză sănătoasă de bună dispoziție!<br/><br/>
 <span className="font-bold">Lecții de dans interactivă cu DDT !</span> Antrenorii și instructorii noștri DDT sunt gata să te învețe pașii cei mai cool și să-ți dea energie pozitivă pentru zile întregi!<br/><br/>
-<span className="font-bold">Dans cu Mihai Petre, pe bune!</span>Da, ai citit bine! Ai ocazia unică să înveți mișcări de dans de la legenda dansului, care este pentru prima dată în Arad !<br/><br/>
+<span className="font-bold">Dans cu Mihai Petre, pe bune !</span> Da, ai citit bine! Ai ocazia unică să înveți mișcări de dans de la legenda dansului, care este pentru prima dată în Arad !<br/><br/>
 <span className="font-bold">Sesiune foto de senzație!</span>  Hai să facem amintiri de neuitat! O poză cu Mihai Petre și prietenii tăi va fi cu siguranță momentul care va străluci în albumul tău de amintiri !<br/><br/>
 <span className="font-bold">Ceremonie de premiere pentru toți!</span>  Nu există niciun pierzător când vine vorba de distracție! Fiecare copil va primi o recompensă pentru efortul lor!<br/><br/>
 <span className="font-bold">Tombolă cu premii de neratat!</span>  Ce zici de o aventură educațională plină de surprize? Participă la tombolă și poți câștiga premii deosebite care îți vor deschide mintea și inima!<br/><br/>
 <span className="font-bold">Posibilitatea părinților de a se relaxa sau chiar de a intra în ritm!</span>  Părinții curajoși pot lăsa toate grijile acasă și pot lua parte la distracție, fie stând pe margine și savurând momentele, fie dând o tură de dans alături de cei mici!
-
-🎉 Ce aduceți voi?
+<br/><br/>
+<span className="font-bold">🎉 Ce aduceți voi?</span>
 Bună dispoziție în pachet mare!
 O ținută lejeră pentru dans și distracție!
 Pantofi curați de schimb pentru a face față provocărilor cursului de dans!

@@ -57,6 +57,13 @@ model Testmonial {
   createdAt   DateTime @default(now())
 }
 
+model Invitation {
+  id  String @id @default(uuid())
+  name  String
+  invitationLink String
+  nrInvitati     Int  @default(0)
+}
+
 model Rule {
   id   String  @id @default(uuid())
   show Boolean @default(false)

@@ -90,6 +90,16 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
             ))}
           </div>
         </div>
+        <div className="flex flex-col gap-10">
+          <p>inregistrat</p>
+          <div className="space-y-5">
+            {allRegistrations.map((reg) => (
+              <div key={reg.id} className="text-sm font-normal">
+                <p className="whitespace-nowrap">{new Date(reg.createdAt).toLocaleString()}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

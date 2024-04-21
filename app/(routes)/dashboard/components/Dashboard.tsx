@@ -10,6 +10,7 @@ import EditPartnershipContainer from "./parteneriat/EditPartnershipContainer";
 import OnlineGallery from "./onlineGallery/OnlineGallery";
 import Registrations from "./registrations/Registrations";
 import { ToggleEvent } from "./toggle_event/ToggleEvent";
+import Invitations from "./invitatii/Invitatii";
 
 export const revalidate = 0;
 
@@ -35,6 +36,8 @@ const Dashboard = async ({ event }: { event: string }) => {
       createdAt:"desc"
     }
   })
+
+  const invitations = await prismadb.invitation.findMany();
 
   return (
     <div className="">
@@ -79,7 +82,16 @@ const Dashboard = async ({ event }: { event: string }) => {
       </div>
 
       <div className="my-20">
+        <div className="flex justify-center">
+          <p className="text-[1.1em] mb-5 sm:text-start xss:text-[1.2em] sm:text-[1.3em] md:text-[1.4em] lg:text-[1.5em] font-bold">Înregistrări la eveniment</p>
+        </div>
         <Registrations allRegistrations={registrations}/>
+      </div>
+      <div className="my-20">
+        <div className="flex justify-center">
+          <p className="text-[1.1em] mb-5 sm:text-start xss:text-[1.2em] sm:text-[1.3em] md:text-[1.4em] lg:text-[1.5em] font-bold">Invitații / copil</p>
+        </div>
+        <Invitations allInvitations={invitations}/>
       </div>
     </div>
   );

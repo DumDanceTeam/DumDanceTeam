@@ -29,11 +29,17 @@ import {
 } from "@/validators";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { useSearchParams } from "next/navigation";
 
-interface PersInfoEventProps {}
 
-export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
+export const PersInfoEvent = ({}) => {
   const [isLoading, setIsLoading] = useState(false);
+  const params = useSearchParams();
+  const invitationName = params.get("nume");
+
+  console.log(invitationName);
+  
+  
 
   const form = useForm<RegistrationDataRequest>({
     resolver: zodResolver(RegistrationDataValidator),
@@ -51,6 +57,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
       email_parinte,
       sesiune_foto,
       tombola,
+      numeInvitatie,
     }: RegistrationDataRequest) => {
       setIsLoading(true);
       const payload: RegistrationDataRequest = {
@@ -64,6 +71,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
         email_parinte,
         sesiune_foto,
         tombola,
+        numeInvitatie
       };
 
       const { data } = await axios.post("/api/inscriereEveniment", payload);
@@ -110,6 +118,7 @@ export const PersInfoEvent: FC<PersInfoEventProps> = ({}) => {
             email_parinte: form.getValues("email_parinte"),
             sesiune_foto: form.getValues("sesiune_foto"),
             tombola: form.getValues("tombola"),
+            numeInvitatie: invitationName?.trim() || "",
           })
         )}
         className="border-2 mt-10 border-[#3AB5FB] rounded-[6px] p-10 space-y-8 max-w-[500px] mx-auto"

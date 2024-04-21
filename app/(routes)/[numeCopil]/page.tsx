@@ -9,7 +9,7 @@ const page = ({ params }: { params: { numeCopil: string } }) => {
       <div className="border-2 p-10 shadow-2xl rounded-[10px] w-fit">
         <p className="font-bold text-xl text-center mb-5">
           <span className="underline underline-offset-2">
-            {params.numeCopil}{" "}
+            {decodeURIComponent(params.numeCopil)}{" "}
           </span>
           te-a invitat la eveniment!
         </p>

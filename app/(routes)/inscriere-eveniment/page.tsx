@@ -1,13 +1,11 @@
-import { FC } from "react";
 import { PersInfoEvent } from "../components/PersInfoEvent";
 import prismadb from "@/lib/db";
 import { redirect } from "next/navigation";
 import { ProgressBar } from "../components/ProgressBar";
-interface pageProps {}
 
-const page: FC<pageProps> = async ({}) => {
+const page = async ({searchParams}:{searchParams:{nume: string}}) => {
   const showEvent = await prismadb.eventToggle.findFirst();
-
+  
   if (showEvent) {
     if (!showEvent.show) return redirect("/");
   } else return redirect("/");

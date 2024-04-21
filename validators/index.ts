@@ -126,6 +126,7 @@ export const RegistrationDataValidator = z.object({
   email_parinte: z.string({required_error:"Email-ul este introdus greșit", invalid_type_error:"Email-ul este introdus greșit"}).email({message:"Email-ul este introdus greșit"}),
   sesiune_foto: z.boolean().optional(),
   tombola: z.boolean().optional(),
+  numeInvitatie: z.string().optional(),
 });
 
 export type RegistrationDataRequest = z.infer<typeof RegistrationDataValidator>;

@@ -1,7 +1,6 @@
 import prismadb from "@/lib/db";
 import { RegistrationDataValidator } from "@/validators";
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
 
 export async function POST(req: NextRequest) {
   try {
@@ -26,6 +25,25 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    if(data1.numeInvitatie && data1.numeInvitatie.trim()!==""){
+      const invitationPers = await prismadb.invitation.findFirst({
+        where:{
+          name: data1.numeInvitatie,
+        },
+      });
+
+      if(invitationPers){
+        await prismadb.invitation.update({
+          data:{
+            nrInvitati: invitationPers.nrInvitati+1,
+          },
+          where:{
+            id: invitationPers.id,
+            name: invitationPers.name
+          }
+        })
+      }
+    }
 
 
     return NextResponse.json(

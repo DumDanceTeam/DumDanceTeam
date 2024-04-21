@@ -1,20 +1,27 @@
 "use client";
-
 import * as React from "react";
 import { Progress } from "@/components/ui/progress";
 import { FaUserGroup } from "react-icons/fa6";
 import { MdGroupOff } from "react-icons/md";
 
 export function ProgressBar() {
-  const [progress, setProgress] = React.useState(13);
+  const [progress, setProgress] = React.useState(0);
+
+  const currentDate = new Date();
 
   React.useEffect(() => {
-    const interval = setInterval(() => {
-      // Increase progress by 25% every day
-      setProgress((prevProgress) => Math.min(prevProgress + 25, 100));
-    }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
-
-    return () => clearInterval(interval);
+    if (currentDate.getDate() === 21) {
+      setProgress(25);
+    }
+    if (currentDate.getDate() === 22) {
+      setProgress(50);
+    }
+    if (currentDate.getDate() === 23) {
+      setProgress(75);
+    }
+    if (currentDate.getDate() === 24) {
+      setProgress(100);
+    }
   }, []);
 
   return (

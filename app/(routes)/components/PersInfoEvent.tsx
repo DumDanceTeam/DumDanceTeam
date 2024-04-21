@@ -33,7 +33,6 @@ import { useSearchParams } from "next/navigation";
 
 
 export const PersInfoEvent = ({}) => {
-  const [isLoading, setIsLoading] = useState(false);
   const params = useSearchParams();
   const invitationName = params.get("nume");
 
@@ -45,7 +44,7 @@ export const PersInfoEvent = ({}) => {
     resolver: zodResolver(RegistrationDataValidator),
   });
 
-  const { mutate: createRegistration } = useMutation({
+  const { mutate: createRegistration, isLoading } = useMutation({
     mutationFn: async ({
       nume_copil,
       varsta_copil,
@@ -59,7 +58,6 @@ export const PersInfoEvent = ({}) => {
       tombola,
       numeInvitatie,
     }: RegistrationDataRequest) => {
-      setIsLoading(true);
       const payload: RegistrationDataRequest = {
         nume_copil,
         varsta_copil,
@@ -85,7 +83,6 @@ export const PersInfoEvent = ({}) => {
       toast.error("Ceva a mers greșit. Te rugăm să ne contactezi la numărul nostru de telefon sau încearcă mai târziu.")
     },
     onSettled:()=>{
-      setIsLoading(false);
       setTimeout(()=>{
         form.setValue("nume_copil","");
         form.setValue("varsta_copil","");
@@ -128,7 +125,7 @@ export const PersInfoEvent = ({}) => {
           name="nume_copil"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nume Și Prenume Copil</FormLabel>
+              <FormLabel className="font-bold text-lg">Nume Și Prenume Copil</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -141,7 +138,7 @@ export const PersInfoEvent = ({}) => {
           name="varsta_copil"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Vârstă Copil</FormLabel>
+              <FormLabel className="font-bold text-lg">Vârstă Copil</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} type="number" min={1}/>
               </FormControl>
@@ -155,7 +152,7 @@ export const PersInfoEvent = ({}) => {
           name="scoala"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Școală / Grădiniță</FormLabel>
+              <FormLabel className="font-bold text-lg">Școală / Grădiniță</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -168,7 +165,7 @@ export const PersInfoEvent = ({}) => {
           name="grupa_copil"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Grupă de Vârstă Aleasă în Cadrul Evenimentului</FormLabel>
+              <FormLabel className="font-bold text-lg">Grupă de Vârstă Aleasă în Cadrul Evenimentului</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="w-[180px]">
@@ -194,7 +191,7 @@ export const PersInfoEvent = ({}) => {
           name="nume_parinte"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nume și Prenume Tutore / Reprezentat legal</FormLabel>
+              <FormLabel className="font-bold text-lg">Nume și Prenume Tutore / Reprezentat legal</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -208,7 +205,7 @@ export const PersInfoEvent = ({}) => {
           name="numar_telefon"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Număr Telefon</FormLabel>
+              <FormLabel className="font-bold text-lg">Număr Telefon</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -221,7 +218,7 @@ export const PersInfoEvent = ({}) => {
           name="nume_parinte_eveniment"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Numele și Prenumele însoțitorului la eveniment</FormLabel>
+              <FormLabel className="font-bold text-lg">Numele și Prenumele însoțitorului la eveniment</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -235,7 +232,7 @@ export const PersInfoEvent = ({}) => {
           name="email_parinte"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Părinte</FormLabel>
+              <FormLabel className="font-bold text-lg">Email Părinte</FormLabel>
               <FormControl>
                 <Input placeholder="" {...field} />
               </FormControl>
@@ -249,7 +246,7 @@ export const PersInfoEvent = ({}) => {
           name="sesiune_foto"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Sesiune foto Mihai Petre (Opțional)</FormLabel>
+              <FormLabel className="font-bold text-lg">Sesiune foto Mihai Petre (Opțional)</FormLabel>
               <FormControl>
                 <Input
                   {...field}
@@ -267,7 +264,7 @@ export const PersInfoEvent = ({}) => {
           name="tombola"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Doresc să particip și la tombolă (Opțional)</FormLabel>
+              <FormLabel className="font-bold text-lg">Doresc să particip și la tombolă (Opțional)</FormLabel>
               <FormControl>
                 <Input
                   {...field}

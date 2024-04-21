@@ -8,7 +8,7 @@ const page = ({ params }: { params: { numeCopil: string } }) => {
     <div className="relative container mx-auto flex justify-center items-center py-20">
       <div className="border-2 p-10 shadow-2xl rounded-[10px] w-fit">
         <p className=" text-xl text-center mb-5">
-          Salut, ai primit o invitație de la <span className="underline font-bold underline-offset-2">
+          <span className="font-bold text-[1.5em]">Salut,</span><br/> ai primit o invitație de la <span className="underline font-bold underline-offset-2">
             {params.numeCopil.replace(/([a-z])([A-Z])/g, '$1 $2')}{" "}
           </span>
           pentru evenimentul<br/> <span className="font-bold"> Ritmul DDT: Aradul dansează cu Mihai Petre și Dum Dance Team</span>

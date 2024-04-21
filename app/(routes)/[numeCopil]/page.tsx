@@ -24,7 +24,7 @@ Nu rata ocazia de a fi parte din această experiență unică!
 
 Fii parte din aventură și adu-ți prietenii! Hai să facem această zi memorabilă împreună!
 
-Let's dance together! 🎉💃🕺<br/><br/>
+Let&apos;s dance together! 🎉💃🕺<br/><br/>
         </p>
         <Image
           src={"/mihai.png"}

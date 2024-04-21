@@ -340,7 +340,7 @@ export const PersInfoEvent = ({}) => {
                 </FormLabel>
                 <FormDescription>
                     Te rog spune-ne cine te-a invitat sau de unde ai aflat de evenimentul nostru pentru că ne dorim
-                    să recompensăm aceasta persoană
+                    să recompensăm aceasta persoană.
                   </FormDescription>
                 <FormControl>
                   <Input placeholder="" {...field} />

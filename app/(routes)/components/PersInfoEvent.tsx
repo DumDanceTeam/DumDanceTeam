@@ -54,6 +54,7 @@ export const PersInfoEvent = ({}) => {
       sesiune_foto,
       tombola,
       numeInvitatie,
+      cum_eveniment,
     }: RegistrationDataRequest) => {
       const payload: RegistrationDataRequest = {
         nume_copil,
@@ -67,6 +68,7 @@ export const PersInfoEvent = ({}) => {
         sesiune_foto,
         tombola,
         numeInvitatie,
+        cum_eveniment,
       };
 
       const { data } = await axios.post("/api/inscriereEveniment", payload);
@@ -93,6 +95,7 @@ export const PersInfoEvent = ({}) => {
         form.setValue("email_parinte", "");
         form.setValue("sesiune_foto", false);
         form.setValue("tombola", false);
+        form.setValue("cum_eveniment","");
       }, 1000);
     },
   });
@@ -123,6 +126,7 @@ export const PersInfoEvent = ({}) => {
               sesiune_foto: form.getValues("sesiune_foto"),
               tombola: form.getValues("tombola"),
               numeInvitatie: invitationName?.trim() || "",
+              cum_eveniment:form.getValues("cum_eveniment")
             })
           )}
           className="border-2 mt-10 border-[#3AB5FB] rounded-[6px] p-10 space-y-8 max-w-[1000px] mx-auto"
@@ -300,7 +304,7 @@ export const PersInfoEvent = ({}) => {
             control={form.control}
             name="tombola"
             render={({ field }) => (
-              <FormItem className="flex flex-col sm:flex-row items-center">
+              <FormItem className="flex flex-col sm:flex-row items-center justify-between">
                 <div className="flex flex-col">
                   <FormLabel className="font-bold text-lg">
                     Optez pentru participarea copilului la tombola cu premii
@@ -317,10 +321,31 @@ export const PersInfoEvent = ({}) => {
                     {...field}
                     type="checkbox"
                     value={field.value ? "true" : "false"}
+                    className="ml-auto"
                   />
                 </FormControl>
                 
               
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="cum_eveniment"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="font-bold text-lg">
+                  Cine te-a invitat sau cum ai aflat de evenimentul nostru ?
+                </FormLabel>
+                <FormDescription>
+                    Te rog spune-ne cine te-a invitat sau de unde ai aflat de evenimentul nostru pentru că ne dorim
+                    să recompensăm aceasta persoană
+                  </FormDescription>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+
                 <FormMessage />
               </FormItem>
             )}

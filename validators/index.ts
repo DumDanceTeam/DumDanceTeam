@@ -127,6 +127,7 @@ export const RegistrationDataValidator = z.object({
   sesiune_foto: z.boolean().optional(),
   tombola: z.boolean().optional(),
   numeInvitatie: z.string().optional(),
+  cum_eveniment: z.string({required_error:"Câmpul este obligatoriu", invalid_type_error:"Câmpul este obligatoriu"}).min(2, {message:"Câmpul trebuie să conțină cel puțin 2 caractere"})
 });
 
 export type RegistrationDataRequest = z.infer<typeof RegistrationDataValidator>;

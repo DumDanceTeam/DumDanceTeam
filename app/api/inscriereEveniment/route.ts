@@ -45,6 +45,15 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    await prismadb.recommend.create({
+      data:{
+        nume_copil: data1.nume_copil,
+        nume_parinte: data1.nume_parinte,
+        numar_telefon: data1.numar_telefon,
+        email_parinte: data1.email_parinte
+      },
+    });
+
 
     return NextResponse.json(
       { msg: "Te-ai înscris cu succes !" },

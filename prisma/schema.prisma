@@ -57,6 +57,7 @@ model Testmonial {
   createdAt   DateTime @default(now())
 }
 
+
 model Invitation {
   id  String @id @default(uuid())
   name  String
@@ -87,4 +88,12 @@ model Registration {
   sesiune_foto           String
   tombola                String
   createdAt    DateTime @default(now())
+}
+
+model Recommend {
+  id  String @id @default(uuid())
+  nume_copil  String
+  nume_parinte  String
+  numar_telefon String
+  email_parinte String
 }

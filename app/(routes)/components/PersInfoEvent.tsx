@@ -330,7 +330,7 @@ export const PersInfoEvent = ({}) => {
                     Informații eveniment
                   </p>
                   <p className="text-start text-[1.5em]">
-                    Ce aducem noi?
+                  🎉 Ce aducem noi?
                   </p>
                   <p>
                   <span className="font-bold">O oră de distracție non-stop!</span> Vom umple aerul cu ritmuri vesele, multă mișcare și o doză sănătoasă de bună dispoziție!<br/><br/>

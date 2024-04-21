@@ -10,10 +10,10 @@ const page = ({ params }: { params: { numeCopil: string } }) => {
         <p className=" text-xl text-center mb-5">
           Salut, ai primit o invitație de la <span className="underline font-bold underline-offset-2">
             {params.numeCopil.replace(/([a-z])([A-Z])/g, '$1 $2')}{" "}
-          </span><br/>
-          pentru evenimentul <span className="font-bold"> Ritmul DDT: Aradul dansează cu Mihai Petre și Dum Dance Team</span>
+          </span>
+          pentru evenimentul<br/> <span className="font-bold"> Ritmul DDT: Aradul dansează cu Mihai Petre și Dum Dance Team</span>
         </p>
-        <p>
+        <p className="text-center">
         Prin intermediul acestui link special, ai prioritate la eveniment și îți asiguri un loc la cea mai tare petrecere a anului alaturi de {params.numeCopil.replace(/([a-z])([A-Z])/g, '$1 $2')}<br/>
     <br/>
 Dar asta nu e tot! Te așteaptă o zi plină de surprize: ore de dans distractive, ocazia de a dansa cu Mihai Petre în persoană, sesiuni foto deosebite și multe alte premii și momente speciale!
@@ -41,7 +41,7 @@ Let&apos;s dance together! 🎉💃🕺<br/><br/>
             "bg-emerald-500 w-full mt-10 hover:bg-[#096c4b]"
           )}
         >
-          Acceptă invitația!
+          Acceptă invitația și înscrie-te acum!
         </Link>
       </div>
     </div>

@@ -8,7 +8,7 @@ const InscriereCuSucces = () => {
             <div>
                 <CheckCircle className="w-[100px] h-[100px] mx-auto text-green-500"/>
                 <p>
-                Mulțumim pentru înscrierea ta la evenimentul nostru extraordinar, "Ritmul DDT: Aradul dansează cu Mihai Petre și Dum Dance Team"! Suntem încântați să te avem alături de noi!
+                Mulțumim pentru înscrierea ta la evenimentul nostru extraordinar, &quot;Ritmul DDT: Aradul dansează cu Mihai Petre și Dum Dance Team&quot;! Suntem încântați să te avem alături de noi!
 
 După încheierea perioadei de înscriere, vom lua legătura personal cu tine pentru a-ți oferi toate detaliile necesare privind desfășurarea evenimentului. Așteaptă cu încredere un e-mail, un mesaj sau un apel telefonic din partea noastră!
 

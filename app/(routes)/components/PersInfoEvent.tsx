@@ -29,12 +29,12 @@ import {
 } from "@/validators";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const PersInfoEvent = ({}) => {
   const params = useSearchParams();
   const invitationName = params.get("nume");
-
+  const router = useRouter();
   console.log(invitationName);
 
   const form = useForm<RegistrationDataRequest>({
@@ -76,7 +76,7 @@ export const PersInfoEvent = ({}) => {
       return data;
     },
     onSuccess: () => {
-      toast.success("Te-ai înregistrat cu succes!");
+      router.push("/inscriere-cu-succes")
     },
     onError: () => {
       toast.error(

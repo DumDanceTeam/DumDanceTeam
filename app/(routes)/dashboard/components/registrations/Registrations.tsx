@@ -8,7 +8,7 @@ interface RegistrationsProps {
 export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
   return (
     <div className="flex flex-col gap-10 items-center">
-      <div className="flex items-center gap-10 font-bold text-sm">
+      <div className="flex gap-10 font-bold text-sm overflow-auto max-w-full">
         <div className="flex flex-col gap-10">
           <p>nume_copil</p>
           <div className="space-y-5">

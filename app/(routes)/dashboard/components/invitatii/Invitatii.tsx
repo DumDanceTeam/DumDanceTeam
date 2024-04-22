@@ -6,7 +6,7 @@ interface InvitationsProps {
 
 export const Invitations = ({ allInvitations }: InvitationsProps) => {
   return (
-    <div className="flex flex-col gap-10 items-center">
+    <div className="flex flex-col gap-10 items-center overflow-auto max-w-full">
       <div className="flex items-center gap-10 font-bold text-sm">
         <div className="flex flex-col gap-10">
           <p>nume_copil</p>

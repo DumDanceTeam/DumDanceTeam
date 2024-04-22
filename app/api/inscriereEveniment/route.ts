@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     console.log(payload);
 
     const data1 = RegistrationDataValidator.parse(payload);
-
+console.log(data1.cum_eveniment)
     await prismadb.registration.create({
       data: {
         nume_copil: data1.nume_copil,

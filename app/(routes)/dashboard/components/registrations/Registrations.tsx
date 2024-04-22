@@ -19,13 +19,23 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
             ))}
           </div>
         </div>
-       
+
         <div className="flex flex-col gap-10">
           <p>varsta_copil</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
               <div key={reg.id} className="text-sm font-normal">
                 <p>{reg.varsta_copil}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-10">
+          <p>școală_grădiniță</p>
+          <div className="space-y-5">
+            {allRegistrations.map((reg) => (
+              <div key={reg.id} className="text-sm font-normal">
+                <p>{reg.scoala}</p>
               </div>
             ))}
           </div>
@@ -46,6 +56,16 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
             {allRegistrations.map((reg) => (
               <div key={reg.id} className="text-sm font-normal">
                 <p>{reg.nume_parinte}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-10">
+          <p>telefon_parinte</p>
+          <div className="space-y-5">
+            {allRegistrations.map((reg) => (
+              <div key={reg.id} className="text-sm font-normal">
+                <p>{reg.numar_telefon}</p>
               </div>
             ))}
           </div>
@@ -95,7 +115,9 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
               <div key={reg.id} className="text-sm font-normal">
-                <p className="whitespace-nowrap">{new Date(reg.createdAt).toLocaleString()}</p>
+                <p className="whitespace-nowrap">
+                  {new Date(reg.createdAt).toLocaleString()}
+                </p>
               </div>
             ))}
           </div>

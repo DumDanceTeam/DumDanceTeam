@@ -13,7 +13,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>nume_copil</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.nume_copil}</p>
               </div>
             ))}
@@ -24,7 +27,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>varsta_copil</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.varsta_copil}</p>
               </div>
             ))}
@@ -34,7 +40,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>școală_grădiniță</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.scoala}</p>
               </div>
             ))}
@@ -44,7 +53,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>grupa_copil</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.grupa_copil}</p>
               </div>
             ))}
@@ -54,7 +66,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>nume_parinte</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.nume_parinte}</p>
               </div>
             ))}
@@ -64,7 +79,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>telefon_parinte</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.numar_telefon}</p>
               </div>
             ))}
@@ -74,7 +92,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>nume_parinte_eveniment</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.nume_parinte_eveniment}</p>
               </div>
             ))}
@@ -84,7 +105,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>email_parinte</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.email_parinte}</p>
               </div>
             ))}
@@ -94,7 +118,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>sesiune_foto</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.sesiune_foto}</p>
               </div>
             ))}
@@ -104,7 +131,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>tombola</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p>{reg.tombola}</p>
               </div>
             ))}
@@ -114,7 +144,10 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
           <p>inregistrat</p>
           <div className="space-y-5">
             {allRegistrations.map((reg) => (
-              <div key={reg.id} className="text-sm font-normal">
+              <div
+                key={reg.id}
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+              >
                 <p className="whitespace-nowrap">
                   {new Date(reg.createdAt).toLocaleString()}
                 </p>

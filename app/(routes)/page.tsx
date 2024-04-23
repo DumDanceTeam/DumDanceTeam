@@ -43,26 +43,25 @@ export default function Home() {
         <RevealRightSlideIn>
           <Recommends />
           <div className="flex-1 text-black text-center mt-6">
-              <p className="text-center text-black tracking-tight leading-8 font-semibold sm:text-[1.25em]">
-                Faptul că suntem cel mai bun club de dans din Arad încă din 2015
-                încoace, ascunde în spate multă muncă, sacrificii, multe ore
-                petrecute în sală de dans. Sute de copii ne-au trecut pragul,
-                iar progresul și succesul perechilor noastre mari stau drept
-                dovadă.
-                <br />
-                Principiile prin care ne educăm copiii ne diferențiază
-                indiferent dacă vrei doar să faci mișcare sau să ajungi un
-                dansator de performanță.
-              </p>
-              <div className="border-b border-b-ddtWhite my-3" />
-            </div>
+            <p className="text-center text-black tracking-tight leading-8 font-semibold sm:text-[1.25em]">
+              Faptul că suntem cel mai bun club de dans din Arad încă din 2015
+              încoace, ascunde în spate multă muncă, sacrificii, multe ore
+              petrecute în sală de dans. Sute de copii ne-au trecut pragul, iar
+              progresul și succesul perechilor noastre mari stau drept dovadă.
+              <br />
+              Principiile prin care ne educăm copiii ne diferențiază indiferent
+              dacă vrei doar să faci mișcare sau să ajungi un dansator de
+              performanță.
+            </p>
+            <div className="border-b border-b-ddtWhite my-3" />
+          </div>
         </RevealRightSlideIn>
       </div>
 
       <div className="my-20">
-          <Reveal>
-            <Gallery />
-          </Reveal>
+        <Reveal>
+          <Gallery />
+        </Reveal>
       </div>
       <div className="">
         <FAQ />

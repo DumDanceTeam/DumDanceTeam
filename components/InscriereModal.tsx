@@ -3,11 +3,6 @@
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
   } from "@/components/ui/dialog"
 import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
@@ -41,7 +36,7 @@ const InscriereModal = () => {
                 localStorage.clear();
             });
           };
-    },[]);
+    },[path]);
 
   return (
     <Link href={"/inscriere-eveniment"} onClick={()=>setIsOpen(false)} className="cursor-pointer">

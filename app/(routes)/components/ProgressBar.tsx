@@ -5,7 +5,7 @@ import { FaUserGroup } from "react-icons/fa6";
 import { MdGroupOff } from "react-icons/md";
 
 export function ProgressBar() {
-  const [progress, setProgress] = React.useState(67);
+  const [progress, setProgress] = React.useState(80);
 
   return (
     <div className="flex items-center justify-center gap-5">

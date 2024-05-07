@@ -105,7 +105,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
         </div>
         <div className="flex mt-2 items-center justify-center">
         {noutati ? (
-              <a href="/#faq">
+              <a href="/inscriere-eveniment">
                 <Button
                   className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8]"
                 >
@@ -114,7 +114,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
                 </Button>
               </a>
             ) : (
-              <Link href="/#faq" className="max-w-content">
+              <Link href="/inscriere-eveniment" className="max-w-content">
                 <Button
                   variant={"fill"}
                   className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8]"

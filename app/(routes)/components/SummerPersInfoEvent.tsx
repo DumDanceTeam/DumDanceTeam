@@ -173,21 +173,10 @@ export const SummerPersInfoEvent = ({}) => {
               </FormItem>
             )}
           />
-          <FormField 
-            control={form.control}
-            name="perioada"
-            render={({field})=>(
-              <FormItem>
-                <FormControl>
-                  <Input {...field} type="checkbox" value={"01.07-05.07"}/>
-                </FormControl>
-                <FormMessage/>
-              </FormItem>
-            )}
-          />
+          
           <FormField
             control={form.control}
-            name="perioadas"
+            name="perioada"
             render={({ field }) => (
               <FormItem className="flex flex-col sm:flex-row items-center justify-between gap-5">
                 <FormLabel className="font-bold text-lg md:whitespace-nowrap self-start">

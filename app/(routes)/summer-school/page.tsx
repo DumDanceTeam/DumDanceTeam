@@ -1,4 +1,3 @@
-import { PersInfoEvent } from "../components/PersInfoEvent";
 import prismadb from "@/lib/db";
 import { redirect } from "next/navigation";
 import { ProgressBar } from "../components/ProgressBar";

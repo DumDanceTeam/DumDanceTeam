@@ -199,12 +199,16 @@ export const SummerRegistrationDataValidator = z.object({
       required_error: "Introdu școala copilului",
       invalid_type_error: "Introdu școala copilului",
     })
-    .min(2, { message: "Școala/Gradinita trebuie să conțină cel puțin 2 caractere" })
-    .max(50, { message: "Școala/Gradinita trebuie să conțină cel mult 50 caractere" }),
+    .min(2, {
+      message: "Școala/Gradinita trebuie să conțină cel puțin 2 caractere",
+    })
+    .max(50, {
+      message: "Școala/Gradinita trebuie să conțină cel mult 50 caractere",
+    }),
   perioada: z
     .string({ required_error: "Introdu perioada în care să participe copilul" })
     .min(2)
-    .max(50),
+    .max(50).optional(),
   nume_parinte: z
     .string({
       required_error: "Introdu numele părintelui",
@@ -242,8 +246,8 @@ export const SummerRegistrationDataValidator = z.object({
       invalid_type_error: "Email-ul este introdus greșit",
     })
     .email({ message: "Email-ul este introdus greșit" }),
-    sesiune_lunga: z.boolean().optional(),
-    sesiune_scurta: z.boolean().optional(),
+  sesiune_lunga: z.boolean().optional(),
+  sesiune_scurta: z.boolean().optional(),
 });
 
 export type SummerRegistrationDataRequest = z.infer<

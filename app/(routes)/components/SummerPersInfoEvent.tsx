@@ -12,27 +12,57 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/Input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import {
-  RegistrationDataRequest,
-  RegistrationDataValidator,
   SummerRegistrationDataRequest,
   SummerRegistrationDataValidator,
 } from "@/validators";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter} from "next/navigation";
+import { useState } from "react";
+
+const items = [
+  {
+    label: "01.07-05.07",
+  },
+  {
+    label: "08.07-12.07",
+  },
+  {
+    label: "15.07-19.07",
+  },
+  {
+    label: "22.07-26.07",
+  },
+  {
+    label: "29.07-02.08",
+  },
+  {
+    label: "05.08-09.08",
+  },
+  {
+    label: "12.08-16.08",
+  },
+  {
+    label: "19.08-23.08",
+  },
+  {
+    label: "26.08-30.08",
+  },
+  {
+    label: "02.09-06.09",
+  },
+  {
+    label: "Full Summer",
+  },
+] as const;
 
 export const SummerPersInfoEvent = ({}) => {
-  const params = useSearchParams();
+  const [perioada, setPerioada] = useState("");
+  const [selectedPerioada, setSelectedPerioada] = useState("");
+
   const router = useRouter();
 
   const form = useForm<SummerRegistrationDataRequest>({
@@ -64,6 +94,8 @@ export const SummerPersInfoEvent = ({}) => {
         sesiune_lunga,
         sesiune_scurta,
       };
+
+      console.log(payload);
 
       const { data } = await axios.post(
         "/api/summerinscriereEveniment",
@@ -109,21 +141,19 @@ export const SummerPersInfoEvent = ({}) => {
       />
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(() =>{
-            console.log(form.getValues("perioada"));
-            
+          onSubmit={form.handleSubmit(() => {
             createRegistration({
               nume_copil: form.getValues("nume_copil"),
               varsta_copil: form.getValues("varsta_copil"),
               scoala: form.getValues("scoala"),
-              perioada: form.getValues("perioada") as string,
+              perioada: perioada,
               nume_parinte: form.getValues("nume_parinte"),
               numar_telefon: form.getValues("numar_telefon"),
               nume_parinte_eveniment: form.getValues("nume_parinte_eveniment"),
               email_parinte: form.getValues("email_parinte"),
               sesiune_lunga: form.getValues("sesiune_lunga"),
               sesiune_scurta: form.getValues("sesiune_scurta"),
-            })
+            });
           })}
           className="border-2 mt-10 border-[#3AB5FB] rounded-[6px] p-10 space-y-8 max-w-[1000px] mx-auto"
         >
@@ -173,194 +203,33 @@ export const SummerPersInfoEvent = ({}) => {
               </FormItem>
             )}
           />
-          <FormField 
-            control={form.control}
-            name="perioada"
-            render={({field})=>(
-              <FormItem>
-                <FormControl>
-                  <Input {...field} type="checkbox" value={"01.07-05.07"}/>
-                </FormControl>
-                <FormMessage/>
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="perioadas"
-            render={({ field }) => (
-              <FormItem className="flex flex-col sm:flex-row items-center justify-between gap-5">
-                <FormLabel className="font-bold text-lg md:whitespace-nowrap self-start">
-                  Alege perioada{" "}
-                </FormLabel>
+          <div className="mt-24">
+            <FormLabel className="font-bold text-lg">Alege perioada</FormLabel>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>01.07-05.07</p>
-                      <Input
-                        {...field}
-                        type="checkbox"
-                        value={"01.07-05.07"}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>08.07-12.07</p>
-                      <Input
-                        {...field}
-                     
-                        type="checkbox"
-                        value={field.value ? "08.07-12.07" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>15.07-19.07</p>
-                      <Input
-                        {...field}
-              
-                        type="checkbox"
-                        value={field.value ? "15.07-19.07" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>{" "}
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>22.07-26.07</p>
-                      <Input
-                        {...field}
-                   
-                        type="checkbox"
-                        value={field.value ? "22.07-26.07" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>{" "}
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>29.07-02.08</p>
-                      <Input
-                        {...field}
-                 
-                        type="checkbox"
-                        value={field.value ? "29.07-02.08" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>{" "}
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>05.08-09.08</p>
-                      <Input
-                        {...field}
-                 
-                        type="checkbox"
-                        value={field.value ? "05.08-09.08" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>{" "}
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>12.08-16.08</p>
-                      <Input
-                        {...field}
-             
-                        type="checkbox"
-                        value={field.value ? "12.08-16.08" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>19.08-23.08</p>
-                      <Input
-                        {...field}
-                  
-                        type="checkbox"
-                        value={field.value ? "19.08-23.08" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>26.08-30.08</p>
-                      <Input
-                        {...field}
-            
-                        type="checkbox"
-                        value={field.value ? "26.08-30.08" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>
-                  <FormControl>
-                    <div className="flex items-center gap-2.5">
-                      <p>02.09-06.09</p>
-                      <Input
-                        {...field}
-                        type="checkbox"
-                        value={field.value ? "02.09-06.09" : ""}
-                        className="w-[50px]"
-                      />
-                    </div>
-                  </FormControl>
-                </div>
-
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          {/* <FormField
-            control={form.control}
-            name="perioada"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="font-bold text-lg">
-                  Alege perioada
-                </FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
+            <div className="flex flex-col justify-center gap-2.5">
+              {items.map((item) => (
+                <div
+                  className="flex items-center justify-between w-full"
+                  key={item.label}
                 >
-                  <FormControl>
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="perioada" />
-                    </SelectTrigger>
-                  </FormControl>
-
-                  <SelectContent>
-                    <SelectItem value="01.07-05.07">01.07-05.07</SelectItem>
-                    <SelectItem value="08.07-12.07">08.07-12.07</SelectItem>
-                    <SelectItem value="15.07-19.07">15.07-19.07</SelectItem>
-                    <SelectItem value="22.07-26.07">22.07-26.07</SelectItem>
-                    <SelectItem value="29.07-02.08">29.07-02.08</SelectItem>
-                    <SelectItem value="05.08-09.08">05.08-09.08</SelectItem>
-                    <SelectItem value="12.08-16.08">12.08-16.08</SelectItem>
-                    <SelectItem value="19.08-23.08">19.08-23.08</SelectItem>
-                    <SelectItem value="26.08-30.08">26.08-30.08</SelectItem>
-                    <SelectItem value="02.09-06.09">02.09-06.09</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormDescription>
-                  Vă rugăm să selectați o perioadă care vă convine pentru tabăra
-                  de vară a copilului dumneavoastră. Alegerea este a
-                  dumneavoastră, iar noi suntem aici să ne asigurăm că
-                  experiența copilului dumneavoastră va fi memorabilă și plină
-                  de aventură!{" "}
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          /> */}
+                  <p className="whitespace-nowrap">{item.label}</p>
+                  <Input
+                    id="same"
+                    name="same"
+                    type="checkbox"
+                    checked={
+                      selectedPerioada === item.label ||
+                      perioada === "Full Summer"
+                    }
+                    onChange={() => {
+                      setPerioada(item.label);
+                      setSelectedPerioada(item.label);
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
           <FormField
             control={form.control}
             name="nume_parinte"

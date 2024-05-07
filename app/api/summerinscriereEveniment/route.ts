@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     // });
 
     return NextResponse.json(
-      { msg: "Te-ai înscris cu succes !" },
+      { msg: "Te-ai înscris cu succes!" },
       { status: 200 }
     );
   } catch (err) {

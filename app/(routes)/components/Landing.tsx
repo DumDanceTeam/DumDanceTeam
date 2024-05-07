@@ -103,6 +103,29 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
             )}
           </div>
         </div>
+        <div className="flex mt-2 items-center justify-center">
+        {noutati ? (
+              <a href="/#faq">
+                <Button
+                  className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8]"
+                >
+                  Aradul dansează alături de Mihai Petre și DDT{" "}
+                  <BsArrowRight className="font-bold text-[1.3em]" />
+                </Button>
+              </a>
+            ) : (
+              <Link href="/#faq" className="max-w-content">
+                <Button
+                  variant={"fill"}
+                  className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8]"
+                >
+                  Aradul dansează alături de MIHAI PETRE și DDT{" "}
+                  <BsArrowRight className="font-bold text-[1.3em]" />
+                </Button>
+              </Link>
+            )}
+        </div>
+        
         <div className="hidden md:block mt-6 w-full space-y-2">
           <p className="text-ddtWhite tracking-tight leading-8 font-medium text-[1.1em] opacity-[0.8] text-center">
             Ne găsiți și pe rețelele de socializare !

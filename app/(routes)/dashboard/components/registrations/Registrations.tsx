@@ -1,3 +1,5 @@
+"use client"
+
 import { Registration } from "@prisma/client";
 import { FC, useState } from "react";
 import { Search } from "./Search";
@@ -11,7 +13,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
   
   return (
     <>
-    <Search setRegistrations={setFilteredRegistrations}/>
+    <Search setRegistrations={setFilteredRegistrations} registrations={allRegistrations}/>
     <div className="flex flex-col gap-10 items-center">
       <div className="flex gap-10 font-bold text-sm overflow-auto max-w-full">
         <div className="flex flex-col gap-10">

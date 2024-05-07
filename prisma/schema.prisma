@@ -85,7 +85,7 @@ model Registration {
   numar_telefon          String
   nume_parinte_eveniment String
   email_parinte          String
-  sesiune_foto           String
+  sesiune_foto           String     
   tombola                String
   createdAt    DateTime @default(now())
 }
@@ -95,5 +95,21 @@ model Recommend {
   nume_copil  String
   nume_parinte  String
   numar_telefon String
+
   email_parinte String
+}
+
+model SummerRegistration {
+  id                     String @id @default(uuid())
+  nume_copil             String
+  varsta_copil           String
+  scoala                 String
+  perioada               String
+  nume_parinte           String
+  numar_telefon          String
+  nume_parinte_eveniment String
+  email_parinte          String
+  sesiune_lunga          String
+  sesiun_scurta          String  
+  createdAt    DateTime @default(now())
 }

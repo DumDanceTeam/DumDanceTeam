@@ -1,18 +1,23 @@
 import { Registration } from "@prisma/client";
-import { FC } from "react";
+import { FC, useState } from "react";
+import { Search } from "./Search";
 
 interface RegistrationsProps {
   allRegistrations: Registration[];
 }
 
 export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
+  const [filteredRegistrations, setFilteredRegistrations] = useState(allRegistrations);
+  
   return (
+    <>
+    <Search setRegistrations={setFilteredRegistrations}/>
     <div className="flex flex-col gap-10 items-center">
       <div className="flex gap-10 font-bold text-sm overflow-auto max-w-full">
         <div className="flex flex-col gap-10">
           <p>nume_copil</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -26,7 +31,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>varsta_copil</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -39,7 +44,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>școală_grădiniță</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -52,7 +57,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>grupa_copil</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -65,7 +70,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>nume_parinte</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -78,7 +83,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>telefon_parinte</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -91,7 +96,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>nume_parinte_eveniment</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -104,7 +109,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>email_parinte</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -117,7 +122,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>sesiune_foto</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -130,7 +135,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>tombola</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -143,7 +148,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>inregistrat</p>
           <div className="space-y-5">
-            {allRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg) => (
               <div
                 key={reg.id}
                 className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
@@ -157,6 +162,7 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

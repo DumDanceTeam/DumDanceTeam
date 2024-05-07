@@ -12,6 +12,7 @@ import Gallery from "@/components/about/Gallery";
 import Referinte from "./components/Referinte";
 import Recommends from "./components/Recommends";
 import RevealRightSlideIn from "@/components/Reveal/RevealRightSlide";
+import Test from "./test";
 
 export default function Home() {
   return (

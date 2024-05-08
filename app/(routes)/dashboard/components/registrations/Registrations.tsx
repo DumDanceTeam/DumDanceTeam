@@ -19,11 +19,13 @@ export const Registrations: FC<RegistrationsProps> = ({ allRegistrations }) => {
         <div className="flex flex-col gap-10">
           <p>nume_copil</p>
           <div className="space-y-5">
-            {filteredRegistrations.map((reg) => (
+            {filteredRegistrations.map((reg,i) => (
+
               <div
                 key={reg.id}
-                className="text-sm font-normal whitespace-nowrap border-b-2 border-black"
+                className="text-sm font-normal whitespace-nowrap border-b-2 border-black flex items-center"
               >
+                <p>{i+1}.</p>{" "}
                 <p>{reg.nume_copil}</p>
               </div>
             ))}

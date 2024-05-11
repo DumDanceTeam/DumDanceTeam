@@ -2,6 +2,8 @@ import prismadb from "@/lib/db";
 import { redirect } from "next/navigation";
 import { ProgressBar } from "../components/ProgressBar";
 import { SummerPersInfoEvent } from "../components/SummerPersInfoEvent";
+import SummerImages from "./components/SummerImages";
+import { ContactWhatsApp } from "./components/ContactWhatsapp";
 
 const page = async () => {
   const showEvent = await prismadb.eventToggle.findFirst();
@@ -11,6 +13,8 @@ const page = async () => {
   } else return redirect("/");
 
   return (
+    <>
+    <SummerImages/>
     <div className="container relative mx-auto p-10">
       <h1 className="text-center font-bold text-4xl">Formular de înscriere</h1>
       <p className="text-center font-bold mb-4">Summer School 2024</p>
@@ -23,6 +27,9 @@ const page = async () => {
       </div>
       <SummerPersInfoEvent />
     </div>
+    <ContactWhatsApp/>
+    </>
+
   );
 };
 

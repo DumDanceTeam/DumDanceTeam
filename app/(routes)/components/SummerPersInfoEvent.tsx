@@ -59,7 +59,7 @@ const items = [
   },
 ] as const;
 
-export const SummerPersInfoEvent = ({}) => {
+export const  SummerPersInfoEvent = ({}) => {
   const [perioada, setPerioada] = useState("");
   const [selectedPerioada, setSelectedPerioada] = useState("");
 
@@ -68,7 +68,7 @@ export const SummerPersInfoEvent = ({}) => {
   const form = useForm<SummerRegistrationDataRequest>({
     resolver: zodResolver(SummerRegistrationDataValidator),
   });
-
+ 
   const { mutate: createRegistration, isLoading } = useMutation({
     mutationFn: async ({
       nume_copil,
@@ -133,7 +133,7 @@ export const SummerPersInfoEvent = ({}) => {
       <Image
         width={6000}
         height={3140}
-        src={"/mihai.png"}
+        src={"/1.png"}
         quality={100}
         priority
         className="w-full h-full rounded-[10px]"
@@ -309,7 +309,7 @@ export const SummerPersInfoEvent = ({}) => {
               <FormItem className="flex flex-col sm:flex-row items-center justify-between gap-5">
                 <div className="flex flex-col">
                   <FormLabel className="font-bold text-lg md:whitespace-nowrap">
-                    Optez pentru o program lung
+                    Optez pentru un program lung
                   </FormLabel>
                 </div>
 
@@ -337,7 +337,7 @@ export const SummerPersInfoEvent = ({}) => {
               <FormItem className="flex flex-col sm:flex-row items-center justify-between gap-5">
                 <div className="flex flex-col">
                   <FormLabel className="font-bold text-lg md:whitespace-nowrap">
-                    Optez pentru o program scurt
+                    Optez pentru un program scurt
                   </FormLabel>
                 </div>
 

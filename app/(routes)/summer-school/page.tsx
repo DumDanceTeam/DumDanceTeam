@@ -28,7 +28,7 @@ const page = async () => {
             href="https://forms.gle/EhMmi4veAonFwobA7"
             className={cn(
               buttonVariants({}),
-              "bg-[#29b9e3] hover:bg-[#1b7a96] text-[1.6em] uppercase w-1/2 p-5"
+              "bg-[#29b9e3] hover:bg-[#1b7a96] text-lg uppercase w-full sm:w-1/2 whitespace-nowrap p-5"
             )}
           >
             Înscrie-te acum
@@ -36,7 +36,7 @@ const page = async () => {
         </div>
       </div>{" "}
       <div className="flex items-center justify-center gap-2.5">
-        <p className="text-center text-foreground my-2.5 flex itc">
+        <p className="text-center text-foreground my-2.5">
           sau pentru mai multe informații,
           <Link
             href={`https://wa.me/${process.env.phone_number}?text=Bună, aș dori mai multe informații despre Școala de Vară`}

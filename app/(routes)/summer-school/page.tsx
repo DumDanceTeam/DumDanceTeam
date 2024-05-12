@@ -36,7 +36,7 @@ const page = async () => {
         </div>
       </div>{" "}
       <div className="flex items-center justify-center gap-2.5">
-        <p className="text-center text-foreground my-2.5">
+        <p className="text-center text-foreground my-2.51e">
           sau pentru mai multe informații,
           <Link
             href={`https://wa.me/${process.env.phone_number}?text=Bună, aș dori mai multe informații despre Școala de Vară`}

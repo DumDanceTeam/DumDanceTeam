@@ -47,7 +47,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
             <span className="text-slate-700 ">&quot;</span>{" "}
             {label && label.trim() !== ""
               ? label
-              : "Educație prin mișcare, performanță prin dedicare !"}{" "}
+              : "ȘCOALA DE VARĂ DUM DANCE TEAM"}{" "}
             <span className="text-slate-700">&quot;</span>
           </p>
           <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 mt-3">
@@ -103,28 +103,26 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
           </div>
         </div>
         <div className="flex mt-2 items-center justify-center">
-        {noutati ? (
-              <a href="/summer-school">
-                <Button
-                  className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8]"
-                >
-                  Înscrie-te acum la Școala de Vară, și nu rata momentele unice pregătite pentru tine!{" "}
-                  <BsArrowRight className="font-bold text-[1.3em]" />
-                </Button>
-              </a>
-            ) : (
-              <Link href="/summer-school" className="max-w-content">
-                <Button
-                  variant={"fill"}
-                  className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8]"
-                >
-                  Înscrie-te acum la Școala de Vară, și nu rata momentele unice pregătite pentru tine!{" "}
-                  <BsArrowRight className="font-bold text-[1.3em]" />
-                </Button>
-              </Link>
-            )}
+          {noutati ? (
+            <a href="/summer-school">
+              <Button className="bg-[#ffe801] hover:bg-[#ccb900] mt-5 text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8] hover:text-[#4290c8]">
+                Înscrie-te acum la Școala de Vară!
+                <BsArrowRight className="font-bold text-[1.3em]" />
+              </Button>
+            </a>
+          ) : (
+            <Link href="/summer-school" className="max-w-content">
+              <Button
+                variant={"fill"}
+                className="bg-[#ffe801] hover:bg-[#ccb900] text-xs mt-5 xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8] hover:text-[#4290c8]"
+              >
+                Înscrie-te acum la Școala de Vară!
+                <BsArrowRight className="font-bold text-[1.3em]" />
+              </Button>
+            </Link>
+          )}
         </div>
-        
+
         <div className="hidden md:block mt-6 w-full space-y-2">
           <p className="text-ddtWhite tracking-tight leading-8 font-medium text-[1.1em] opacity-[0.8] text-center">
             Ne găsiți și pe rețelele de socializare !

@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="bg-ddtWhite antialiased">
           <Provider>
-            <InscriereContainer/>
+            {/* <InscriereContainer/> */}
             {children}
             <Footer />
           </Provider>

@@ -16,16 +16,11 @@ const page = async () => {
     <>
     <SummerImages/>
     <div className="container relative mx-auto p-10">
-      <h1 className="text-center font-bold text-4xl">Formular de înscriere</h1>
-      <p className="text-center font-bold mb-4">Summer School 2024</p>
-      <p className="text-center">
-        Te rugam sa completezi datele tale de contact, numele si varsta
-        copilului, perioada si te vom contacta in curand.
-      </p>
-      <div className="my-10">
+     
+      {/* <div className="my-10">
         <ProgressBar />
       </div>
-      <SummerPersInfoEvent />
+      <SummerPersInfoEvent /> */}
     </div>
     <ContactWhatsApp/>
     </>

@@ -105,21 +105,21 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
         </div>
         <div className="flex mt-2 items-center justify-center">
         {noutati ? (
-              <a href="/inscriere-eveniment">
+              <a href="/summer-school">
                 <Button
                   className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8]"
                 >
-                  Aradul dansează alături de Mihai Petre și DDT{" "}
+                  Înscrie-te acum la Școala de Vară, și nu rata momentele unice pregătite pentru tine!{" "}
                   <BsArrowRight className="font-bold text-[1.3em]" />
                 </Button>
               </a>
             ) : (
-              <Link href="/inscriere-eveniment" className="max-w-content">
+              <Link href="/summer-school" className="max-w-content">
                 <Button
                   variant={"fill"}
                   className="bg-transparent text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8]"
                 >
-                  Aradul dansează alături de MIHAI PETRE și DDT{" "}
+                  Înscrie-te acum la Școala de Vară, și nu rata momentele unice pregătite pentru tine!{" "}
                   <BsArrowRight className="font-bold text-[1.3em]" />
                 </Button>
               </Link>

@@ -36,18 +36,17 @@ const page = async () => {
         </div>
       </div>{" "}
       <div className="flex items-center justify-center gap-2.5 mb-5">
-        <p className="text-center text-foreground my-2.51e">
-          sau pentru mai multe informații,
+        <p className="text-center text-foreground my-2.5">
+          Daca simți că ai nevoie de mai multe informații, te scrie-ne{" "}
           <Link
             href={`https://wa.me/${process.env.phone_number}?text=Bună, aș dori mai multe informații despre Școala de Vară`}
-            className="underline underline-offset-4 decoration-[#25d366] ml-1 hover:decoration-[#178641]"
+            className="underline underline-offset-4 decoration-[#25d366] hover:decoration-[#178641]"
           >
-            contactați-ne pe Whatsapp
+            aici.
           </Link>
         </p>
         <FaWhatsapp className="text-[#25d366]" />
       </div>
-   
     </>
   );
 };

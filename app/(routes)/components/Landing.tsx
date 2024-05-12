@@ -54,13 +54,13 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
             {noutati ? (
               <a href="/#faq" className="cursor-pointer">
                 <Button
-                  aria-label="Programează o ședință gratuită"
+                  aria-label="Programează un curs de dans gratuit"
                   variant={"fill"}
                   className="text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 xs:p-2"
                 >
                   <span>
-                    Programează o ședință de dans
-                    <span className="font-bold"> gratuită</span>
+                    Programează un curs de dans
+                    <span className="font-bold"> gratuit</span>
                   </span>
                 </Button>
               </a>
@@ -72,8 +72,8 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
                   className="text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 xs:p-2"
                 >
                   <span>
-                    Programează o ședință
-                    <span className="font-bold"> gratuită</span>
+                    Programează un curs de dans
+                    <span className="font-bold"> gratuit</span>
                   </span>
                 </Button>
               </Link>

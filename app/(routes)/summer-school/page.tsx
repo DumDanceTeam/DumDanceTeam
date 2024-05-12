@@ -35,7 +35,7 @@ const page = async () => {
           </Link>
         </div>
       </div>{" "}
-      <div className="flex items-center justify-center gap-2.5">
+      <div className="flex items-center justify-center gap-2.5 mb-5">
         <p className="text-center text-foreground my-2.51e">
           sau pentru mai multe informații,
           <Link
@@ -47,22 +47,7 @@ const page = async () => {
         </p>
         <FaWhatsapp className="text-[#25d366]" />
       </div>
-      {/* <div className="container mx-auto">
-        <div className="flex items-center justify-center">
-          <Link
-            target="_blank"
-            href={`https://wa.me/${process.env.phone_number}?text=Bună, aș dori mai multe informații despre Școala de Vară`}
-            className={cn(
-              buttonVariants({
-                variant: "default",
-              }),
-              "bg-lightRed text-[1.6em] uppercase"
-            )}
-          >
-            
-          </Link>
-        </div>
-      </div>{" "} */}
+   
     </>
   );
 };

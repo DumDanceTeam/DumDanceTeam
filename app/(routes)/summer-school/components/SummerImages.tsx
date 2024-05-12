@@ -7,19 +7,19 @@ import RevealRightSlideIn from "@/components/Reveal/RevealRightSlide";
 
 const SummerImages = () => {
   const images = [
-    "/2.png",
-    "/3.png",
-    "/4.png",
-    "/5.png",
-    "/Copie a pt site.png",
-    "/6.png",
-    "/radu.png",
-    "/radu (2).png",
-    "/10.png",
-    "/RDKU.png",
-    "/RDKU (2).png",
-    "/RDKU (3).png",
-    "/14.png",
+    "/2.jpg",
+    "/3.jpg",
+    "/4.jpg",
+    "/5.jpg",
+    "/6.jpg",
+    "/7.jpg",
+    "/8.jpg",
+    "/9.jpg",
+    "/10.jpg",
+    "/11.jpg",
+    "/12.jpg",
+    "/13.jpg",
+    "/14.jpg",
   ];
 
   return (
@@ -27,7 +27,7 @@ const SummerImages = () => {
       <div>
         <div className="relative">
           <Image
-            src={"/1.png"}
+            src={"/1.jpg"}
             width={4000}
             height={5000}
             className="w-full h-full object-cover xl:w-[100vw] xl:h-[100vh]"

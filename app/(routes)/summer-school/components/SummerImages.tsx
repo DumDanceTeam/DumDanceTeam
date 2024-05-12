@@ -20,7 +20,6 @@ const SummerImages = () => {
     "/RDKU (2).png",
     "/RDKU (3).png",
     "/14.png",
-    "/15.png",
   ];
 
   return (
@@ -31,17 +30,17 @@ const SummerImages = () => {
             src={"/1.png"}
             width={4000}
             height={5000}
-            className="w-[100vw] h-[100vh] object-contain absolute top-0"
+            className="w-full h-full object-cover xl:w-[100vw] xl:h-[100vh]"
             priority
             quality={100}
             alt={`summer`}
           />
           <Reveal
             className={cn(
-              "absolute left-[50%] -translate-x-[50%] -translate-y-[50%] top-[50%]"
+              "hidden lg:block"
             )}
           >
-            <h1 className="text-white font-bold text-center text-[4em] sm:text-[5em] z-10">
+            <h1 className="absolute text-white top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] font-bold text-[4em] sm:text-5em text-center">
               ȘCOALA DE VARĂ
             </h1>
           </Reveal>
@@ -53,7 +52,7 @@ const SummerImages = () => {
                 src={img}
                 width={4000}
                 height={5000}
-                className="w-[100vw] h-[100vh] object-contain"
+                className="w-full h-full object-cover xl:w-[100vw] xl:h-[100vh]"
                 priority
                 quality={100}
                 alt={`${img}`}
@@ -63,7 +62,7 @@ const SummerImages = () => {
                 src={img}
                 width={4000}
                 height={5000}
-                className="lg:w-[100vw] h-[100vh] object-contain"
+                className="w-full h-full object-cover xl:w-[100vw] xl:h-[100vh]"
                 priority
                 quality={100}
                 alt={`${img}`}
@@ -72,6 +71,20 @@ const SummerImages = () => {
               
           </div>
         ))}
+        <div className="relative">
+        <RevealLeftSlideIn>
+              <Image
+                src={"/15.png"}
+                width={4000}
+                height={5000}
+                className="w-full h-full object-cover xl:w-[100vw] xl:h-[100vh]"
+                priority
+                quality={100}
+                alt={`15`}
+              />
+            </RevealLeftSlideIn>
+            <Image src={"/ddt-white.png"} width={700} height={344} quality={100} className="w-full max-w-[500px] h-[60px] top-3 object-cover animate-pulse absolute xl:top-10 xl:h-[300px] left-[50%] -translate-x-[50%]" alt="ddt"/>
+        </div>
       </div>
     </div>
   );

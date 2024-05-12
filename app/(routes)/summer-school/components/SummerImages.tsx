@@ -26,46 +26,33 @@ const SummerImages = () => {
   return (
     <div>
       <div>
-        <Image
-          src={"/1.jpg"}
-          width={4000}
-          height={5000}
-          className="w-full h-full object-cover"
-          priority
-          quality={100}
-          alt={`summer`}
-        />
-
+        <Reveal>
+          <Image
+            src={"/1.jpg"}
+            width={4000}
+            height={5000}
+            className="w-full h-full object-cover"
+            priority
+            quality={100}
+            alt={`summer`}
+          />
+        </Reveal>
         {images.map((img, idx) => (
           <div key={idx}>
-            {idx % 2 !== 0 ? (
-              <RevealLeftSlideIn>
-                <Image
-                  src={img}
-                  width={4000}
-                  height={5000}
-                  className="w-full h-full object-cover "
-                  priority
-                  quality={100}
-                  alt={`${img}`}
-                />
-              </RevealLeftSlideIn>
-            ) : (
-              <RevealRightSlideIn>
-                <Image
-                  src={img}
-                  width={4000}
-                  height={5000}
-                  className="w-full h-full object-cover "
-                  priority
-                  quality={100}
-                  alt={`${img}`}
-                />
-              </RevealRightSlideIn>
-            )}
+            <Reveal>
+              <Image
+                src={img}
+                width={4000}
+                height={5000}
+                className="w-full h-full object-cover "
+                priority
+                quality={100}
+                alt={`${img}`}
+              />
+            </Reveal>
           </div>
         ))}
-        <RevealLeftSlideIn>
+        <Reveal>
           <Image
             src={"/16.jpg"}
             width={4000}
@@ -75,7 +62,7 @@ const SummerImages = () => {
             quality={100}
             alt={`15`}
           />
-        </RevealLeftSlideIn>
+        </Reveal>{" "}
       </div>
     </div>
   );

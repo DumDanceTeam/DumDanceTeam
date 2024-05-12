@@ -29,7 +29,7 @@ const mainControllers = useAnimation()
         }}
         initial="hidden"
         animate={mainControllers}
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: 2.5, delay: 0.25 }}
       >
         {children}
       </motion.div>

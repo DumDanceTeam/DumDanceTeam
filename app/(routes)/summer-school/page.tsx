@@ -1,10 +1,10 @@
 import prismadb from "@/lib/db";
 import { redirect } from "next/navigation";
-import { ProgressBar } from "../components/ProgressBar";
-import { SummerPersInfoEvent } from "../components/SummerPersInfoEvent";
 import SummerImages from "./components/SummerImages";
-import { ContactWhatsApp } from "./components/ContactWhatsapp";
-
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/Button";
+import { FaWhatsapp } from "react-icons/fa";
 const page = async () => {
   const showEvent = await prismadb.eventToggle.findFirst();
 
@@ -14,17 +14,56 @@ const page = async () => {
 
   return (
     <>
-    <SummerImages/>
-    <div className="container relative mx-auto p-10">
-     
-      {/* <div className="my-10">
+      <SummerImages />
+      <div className="container relative mx-auto p-10">
+        {/* <div className="my-10">
         <ProgressBar />
       </div>
       <SummerPersInfoEvent /> */}
-    </div>
-    <ContactWhatsApp/>
+      </div>
+      <div className="container mx-auto">
+        <div className="flex items-center justify-center">
+          <Link
+            target="_blank"
+            href="https://forms.gle/EhMmi4veAonFwobA7"
+            className={cn(
+              buttonVariants({}),
+              "bg-[#29b9e3] hover:bg-[#1b7a96] text-[1.6em] uppercase w-1/2 p-5"
+            )}
+          >
+            Înscrie-te acum
+          </Link>
+        </div>
+      </div>{" "}
+      <div className="flex items-center justify-center gap-2.5">
+        <p className="text-center text-foreground my-2.5 flex itc">
+          sau pentru mai multe informații,
+          <Link
+            href={`https://wa.me/${process.env.phone_number}?text=Bună, aș dori mai multe informații despre Școala de Vară`}
+            className="underline underline-offset-4 decoration-[#25d366] ml-1 hover:decoration-[#178641]"
+          >
+            contactați-ne pe Whatsapp
+          </Link>
+        </p>
+        <FaWhatsapp className="text-[#25d366]" />
+      </div>
+      {/* <div className="container mx-auto">
+        <div className="flex items-center justify-center">
+          <Link
+            target="_blank"
+            href={`https://wa.me/${process.env.phone_number}?text=Bună, aș dori mai multe informații despre Școala de Vară`}
+            className={cn(
+              buttonVariants({
+                variant: "default",
+              }),
+              "bg-lightRed text-[1.6em] uppercase"
+            )}
+          >
+            
+          </Link>
+        </div>
+      </div>{" "} */}
     </>
-
   );
 };
 

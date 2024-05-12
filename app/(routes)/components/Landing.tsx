@@ -103,7 +103,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
             )}
           </div>
         </div>
-        <div className="flex mt-2 items-center justify-center">
+        {/* <div className="flex mt-2 items-center justify-center">
         {noutati ? (
               <a href="/summer-school">
                 <Button
@@ -124,7 +124,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
                 </Button>
               </Link>
             )}
-        </div>
+        </div> */}
         
         <div className="hidden md:block mt-6 w-full space-y-2">
           <p className="text-ddtWhite tracking-tight leading-8 font-medium text-[1.1em] opacity-[0.8] text-center">

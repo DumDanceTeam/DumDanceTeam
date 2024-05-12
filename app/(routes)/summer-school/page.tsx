@@ -35,7 +35,7 @@ const page = async () => {
           </Link>
         </div>
       </div>{" "}
-      <div className="flex items-center justify-center gap-2.5 mb-5">
+      <div className="flex flex-col sm:flex-row items-center justify-center sm:gap-2.5 mb-5">
         <p className="text-center text-foreground my-2.5">
           Daca simți că ai nevoie de mai multe informații, te scrie-ne{" "}
           <Link

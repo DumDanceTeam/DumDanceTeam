@@ -30,7 +30,7 @@ const Reveal: FC<RevealProps> = ({ children, className }) => {
         initial={{ opacity: 0 }}
         exit={{ opacity: 0 }}
         animate={mainControllers}
-        transition={{ duration: 2.90, delay: 1.15 }}
+        transition={{ duration: 2.80, delay: 1.10 }}
       >
         {children}
       </motion.div>

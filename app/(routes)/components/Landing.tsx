@@ -59,7 +59,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
                   className="text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 xs:p-2"
                 >
                   <span>
-                    Programează o ședință
+                    Programează o ședință de dans
                     <span className="font-bold"> gratuită</span>
                   </span>
                 </Button>

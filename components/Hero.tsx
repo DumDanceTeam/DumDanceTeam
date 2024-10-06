@@ -11,9 +11,9 @@ const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
   return (
     <div className="text-ddtWhite relative z-20 h-full">
       <Image
-        src={"/summer-hero.jpg"}
+        src={"/halloweenparty.jpg"}
         alt="main-image"
-        className="object-cover w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
+        className=" w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
         width={8000}
         height={8000}
       />

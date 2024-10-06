@@ -12,9 +12,9 @@ interface LandingProps {
 
 const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
   return (
-    <div className="flex flex-col items-center gap-20 sm:gap-10 mt-10 mx-2">
-      <RevealLeftSlideIn className="flex-1 w-full">
-        <div className="flex justify-center">
+    <div className="flex flex-col h-full gap-20 sm:gap-10 pb-10 mx-2">
+      <RevealLeftSlideIn className="w-full h-full flex flex-col justify-end">
+        {/* <div className="flex justify-center">
           {noutati === true ? (
             <a href="/" className="cursor-pointer">
               <Image
@@ -40,16 +40,16 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
               />
             </Link>
           )}
-        </div>
+        </div> */}
 
         <div className="w-full flex flex-col items-center justify-center md:items-start">
-          <p className="font-bold text-center w-full mb-3 text-[.9em] xss:text-[1.05em] xs:text-[1.25em] xsBig:text-[1.3em] sm:text-[1.4em] md:text-[1.7em] lg:text-[3em] text-ddtWhite font-roboto tracking-wider whitespace-break-spaces">
+          {/* <p className="font-bold text-center w-full mb-3 text-[.9em] xss:text-[1.05em] xs:text-[1.25em] xsBig:text-[1.3em] sm:text-[1.4em] md:text-[1.7em] lg:text-[3em] text-ddtWhite font-roboto tracking-wider whitespace-break-spaces">
             <span className="text-slate-700 ">&quot;</span>{" "}
             {label && label.trim() !== ""
               ? label
-              : "ȘCOALA DE VARĂ DUM DANCE TEAM"}{" "}
+              : "Halloween in pasi de dans ! "}{" "}
             <span className="text-slate-700">&quot;</span>
-          </p>
+          </p> */}
           <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 mt-3">
             {noutati ? (
               <a href="/#faq" className="cursor-pointer">
@@ -104,19 +104,22 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
         </div>
         <div className="flex mt-2 items-center justify-center">
           {noutati ? (
-            <a href="/summer-school">
-              <Button className="bg-[#ffe801] hover:bg-[#ccb900] mt-5 text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8] hover:text-[#4290c8]">
-                Înscrie-te acum la Școala de Vară!
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzCZzXQCxEJ7T8GPyVq-6X0uEdZ7emBg-m-nZvrY4MKygIYA/viewform">
+              <Button className="bg-[#ffe801] hover:bg-[#ccb900] mt-5 text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#5e1c85] hover:text-[#380f51]">
+                Înscrie-te acum la Carnavalul de Halloween!
                 <BsArrowRight className="font-bold text-[1.3em]" />
               </Button>
             </a>
           ) : (
-            <Link href="/summer-school" className="max-w-content">
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdzCZzXQCxEJ7T8GPyVq-6X0uEdZ7emBg-m-nZvrY4MKygIYA/viewform"
+              className="max-w-content"
+            >
               <Button
                 variant={"fill"}
-                className="bg-[#ffe801] hover:bg-[#ccb900] text-xs mt-5 xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#4290c8] hover:text-[#4290c8]"
+                className="bg-[#ffe801] hover:bg-[#ccb900] mt-5 text-xs xss:text-[.5em] xs:text-[.9em] xsBig:text-[1em] sm:text-[1.1em] flex whitespace-break-spaces items-center w-full gap-2 p-2 border-none animate-bounce font-bold text-[#5e1c85] hover:text-[#380f51]"
               >
-                Înscrie-te acum la Școala de Vară!
+                Înscrie-te acum la Carnavalul de Halloween!
                 <BsArrowRight className="font-bold text-[1.3em]" />
               </Button>
             </Link>
@@ -131,7 +134,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
           <Socials />
         </div>
       </RevealLeftSlideIn>
-      <div className="md:hidden xsBig:mt-6 w-fit mb-20">
+      <div className=" md:hidden xsBig:mt-6 w-fit h-full mb-20">
         <p className="text-gray-400 mb-4 font-roboto tracking-wide italic text-[.9em] text-center">
           Ne găsiți și pe rețelele de socializare !
         </p>

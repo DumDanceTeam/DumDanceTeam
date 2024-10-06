@@ -60,7 +60,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
                 </div>
                 <div className="flex flex-col mt-10 items-center justify-center gap-1 sm:gap-2.5 text-xs">
                     {/*@ts-ignore */}
-                    <p className="font-semibold text-center xxs:text-start sm:text-[1.4em] leading-5">Programează pentru data de: {selectedDate.date()} {months[selectedDate.month()]} {selectedDate.year()}, {selectedDate.day()===2 || selectedDate.day()===4 ? "de la ora 17:30 la 18:30":"de la ora 10 la 11"}</p>
+                    <p className="font-semibold text-center xxs:text-start sm:text-[1.4em] leading-5">Programează pentru data de: {selectedDate.date()} {months[selectedDate.month()]} {selectedDate.year()}, {selectedDate.day()===2 || selectedDate.day()===4 ? "de la ora 17:30 la 18:30":"de la ora 10 la 12"}</p>
                   {/*@ts-ignore */}
                     <Button aria-label="Programează ședința" onClick={
                           handleSubmit((data)=>{
@@ -70,7 +70,7 @@ const AppointmentData: React.FC<AppointmentDataProps> = ({selectedDate, phone_nu
                             }
                             if(data.parentName.trim().length>=2 && data.childName.trim().length>=2){
                               {/* @ts-ignore */}
-                              window.location.href=`https://wa.me/${phone_number}?text=Bună mă numesc ${data.parentName}, sunt interesat/ă de o ședință de dans gratuită în data de ${selectedDate.date()} ${months[selectedDate.month()]} ${selectedDate.year()} ${selectedDate.day()===2 || selectedDate.day()===4 ? "de la ora 16 la 17 (orele disponibile)":"de la ora 10 la 11 (orele disponibile)"}, pentru ${data.childName} în vârstă de ${data.childAge} ani`
+                              window.location.href=`https://wa.me/${phone_number}?text=Bună mă numesc ${data.parentName}, sunt interesat/ă de o ședință de dans gratuită în data de ${selectedDate.date()} ${months[selectedDate.month()]} ${selectedDate.year()} ${selectedDate.day()===2 || selectedDate.day()===4 ? "de la ora 17:30 la 18:30 (orele disponibile)":"de la ora 10 la 12 (orele disponibile)"}, pentru ${data.childName} în vârstă de ${data.childAge} ani`
                             }
                           })
                     } variant={"fill"} className="active:scale-95 transition-transform text-xs sm:text-[1.5em] mt-2.5">Programează ședința</Button>

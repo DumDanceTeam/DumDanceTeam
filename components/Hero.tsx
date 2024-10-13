@@ -12,36 +12,43 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
   return (
     <div className="text-ddtWhite relative z-20 h-full">
-      <Link href="https://forms.gle/yfMhHghERybHwy3N6">
-        <Image
+       <Link href="https://forms.gle/yfMhHghERybHwy3N6">
+       <Image
           src={"/saladans.jpg"}
-          alt="main-image"
-          className="z-50 w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
-          width={8000}
-          height={8000}
-        />
+          width={4000}
+            height={5000}
+            className="w-full h-full object-cover brightness-50"
+            priority
+            quality={100}
+            alt={`summer`}
+          />
+     
       </Link>
 
       <Link href="https://forms.gle/JZBDrn7TApuBesXS8">
         <Image
           src={"/autumnschool.jpg"}
-          alt="main-image"
-          className="z-50 w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
-          width={8000}
-          height={8000}
+          width={4000}
+            height={5000}
+            className="w-full h-full object-cover brightness-50"
+            priority
+            quality={100}
+            alt={`summer`}
         />
       </Link>
 
       <Link href="https://forms.gle/qtSSPhdVgVcuRCwR7">
-        <Image
-          src={"/halloweenparty.jpg"}
-          alt="main-image"
-          className=" w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
-          width={8000}
-          height={8000}
-        />
+      <Image
+        src={"/halloweenparty.jpg"}
+        width={4000}
+        height={5000}
+        className="w-full h-full object-cover brightness-50"
+        priority
+        quality={100}
+        alt={`summer`}
+      />
       </Link>
-
+    
       {/* <video
         src="/Edited.mp4"
         autoPlay

@@ -12,7 +12,7 @@ interface LandingProps {
 
 const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
   return (
-    <div className="flex flex-col h-full gap-20 sm:gap-10 pb-10 mx-2">
+    <div className="xsBig:flex xsBig:flex-col pb-32 xsBig:pb-10 h-full gap-20 xsBig:gap-10 mx-2">
       <RevealLeftSlideIn className="w-full h-full flex flex-col justify-end">
         {/* <div className="flex justify-center">
           {noutati === true ? (
@@ -134,7 +134,7 @@ const Landing: React.FC<LandingProps> = ({ label, noutati }) => {
           <Socials />
         </div>
       </RevealLeftSlideIn>
-      <div className=" md:hidden xsBig:mt-6 w-fit h-full mb-20">
+      <div className=" md:hidden xsBig:mt-6 w-full h-full mb-20">
         <p className="text-gray-400 mb-4 font-roboto tracking-wide italic text-[.9em] text-center">
           Ne găsiți și pe rețelele de socializare !
         </p>

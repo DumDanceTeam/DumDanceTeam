@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Landing from "../app/(routes)/components/Landing";
 import Navbar from "../app/(routes)/components/Navbar";
+import Link from "next/link";
+import { HeroEvent } from "./HeroEvent";
 
 interface HeroProps {
   label?: string;
@@ -10,13 +12,36 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
   return (
     <div className="text-ddtWhite relative z-20 h-full">
-      <Image
-        src={"/halloweenparty.jpg"}
-        alt="main-image"
-        className=" w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
-        width={8000}
-        height={8000}
-      />
+      <Link href="https://forms.gle/yfMhHghERybHwy3N6">
+        <Image
+          src={"/saladans.jpg"}
+          alt="main-image"
+          className="z-50 w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
+          width={8000}
+          height={8000}
+        />
+      </Link>
+
+      <Link href="https://forms.gle/JZBDrn7TApuBesXS8">
+        <Image
+          src={"/autumnschool.jpg"}
+          alt="main-image"
+          className="z-50 w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
+          width={8000}
+          height={8000}
+        />
+      </Link>
+
+      <Link href="https://forms.gle/qtSSPhdVgVcuRCwR7">
+        <Image
+          src={"/halloweenparty.jpg"}
+          alt="main-image"
+          className=" w-full h-full min-h-[90vh] md:h-[60vh] max-h-[80vh] brightness-50"
+          width={8000}
+          height={8000}
+        />
+      </Link>
+
       {/* <video
         src="/Edited.mp4"
         autoPlay
@@ -32,9 +57,9 @@ const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
           <Navbar noutati={noutati} />
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center h-full w-full">
+        {/* <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center h-full w-full">
           <Landing label={label} noutati={noutati} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

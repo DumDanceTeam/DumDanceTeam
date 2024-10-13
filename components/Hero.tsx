@@ -1,8 +1,6 @@
 import Image from "next/image";
-import Landing from "../app/(routes)/components/Landing";
 import Navbar from "../app/(routes)/components/Navbar";
 import Link from "next/link";
-import { HeroEvent } from "./HeroEvent";
 
 interface HeroProps {
   label?: string;
@@ -17,7 +15,7 @@ const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
           src={"/saladans.jpg"}
           width={4000}
             height={5000}
-            className="w-full h-full object-cover brightness-50"
+            className="w-full h-full object-cover brightness-80 xl:brightness-50"
             priority
             quality={100}
             alt={`summer`}
@@ -30,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
           src={"/autumnschool.jpg"}
           width={4000}
             height={5000}
-            className="w-full h-full object-cover brightness-50"
+            className="w-full h-full object-cover brightness-80 xl:brightness-50"
             priority
             quality={100}
             alt={`summer`}
@@ -42,7 +40,7 @@ const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
         src={"/halloweenparty.jpg"}
         width={4000}
         height={5000}
-        className="w-full h-full object-cover brightness-50"
+        className="w-full h-full object-cover brightness-80 xl:brightness-50"
         priority
         quality={100}
         alt={`summer`}

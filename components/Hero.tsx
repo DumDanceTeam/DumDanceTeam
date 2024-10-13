@@ -10,6 +10,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
   return (
     <div className="text-ddtWhite relative z-20 h-full">
+      <p className=" xl:hidden text-3xl font-bold text-black text-center py-2.5 px-4">Nu rata următoarele evenimente <span className="text-lightRed">DDT</span></p>
        <Link href="https://forms.gle/yfMhHghERybHwy3N6">
        <Image
           src={"/saladans.jpg"}

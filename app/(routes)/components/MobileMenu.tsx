@@ -20,7 +20,7 @@ const MobileMenu =({events, showRule, noutati}: {noutati?: boolean,events: { id:
   
     useOnClickOutside(ref, handleClickOutside)
   return (
-    <div ref={ref} className={`-z-10 absolute left-0 right-0 top-0 bottom-0 duration-150 ${!isActive ? "-z-10 h-0 opacity-0 pointer-events-none":"text-ddtWhite backdrop-blur-md h-[220px] w-full z-[5] py-3"}`}>
+    <div ref={ref} className={`-z-10 absolute left-0 right-0 top-0 bottom-0 duration-150 ${!isActive ? "-z-10 h-0 opacity-0 pointer-events-none":"text-ddtWhite bg-black h-[220px] w-full z-[5] py-3"}`}>
       <div className="flex flex-col justify-evenly h-full">
 
       {navbarLinks.map((navItem, index) => {

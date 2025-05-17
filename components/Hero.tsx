@@ -11,66 +11,71 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
   return (
     <div className="text-ddtWhite relative z-20 h-full">
-      <p className=" xl:hidden text-3xl font-bold text-black text-center py-2.5 px-4">Nu rata următoarele evenimente <span className="text-lightRed">DDT</span></p>
-      <Link href="/summerschool2025">
-       <Image
+      <p className=" xl:hidden text-3xl font-bold text-black text-center py-2.5 px-4">
+        Nu rata următoarele evenimente{" "}
+        <span className="text-lightRed">DDT</span>
+      </p>
+      <Link href="/summerschool2025" className="hidden md:flex">
+        <Image
           src={"/ddtSummer.jpg"}
           width={4000}
-            height={5000}
-            className="w-full h-full object-cover brightness-80 xl:brightness-50"
-            priority
-            quality={100}
-            alt={`summer`}
-          />
-     
-      </Link>
-
-          <a href={"/summerschool2025"} className=" w-full ml-[38%] mr-[38%]">
-              <Button
-                aria-label="Înscrie-te aici la SummerSchool2025"
-                variant={"fill"}
-                className="bg-[#ffcc00] border-[#ffcc00] text-xl"
-              >
-                Înscrie-te aici la SummerSchool2025
-              </Button>
-            </a>
-       {/* <Link href="https://forms.gle/yfMhHghERybHwy3N6">
-       <Image
-          src={"/saladans.jpg"}
-          width={4000}
-            height={5000}
-            className="w-full h-full object-cover brightness-80 xl:brightness-50"
-            priority
-            quality={100}
-            alt={`summer`}
-          />
-     
-      </Link>
-
-      <Link href="https://forms.gle/JZBDrn7TApuBesXS8">
-        <Image
-          src={"/autumnschool.jpg"}
-          width={4000}
-            height={5000}
-            className="w-full h-full object-cover brightness-80 xl:brightness-50"
-            priority
-            quality={100}
-            alt={`summer`}
+          height={5000}
+          className="w-full h-full object-cover brightness-80 md:brightness-50"
+          priority
+          quality={100}
+          alt={`summer`}
         />
       </Link>
 
-      <Link href="https://forms.gle/qtSSPhdVgVcuRCwR7">
-      <Image
-        src={"/halloweenparty.jpg"}
-        width={4000}
-        height={5000}
-        className="w-full h-full object-cover brightness-80 xl:brightness-50"
-        priority
-        quality={100}
-        alt={`summer`}
-      />
-      </Link> */}
-    
+      {/* mobile images */}
+
+      <Link href="/summerschool2025" className="md:hidden">
+        <Image
+          src={"/s1.jpg"}
+          width={4000}
+          height={5000}
+          className="w-full h-full object-cover brightness-80 md:brightness-50"
+          priority
+          quality={100}
+          alt={`summer`}
+        />
+      </Link>
+      <Link href="/summerschool2025" className="md:hidden">
+        <Image
+          src={"/s2.jpg"}
+          width={4000}
+          height={5000}
+          className="w-full h-full object-cover brightness-80 md:brightness-50"
+          priority
+          quality={100}
+          alt={`summer`}
+        />
+      </Link>
+      <Link href="/summerschool2025" className="md:hidden">
+        <Image
+          src={"/s2.jpg"}
+          width={4000}
+          height={5000}
+          className="w-full h-full object-cover brightness-80 md:brightness-50"
+          priority
+          quality={100}
+          alt={`summer`}
+        />
+      </Link>
+
+    <div className="w-full flex items-center justify-center mt-2.5">
+
+       <a href={"/summerschool2025"}>
+        <Button
+          aria-label="Înscrie-te aici la SummerSchool2025"
+          variant={"fill"}
+          className="bg-[#ffcc00] border-[#ffcc00] text-xl"
+        >
+          Înscrie-te aici la SummerSchool2025
+        </Button>
+      </a>
+    </div>
+     
       {/* <video
         src="/Edited.mp4"
         autoPlay

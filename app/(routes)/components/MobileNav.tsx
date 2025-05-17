@@ -30,17 +30,17 @@ const MobileNav: React.FC = () => {
       >
         <div
           className={`line1 duration-150 line w-[20px] h-[4.15px] bg-darkBlack ${
-            isActive && "activeMenu"
+            isActive && "activeMenu bg-white"
           }`}
         />
         <div
           className={`line2 duration-150 line w-[20px] h-[4.15px] bg-darkBlack ${
-            isActive && "activeMenu"
+            isActive && "activeMenu bg-white"
           }`}
         />
         <div
           className={`line3 duration-150 line w-[20px] h-[4.15px] bg-darkBlack ${
-            isActive && "activeMenu"
+            isActive && "activeMenu bg-white"
           }`}
         />
       </div>

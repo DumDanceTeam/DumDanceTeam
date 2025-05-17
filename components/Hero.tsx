@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "../app/(routes)/components/Navbar";
 import Link from "next/link";
+import { Button } from "./ui/Button";
 
 interface HeroProps {
   label?: string;
@@ -11,7 +12,29 @@ const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
   return (
     <div className="text-ddtWhite relative z-20 h-full">
       <p className=" xl:hidden text-3xl font-bold text-black text-center py-2.5 px-4">Nu rata următoarele evenimente <span className="text-lightRed">DDT</span></p>
-       <Link href="https://forms.gle/yfMhHghERybHwy3N6">
+      <Link href="/summerschool2025">
+       <Image
+          src={"/ddtSummer.jpg"}
+          width={4000}
+            height={5000}
+            className="w-full h-full object-cover brightness-80 xl:brightness-50"
+            priority
+            quality={100}
+            alt={`summer`}
+          />
+     
+      </Link>
+
+          <a href={"/summerschool2025"} className=" w-full ml-[38%] mr-[38%]">
+              <Button
+                aria-label="Înscrie-te aici la SummerSchool2025"
+                variant={"fill"}
+                className="bg-[#ffcc00] border-[#ffcc00] text-xl"
+              >
+                Înscrie-te aici la SummerSchool2025
+              </Button>
+            </a>
+       {/* <Link href="https://forms.gle/yfMhHghERybHwy3N6">
        <Image
           src={"/saladans.jpg"}
           width={4000}
@@ -46,7 +69,7 @@ const Hero: React.FC<HeroProps> = ({ label, noutati }) => {
         quality={100}
         alt={`summer`}
       />
-      </Link>
+      </Link> */}
     
       {/* <video
         src="/Edited.mp4"

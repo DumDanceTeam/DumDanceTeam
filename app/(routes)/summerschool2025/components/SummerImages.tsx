@@ -43,7 +43,7 @@ const SummerImages = () => {
             </Reveal>
           </div>
         ))}
-        <Reveal>
+        {/* <Reveal>
           <Image
             src={"/16.jpg"}
             width={4000}
@@ -53,7 +53,7 @@ const SummerImages = () => {
             quality={100}
             alt={`15`}
           />
-        </Reveal>{" "}
+        </Reveal>{" "} */}
       </div>
     </div>
   );
